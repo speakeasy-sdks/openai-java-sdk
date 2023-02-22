@@ -1,4 +1,13 @@
+configVersion: 1.0.0
+management:
+    docChecksum: 070eea1a67c4e5af9e7dbad61d95fd37
+    docVersion: 1.1.0
+    speakeasyVersion: 1.4.7
+generation:
+    telemetryEnabled: false
+    sdkClassName: companyname
 go:
     version: 0.0.0
-    packagename: github.com/speakeasy-sdks/company-laguage-sdk
-sdkclassname: companyname
+    packageName: github.com/speakeasy-sdks/company-laguage-sdk
+java:
+    version: 0.1.0
