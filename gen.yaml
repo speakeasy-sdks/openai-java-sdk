@@ -1,5 +1,5 @@
 java:
-    version: 0.1.0
+    version: 1.1.0
     packagename: openai.javasdk
     projectname: openai-java-sdk
 sdkclassname: Openai
