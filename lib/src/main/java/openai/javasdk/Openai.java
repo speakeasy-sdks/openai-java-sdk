@@ -16,8 +16,8 @@ public class Openai {
 	
 	private String _serverUrl;
 	private String _language = "java";
-	private String _sdkVersion = "1.3.1";
-	private String _genVersion = "1.5.4";
+	private String _sdkVersion = "1.4.0";
+	private String _genVersion = "1.6.0";
 
 	public static class Builder {
 		private HTTPClient client;
