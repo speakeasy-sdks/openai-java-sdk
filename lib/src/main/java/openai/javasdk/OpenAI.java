@@ -104,6 +104,45 @@ public class OpenAI {
     }
     
     /**
+     * createChatCompletion - Creates a completion for the chat message
+    **/
+    public openai.javasdk.models.operations.CreateChatCompletionResponse createChatCompletion(openai.javasdk.models.operations.CreateChatCompletionRequest request) throws Exception {
+        String baseUrl = this._serverUrl;
+        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/chat/completions");
+        
+        HTTPRequest req = new HTTPRequest();
+        req.setMethod("POST");
+        req.setURL(url);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        if (serializedRequestBody == null) {
+            throw new Exception("Request body is required");
+        }
+        req.setBody(serializedRequestBody);
+        
+        
+        HTTPClient client = this._defaultClient;
+        HttpResponse<byte[]> httpRes = client.send(req);
+
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
+
+        openai.javasdk.models.operations.CreateChatCompletionResponse res = new openai.javasdk.models.operations.CreateChatCompletionResponse() {{
+            createChatCompletionResponse = null;
+        }};
+        res.statusCode = httpRes.statusCode();
+        res.contentType = contentType;
+        
+        if (httpRes.statusCode() == 200) {
+            if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
+                ObjectMapper mapper = JSON.getMapper();
+                openai.javasdk.models.shared.CreateChatCompletionResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.CreateChatCompletionResponse.class);
+                res.createChatCompletionResponse = out;
+            }
+        }
+
+        return res;
+    }
+    
+    /**
      * createClassification - Classifies the specified `query` using provided examples.
      * 
      * The endpoint first [searches](/docs/api-reference/searches) over the labeled examples
@@ -191,7 +230,7 @@ public class OpenAI {
     }
     
     /**
-     * createEdit - Creates a new edit for the provided input, instruction, and parameters
+     * createEdit - Creates a new edit for the provided input, instruction, and parameters.
     **/
     public openai.javasdk.models.operations.CreateEditResponse createEdit(openai.javasdk.models.operations.CreateEditRequest request) throws Exception {
         String baseUrl = this._serverUrl;
@@ -546,6 +585,84 @@ public class OpenAI {
                 ObjectMapper mapper = JSON.getMapper();
                 openai.javasdk.models.shared.CreateSearchResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.CreateSearchResponse.class);
                 res.createSearchResponse = out;
+            }
+        }
+
+        return res;
+    }
+    
+    /**
+     * createTranscription - Transcribes audio into the input language.
+    **/
+    public openai.javasdk.models.operations.CreateTranscriptionResponse createTranscription(openai.javasdk.models.operations.CreateTranscriptionRequest request) throws Exception {
+        String baseUrl = this._serverUrl;
+        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/audio/transcriptions");
+        
+        HTTPRequest req = new HTTPRequest();
+        req.setMethod("POST");
+        req.setURL(url);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        if (serializedRequestBody == null) {
+            throw new Exception("Request body is required");
+        }
+        req.setBody(serializedRequestBody);
+        
+        
+        HTTPClient client = this._defaultClient;
+        HttpResponse<byte[]> httpRes = client.send(req);
+
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
+
+        openai.javasdk.models.operations.CreateTranscriptionResponse res = new openai.javasdk.models.operations.CreateTranscriptionResponse() {{
+            createTranscriptionResponse = null;
+        }};
+        res.statusCode = httpRes.statusCode();
+        res.contentType = contentType;
+        
+        if (httpRes.statusCode() == 200) {
+            if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
+                ObjectMapper mapper = JSON.getMapper();
+                openai.javasdk.models.shared.CreateTranscriptionResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.CreateTranscriptionResponse.class);
+                res.createTranscriptionResponse = out;
+            }
+        }
+
+        return res;
+    }
+    
+    /**
+     * createTranslation - Translates audio into into English.
+    **/
+    public openai.javasdk.models.operations.CreateTranslationResponse createTranslation(openai.javasdk.models.operations.CreateTranslationRequest request) throws Exception {
+        String baseUrl = this._serverUrl;
+        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/audio/translations");
+        
+        HTTPRequest req = new HTTPRequest();
+        req.setMethod("POST");
+        req.setURL(url);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        if (serializedRequestBody == null) {
+            throw new Exception("Request body is required");
+        }
+        req.setBody(serializedRequestBody);
+        
+        
+        HTTPClient client = this._defaultClient;
+        HttpResponse<byte[]> httpRes = client.send(req);
+
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
+
+        openai.javasdk.models.operations.CreateTranslationResponse res = new openai.javasdk.models.operations.CreateTranslationResponse() {{
+            createTranslationResponse = null;
+        }};
+        res.statusCode = httpRes.statusCode();
+        res.contentType = contentType;
+        
+        if (httpRes.statusCode() == 200) {
+            if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
+                ObjectMapper mapper = JSON.getMapper();
+                openai.javasdk.models.shared.CreateTranslationResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.CreateTranslationResponse.class);
+                res.createTranslationResponse = out;
             }
         }
 

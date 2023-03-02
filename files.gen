@@ -35,6 +35,8 @@ lib/src/main/java/openai/javasdk/models/operations/CancelFineTuneRequest.java
 lib/src/main/java/openai/javasdk/models/operations/CancelFineTuneResponse.java
 lib/src/main/java/openai/javasdk/models/operations/CreateAnswerRequest.java
 lib/src/main/java/openai/javasdk/models/operations/CreateAnswerResponse.java
+lib/src/main/java/openai/javasdk/models/operations/CreateChatCompletionRequest.java
+lib/src/main/java/openai/javasdk/models/operations/CreateChatCompletionResponse.java
 lib/src/main/java/openai/javasdk/models/operations/CreateClassificationRequest.java
 lib/src/main/java/openai/javasdk/models/operations/CreateClassificationResponse.java
 lib/src/main/java/openai/javasdk/models/operations/CreateCompletionRequest.java
@@ -58,6 +60,10 @@ lib/src/main/java/openai/javasdk/models/operations/CreateModerationResponse.java
 lib/src/main/java/openai/javasdk/models/operations/CreateSearchPathParams.java
 lib/src/main/java/openai/javasdk/models/operations/CreateSearchRequest.java
 lib/src/main/java/openai/javasdk/models/operations/CreateSearchResponse.java
+lib/src/main/java/openai/javasdk/models/operations/CreateTranscriptionRequest.java
+lib/src/main/java/openai/javasdk/models/operations/CreateTranscriptionResponse.java
+lib/src/main/java/openai/javasdk/models/operations/CreateTranslationRequest.java
+lib/src/main/java/openai/javasdk/models/operations/CreateTranslationResponse.java
 lib/src/main/java/openai/javasdk/models/operations/DeleteFilePathParams.java
 lib/src/main/java/openai/javasdk/models/operations/DeleteFileRequest.java
 lib/src/main/java/openai/javasdk/models/operations/DeleteFileResponse.java
@@ -90,6 +96,14 @@ lib/src/main/java/openai/javasdk/models/operations/RetrieveModelResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateAnswerResponseSelectedDocuments.java
 lib/src/main/java/openai/javasdk/models/shared/CreateAnswerResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateAnswerRequest.java
+lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponseChoices.java
+lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponseUsage.java
+lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponse.java
+lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessageRoleEnum.java
+lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessage.java
+lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequest.java
+lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessageRoleEnum.java
+lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessage.java
 lib/src/main/java/openai/javasdk/models/shared/CreateClassificationResponseSelectedExamples.java
 lib/src/main/java/openai/javasdk/models/shared/CreateClassificationResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateClassificationRequest.java
@@ -126,6 +140,12 @@ lib/src/main/java/openai/javasdk/models/shared/CreateModerationRequest.java
 lib/src/main/java/openai/javasdk/models/shared/CreateSearchResponseData.java
 lib/src/main/java/openai/javasdk/models/shared/CreateSearchResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateSearchRequest.java
+lib/src/main/java/openai/javasdk/models/shared/CreateTranscriptionResponse.java
+lib/src/main/java/openai/javasdk/models/shared/CreateTranscriptionRequestFile.java
+lib/src/main/java/openai/javasdk/models/shared/CreateTranscriptionRequest.java
+lib/src/main/java/openai/javasdk/models/shared/CreateTranslationResponse.java
+lib/src/main/java/openai/javasdk/models/shared/CreateTranslationRequestFile.java
+lib/src/main/java/openai/javasdk/models/shared/CreateTranslationRequest.java
 lib/src/main/java/openai/javasdk/models/shared/DeleteFileResponse.java
 lib/src/main/java/openai/javasdk/models/shared/DeleteModelResponse.java
 lib/src/main/java/openai/javasdk/models/shared/ListEnginesResponse.java
