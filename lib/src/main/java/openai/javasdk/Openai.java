@@ -3,7 +3,7 @@ package openai.javasdk;
 import openai.javasdk.utils.HTTPClient;
 import openai.javasdk.utils.SpeakeasyHTTPClient;
 
-
+/** SDK Documentation: APIs for sampling from and fine-tuning language models**/
 public class Openai {
 	public static final String[] SERVERS = {
 		"https://api.openai.com/v1",
@@ -16,8 +16,8 @@ public class Openai {
 	
 	private String _serverUrl;
 	private String _language = "java";
-	private String _sdkVersion = "1.5.0";
-	private String _genVersion = "1.7.1";
+	private String _sdkVersion = "1.6.0";
+	private String _genVersion = "1.8.2";
 
 	public static class Builder {
 		private HTTPClient client;
@@ -65,7 +65,7 @@ public class Openai {
 		}
 
 		if (serverUrl != null && !serverUrl.isBlank()) {
-			this._serverUrl = openai.javasdk.utils.Utils.replaceParameters(serverUrl, params);
+			this._serverUrl = openai.javasdk.utils.Utils.templateUrl(serverUrl, params);
 		}
 		
 		if (this._serverUrl == null) {

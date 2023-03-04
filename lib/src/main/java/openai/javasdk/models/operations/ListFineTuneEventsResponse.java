@@ -1,6 +1,6 @@
 package openai.javasdk.models.operations;
 
-
+import java.net.http.HttpResponse;
 
 public class ListFineTuneEventsResponse {
     public String contentType;
@@ -18,6 +18,12 @@ public class ListFineTuneEventsResponse {
     public Integer statusCode;
     public ListFineTuneEventsResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
+        return this;
+    }
+    
+    public HttpResponse<byte[]> rawResponse;
+    public ListFineTuneEventsResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
+        this.rawResponse = rawResponse;
         return this;
     }
     

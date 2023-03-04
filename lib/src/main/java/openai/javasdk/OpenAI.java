@@ -10,6 +10,34 @@ import openai.javasdk.utils.SerializedBody;
 import org.apache.http.NameValuePair;
 
 public class OpenAI {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	private HTTPClient _defaultClient;
 	private HTTPClient _securityClient;
 	private String _serverUrl;
@@ -25,6 +53,7 @@ public class OpenAI {
 		this._sdkVersion = sdkVersion;
 		this._genVersion = genVersion;
 	}
+	
     
     /**
      * cancelFineTune - Immediately cancel a fine-tune job.
@@ -49,6 +78,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -60,6 +90,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createAnswer - Answers the specified question using the provided documents and examples.
@@ -91,6 +122,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -102,6 +134,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createChatCompletion - Creates a completion for the chat message
@@ -130,6 +163,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -141,6 +175,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createClassification - Classifies the specified `query` using provided examples.
@@ -178,6 +213,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -189,6 +225,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createCompletion - Creates a completion for the provided prompt and parameters
@@ -217,6 +254,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -228,6 +266,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createEdit - Creates a new edit for the provided input, instruction, and parameters.
@@ -256,6 +295,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -267,6 +307,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createEmbedding - Creates an embedding vector representing the input text.
@@ -295,6 +336,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -306,6 +348,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createFile - Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.
@@ -335,6 +378,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -346,6 +390,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createFineTune - Creates a job that fine-tunes a specified model from a given dataset.
@@ -379,6 +424,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -390,6 +436,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createImage - Creates an image given a prompt.
@@ -418,6 +465,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -429,6 +477,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createImageEdit - Creates an edited or extended image given an original image and a prompt.
@@ -457,6 +506,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -468,6 +518,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createImageVariation - Creates a variation of a given image.
@@ -496,6 +547,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -507,6 +559,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createModeration - Classifies if text violates OpenAI's Content Policy
@@ -535,6 +588,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -546,6 +600,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createSearch - The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.
@@ -579,6 +634,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -590,6 +646,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createTranscription - Transcribes audio into the input language.
@@ -618,6 +675,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -629,6 +687,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * createTranslation - Translates audio into into English.
@@ -657,6 +716,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -668,6 +728,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * deleteFile - Delete a file.
@@ -691,6 +752,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -702,6 +764,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * deleteModel - Delete a fine-tuned model. You must have the Owner role in your organization.
@@ -725,6 +788,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -736,6 +800,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * downloadFile - Returns the contents of the specified file
@@ -759,6 +824,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -769,6 +835,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * listEngines - Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability.
@@ -792,6 +859,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -803,6 +871,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * listFiles - Returns a list of files that belong to the user's organization.
@@ -826,6 +895,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -837,6 +907,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * listFineTuneEvents - Get fine-grained status updates for a fine-tune job.
@@ -867,6 +938,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -878,6 +950,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * listFineTunes - List your organization's fine-tuning jobs
@@ -902,6 +975,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -913,6 +987,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * listModels - Lists the currently available models, and provides basic information about each one such as the owner and availability.
@@ -936,6 +1011,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -947,6 +1023,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * retrieveEngine - Retrieves a model instance, providing basic information about it such as the owner and availability.
@@ -970,6 +1047,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -981,6 +1059,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * retrieveFile - Returns information about a specific file.
@@ -1004,6 +1083,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -1015,6 +1095,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * retrieveFineTune - Gets info about the fine-tune job.
@@ -1041,6 +1122,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -1052,6 +1134,7 @@ public class OpenAI {
 
         return res;
     }
+	
     
     /**
      * retrieveModel - Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
@@ -1075,6 +1158,7 @@ public class OpenAI {
         }};
         res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
+        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
