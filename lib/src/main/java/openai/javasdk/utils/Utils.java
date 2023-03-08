@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.apache.http.NameValuePair;
 
@@ -51,7 +52,7 @@ public final class Utils {
 
                                 pathParams.put(pathParamsMetadata.name,
                                         String.join(",",
-                                                Arrays.asList(array).stream().map(v -> Utils.valToString(v)).toList()));
+                                                Arrays.asList(array).stream().map(v -> Utils.valToString(v)).collect(Collectors.toList())));
                                 break;
                             case MAP:
                                 Map<?, ?> map = (Map<?, ?>) value;
@@ -68,7 +69,7 @@ public final class Utils {
                                                 return String.format("%s,%s", Utils.valToString(e.getKey()),
                                                         Utils.valToString(e.getValue()));
                                             }
-                                        }).toList()));
+                                        }).collect(Collectors.toList())));
                                 break;
                             case OBJECT:
                                 List<String> values = new ArrayList<String>();
@@ -105,7 +106,7 @@ public final class Utils {
             }
         }
 
-        return baseURL + replaceParameters(path, pathParams);
+        return baseURL + templateUrl(path, pathParams);
     }
 
     public static boolean matchContentType(String contentType, String pattern) {
@@ -151,7 +152,7 @@ public final class Utils {
         return Security.createClient(client, security);
     }
 
-    public static String replaceParameters(String url, Map<String, String> params) {
+    public static String templateUrl(String url, Map<String, String> params) {
         StringBuilder sb = new StringBuilder();
 
         Pattern p = Pattern.compile("(\\{.*?\\})");

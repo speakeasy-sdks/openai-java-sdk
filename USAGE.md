@@ -2,15 +2,15 @@
 ```java
 package hello.world;
 
-import openai.javasdk.Openai;
+import openai.javasdk.Gpt;
 import openai.javasdk.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
         try {
-            Openai.Builder builder = Openai.builder();
+            Gpt.Builder builder = Gpt.builder();
 
-            Openai sdk = builder.build();
+            Gpt sdk = builder.build();
 
             CancelFineTuneRequest req = new CancelFineTuneRequest() {{
                 pathParams = new CancelFineTunePathParams() {{

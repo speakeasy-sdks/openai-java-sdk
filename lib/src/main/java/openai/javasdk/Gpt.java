@@ -3,8 +3,8 @@ package openai.javasdk;
 import openai.javasdk.utils.HTTPClient;
 import openai.javasdk.utils.SpeakeasyHTTPClient;
 
-
-public class Openai {
+/** SDK Documentation: APIs for sampling from and fine-tuning language models**/
+public class Gpt {
 	public static final String[] SERVERS = {
 		"https://api.openai.com/v1",
 	};
@@ -16,8 +16,8 @@ public class Openai {
 	
 	private String _serverUrl;
 	private String _language = "java";
-	private String _sdkVersion = "1.2.0";
-	private String _genVersion = "1.4.7";
+	private String _sdkVersion = "1.3.0";
+	private String _genVersion = "1.8.6";
 
 	public static class Builder {
 		private HTTPClient client;
@@ -44,8 +44,8 @@ public class Openai {
 			return this;
 		}
 		
-		public Openai build() throws Exception {
-			return new Openai(this.client, this.serverUrl, this.params);
+		public Gpt build() throws Exception {
+			return new Gpt(this.client, this.serverUrl, this.params);
 		}
 	}
 
@@ -53,7 +53,7 @@ public class Openai {
 		return new Builder();
 	}
 
-	private Openai(HTTPClient client, String serverUrl, java.util.Map<String, String> params) throws Exception {
+	private Gpt(HTTPClient client, String serverUrl, java.util.Map<String, String> params) throws Exception {
 		this._defaultClient = client;
 		
 		if (this._defaultClient == null) {
@@ -65,7 +65,7 @@ public class Openai {
 		}
 
 		if (serverUrl != null && !serverUrl.isBlank()) {
-			this._serverUrl = openai.javasdk.utils.Utils.replaceParameters(serverUrl, params);
+			this._serverUrl = openai.javasdk.utils.Utils.templateUrl(serverUrl, params);
 		}
 		
 		if (this._serverUrl == null) {
