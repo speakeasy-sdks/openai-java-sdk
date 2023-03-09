@@ -6,7 +6,7 @@
 ### Gradle
 
 ```groovy
-implementation 'openai.javasdk:openai-java-sdk:1.3.0'
+implementation 'openai.javasdk:openai-java-sdk:1.3.1'
 ```
 <!-- End SDK Installation -->
 
@@ -16,7 +16,10 @@ implementation 'openai.javasdk:openai-java-sdk:1.3.0'
 package hello.world;
 
 import openai.javasdk.Gpt;
-import openai.javasdk.models.shared.Security;
+
+import openai.javasdk.models.operations.CancelFineTunePathParams;
+import openai.javasdk.models.operations.CancelFineTuneRequest;
+import openai.javasdk.models.operations.CancelFineTuneResponse;
 
 public class Application {
     public static void main(String[] args) {

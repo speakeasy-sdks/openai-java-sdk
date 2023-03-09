@@ -3,7 +3,10 @@
 package hello.world;
 
 import openai.javasdk.Gpt;
-import openai.javasdk.models.shared.Security;
+
+import openai.javasdk.models.operations.CancelFineTunePathParams;
+import openai.javasdk.models.operations.CancelFineTuneRequest;
+import openai.javasdk.models.operations.CancelFineTuneResponse;
 
 public class Application {
     public static void main(String[] args) {
