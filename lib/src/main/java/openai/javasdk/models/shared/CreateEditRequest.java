@@ -21,8 +21,8 @@ public class CreateEditRequest {
     }
     
     @JsonProperty("model")
-    public Object model;
-    public CreateEditRequest withModel(Object model) {
+    public String model;
+    public CreateEditRequest withModel(String model) {
         this.model = model;
         return this;
     }

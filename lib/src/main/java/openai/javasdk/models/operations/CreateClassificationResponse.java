@@ -1,6 +1,6 @@
 package openai.javasdk.models.operations;
 
-
+import java.net.http.HttpResponse;
 
 public class CreateClassificationResponse {
     public String contentType;
@@ -18,6 +18,12 @@ public class CreateClassificationResponse {
     public Integer statusCode;
     public CreateClassificationResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
+        return this;
+    }
+    
+    public HttpResponse<byte[]> rawResponse;
+    public CreateClassificationResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
+        this.rawResponse = rawResponse;
         return this;
     }
     

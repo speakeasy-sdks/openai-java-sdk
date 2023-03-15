@@ -1,6 +1,6 @@
 package openai.javasdk.models.operations;
 
-
+import java.net.http.HttpResponse;
 
 public class DeleteModelResponse {
     public String contentType;
@@ -18,6 +18,12 @@ public class DeleteModelResponse {
     public Integer statusCode;
     public DeleteModelResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
+        return this;
+    }
+    
+    public HttpResponse<byte[]> rawResponse;
+    public DeleteModelResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
+        this.rawResponse = rawResponse;
         return this;
     }
     

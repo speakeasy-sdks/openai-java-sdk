@@ -1,6 +1,6 @@
 package openai.javasdk.models.operations;
 
-
+import java.net.http.HttpResponse;
 
 public class DeleteFileResponse {
     public String contentType;
@@ -18,6 +18,12 @@ public class DeleteFileResponse {
     public Integer statusCode;
     public DeleteFileResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
+        return this;
+    }
+    
+    public HttpResponse<byte[]> rawResponse;
+    public DeleteFileResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
+        this.rawResponse = rawResponse;
         return this;
     }
     

@@ -1,6 +1,6 @@
 package openai.javasdk.models.operations;
 
-
+import java.net.http.HttpResponse;
 
 public class RetrieveFineTuneResponse {
     public String contentType;
@@ -18,6 +18,12 @@ public class RetrieveFineTuneResponse {
     public Integer statusCode;
     public RetrieveFineTuneResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
+        return this;
+    }
+    
+    public HttpResponse<byte[]> rawResponse;
+    public RetrieveFineTuneResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
+        this.rawResponse = rawResponse;
         return this;
     }
     

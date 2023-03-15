@@ -2,21 +2,20 @@
 ```java
 package hello.world;
 
-import openai.javasdk.Openai;
-import openai.javasdk.models.shared.Security;
+import openai.javasdk.Gpt;
+
+import openai.javasdk.models.operations.CancelFineTuneRequest;
+import openai.javasdk.models.operations.CancelFineTuneResponse;
 
 public class Application {
     public static void main(String[] args) {
         try {
-            Openai.Builder builder = Openai.builder();
-
-            Openai sdk = builder.build();
+            Gpt sdk = Gpt.builder()
+                .build();
 
             CancelFineTuneRequest req = new CancelFineTuneRequest() {{
-                pathParams = new CancelFineTunePathParams() {{
-                    fineTuneId = "unde";
-                }};
-            }};
+                fineTuneId = "unde";
+            }}            
 
             CancelFineTuneResponse res = sdk.openAI.cancelFineTune(req);
 

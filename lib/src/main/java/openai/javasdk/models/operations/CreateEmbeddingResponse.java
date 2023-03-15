@@ -1,6 +1,6 @@
 package openai.javasdk.models.operations;
 
-
+import java.net.http.HttpResponse;
 
 public class CreateEmbeddingResponse {
     public String contentType;
@@ -18,6 +18,12 @@ public class CreateEmbeddingResponse {
     public Integer statusCode;
     public CreateEmbeddingResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
+        return this;
+    }
+    
+    public HttpResponse<byte[]> rawResponse;
+    public CreateEmbeddingResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
+        this.rawResponse = rawResponse;
         return this;
     }
     

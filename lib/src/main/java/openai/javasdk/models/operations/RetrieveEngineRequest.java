@@ -1,11 +1,12 @@
 package openai.javasdk.models.operations;
 
-
+import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class RetrieveEngineRequest {
-    public RetrieveEnginePathParams pathParams;
-    public RetrieveEngineRequest withPathParams(RetrieveEnginePathParams pathParams) {
-        this.pathParams = pathParams;
+    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=engine_id")
+    public String engineId;
+    public RetrieveEngineRequest withEngineId(String engineId) {
+        this.engineId = engineId;
         return this;
     }
     

@@ -1,6 +1,6 @@
 package openai.javasdk.models.operations;
 
-
+import java.net.http.HttpResponse;
 
 public class RetrieveEngineResponse {
     public String contentType;
@@ -18,6 +18,12 @@ public class RetrieveEngineResponse {
     public Integer statusCode;
     public RetrieveEngineResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
+        return this;
+    }
+    
+    public HttpResponse<byte[]> rawResponse;
+    public RetrieveEngineResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
+        this.rawResponse = rawResponse;
         return this;
     }
     
