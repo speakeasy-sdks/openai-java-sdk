@@ -11,33 +11,6 @@ import org.apache.http.NameValuePair;
 
 public class OpenAI {
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	private HTTPClient _defaultClient;
 	private HTTPClient _securityClient;
 	private String _serverUrl;
@@ -61,7 +34,7 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.CancelFineTuneResponse cancelFineTune(openai.javasdk.models.operations.CancelFineTuneRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/fine-tunes/{fine_tune_id}/cancel", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.CancelFineTuneRequest.class, baseUrl, "/fine-tunes/{fine_tune_id}/cancel", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
@@ -98,14 +71,14 @@ public class OpenAI {
      * The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions).
      * 
     **/
-    public openai.javasdk.models.operations.CreateAnswerResponse createAnswer(openai.javasdk.models.operations.CreateAnswerRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateAnswerResponse createAnswer(openai.javasdk.models.shared.CreateAnswerRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/answers");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -139,14 +112,14 @@ public class OpenAI {
     /**
      * createChatCompletion - Creates a completion for the chat message
     **/
-    public openai.javasdk.models.operations.CreateChatCompletionResponse createChatCompletion(openai.javasdk.models.operations.CreateChatCompletionRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateChatCompletionResponse createChatCompletion(openai.javasdk.models.shared.CreateChatCompletionRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/chat/completions");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -189,14 +162,14 @@ public class OpenAI {
      * request using the `examples` parameter for quick tests and small scale use cases.
      * 
     **/
-    public openai.javasdk.models.operations.CreateClassificationResponse createClassification(openai.javasdk.models.operations.CreateClassificationRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateClassificationResponse createClassification(openai.javasdk.models.shared.CreateClassificationRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/classifications");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -230,14 +203,14 @@ public class OpenAI {
     /**
      * createCompletion - Creates a completion for the provided prompt and parameters
     **/
-    public openai.javasdk.models.operations.CreateCompletionResponse createCompletion(openai.javasdk.models.operations.CreateCompletionRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateCompletionResponse createCompletion(openai.javasdk.models.shared.CreateCompletionRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/completions");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -271,14 +244,14 @@ public class OpenAI {
     /**
      * createEdit - Creates a new edit for the provided input, instruction, and parameters.
     **/
-    public openai.javasdk.models.operations.CreateEditResponse createEdit(openai.javasdk.models.operations.CreateEditRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateEditResponse createEdit(openai.javasdk.models.shared.CreateEditRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/edits");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -312,14 +285,14 @@ public class OpenAI {
     /**
      * createEmbedding - Creates an embedding vector representing the input text.
     **/
-    public openai.javasdk.models.operations.CreateEmbeddingResponse createEmbedding(openai.javasdk.models.operations.CreateEmbeddingRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateEmbeddingResponse createEmbedding(openai.javasdk.models.shared.CreateEmbeddingRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/embeddings");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -354,14 +327,14 @@ public class OpenAI {
      * createFile - Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.
      * 
     **/
-    public openai.javasdk.models.operations.CreateFileResponse createFile(openai.javasdk.models.operations.CreateFileRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateFileResponse createFile(openai.javasdk.models.shared.CreateFileRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/files");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "multipart");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -400,14 +373,14 @@ public class OpenAI {
      * [Learn more about Fine-tuning](/docs/guides/fine-tuning)
      * 
     **/
-    public openai.javasdk.models.operations.CreateFineTuneResponse createFineTune(openai.javasdk.models.operations.CreateFineTuneRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateFineTuneResponse createFineTune(openai.javasdk.models.shared.CreateFineTuneRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/fine-tunes");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -441,14 +414,14 @@ public class OpenAI {
     /**
      * createImage - Creates an image given a prompt.
     **/
-    public openai.javasdk.models.operations.CreateImageResponse createImage(openai.javasdk.models.operations.CreateImageRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateImageResponse createImage(openai.javasdk.models.shared.CreateImageRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/images/generations");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -482,14 +455,14 @@ public class OpenAI {
     /**
      * createImageEdit - Creates an edited or extended image given an original image and a prompt.
     **/
-    public openai.javasdk.models.operations.CreateImageEditResponse createImageEdit(openai.javasdk.models.operations.CreateImageEditRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateImageEditResponse createImageEdit(openai.javasdk.models.shared.CreateImageEditRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/images/edits");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "multipart");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -523,14 +496,14 @@ public class OpenAI {
     /**
      * createImageVariation - Creates a variation of a given image.
     **/
-    public openai.javasdk.models.operations.CreateImageVariationResponse createImageVariation(openai.javasdk.models.operations.CreateImageVariationRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateImageVariationResponse createImageVariation(openai.javasdk.models.shared.CreateImageVariationRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/images/variations");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "multipart");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -564,14 +537,14 @@ public class OpenAI {
     /**
      * createModeration - Classifies if text violates OpenAI's Content Policy
     **/
-    public openai.javasdk.models.operations.CreateModerationResponse createModeration(openai.javasdk.models.operations.CreateModerationRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateModerationResponse createModeration(openai.javasdk.models.shared.CreateModerationRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/moderations");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -612,12 +585,12 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.CreateSearchResponse createSearch(openai.javasdk.models.operations.CreateSearchRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/engines/{engine_id}/search", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.CreateSearchRequest.class, baseUrl, "/engines/{engine_id}/search", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "createSearchRequest", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -651,14 +624,14 @@ public class OpenAI {
     /**
      * createTranscription - Transcribes audio into the input language.
     **/
-    public openai.javasdk.models.operations.CreateTranscriptionResponse createTranscription(openai.javasdk.models.operations.CreateTranscriptionRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateTranscriptionResponse createTranscription(openai.javasdk.models.shared.CreateTranscriptionRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/audio/transcriptions");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "multipart");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -692,14 +665,14 @@ public class OpenAI {
     /**
      * createTranslation - Translates audio into into English.
     **/
-    public openai.javasdk.models.operations.CreateTranslationResponse createTranslation(openai.javasdk.models.operations.CreateTranslationRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateTranslationResponse createTranslation(openai.javasdk.models.shared.CreateTranslationRequest request) throws Exception {
         String baseUrl = this._serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/audio/translations");
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request);
+        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "multipart");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -735,7 +708,7 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.DeleteFileResponse deleteFile(openai.javasdk.models.operations.DeleteFileRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/files/{file_id}", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.DeleteFileRequest.class, baseUrl, "/files/{file_id}", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("DELETE");
@@ -771,7 +744,7 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.DeleteModelResponse deleteModel(openai.javasdk.models.operations.DeleteModelRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/models/{model}", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.DeleteModelRequest.class, baseUrl, "/models/{model}", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("DELETE");
@@ -807,7 +780,7 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.DownloadFileResponse downloadFile(openai.javasdk.models.operations.DownloadFileRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/files/{file_id}/content", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.DownloadFileRequest.class, baseUrl, "/files/{file_id}/content", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("GET");
@@ -915,13 +888,13 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.ListFineTuneEventsResponse listFineTuneEvents(openai.javasdk.models.operations.ListFineTuneEventsRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/fine-tunes/{fine_tune_id}/events", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.ListFineTuneEventsRequest.class, baseUrl, "/fine-tunes/{fine_tune_id}/events", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("GET");
         req.setURL(url);
         
-        java.util.List<NameValuePair> queryParams = openai.javasdk.utils.Utils.getQueryParams(request.queryParams);
+        java.util.List<NameValuePair> queryParams = openai.javasdk.utils.Utils.getQueryParams(openai.javasdk.models.operations.ListFineTuneEventsRequest.class, request, null);
         if (queryParams != null) {
             for (NameValuePair queryParam : queryParams) {
                 req.addQueryParam(queryParam);
@@ -1030,7 +1003,7 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.RetrieveEngineResponse retrieveEngine(openai.javasdk.models.operations.RetrieveEngineRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/engines/{engine_id}", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.RetrieveEngineRequest.class, baseUrl, "/engines/{engine_id}", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("GET");
@@ -1066,7 +1039,7 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.RetrieveFileResponse retrieveFile(openai.javasdk.models.operations.RetrieveFileRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/files/{file_id}", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.RetrieveFileRequest.class, baseUrl, "/files/{file_id}", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("GET");
@@ -1105,7 +1078,7 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.RetrieveFineTuneResponse retrieveFineTune(openai.javasdk.models.operations.RetrieveFineTuneRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/fine-tunes/{fine_tune_id}", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.RetrieveFineTuneRequest.class, baseUrl, "/fine-tunes/{fine_tune_id}", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("GET");
@@ -1141,7 +1114,7 @@ public class OpenAI {
     **/
     public openai.javasdk.models.operations.RetrieveModelResponse retrieveModel(openai.javasdk.models.operations.RetrieveModelRequest request) throws Exception {
         String baseUrl = this._serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/models/{model}", request.pathParams);
+        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.RetrieveModelRequest.class, baseUrl, "/models/{model}", request, null);
         
         HTTPRequest req = new HTTPRequest();
         req.setMethod("GET");

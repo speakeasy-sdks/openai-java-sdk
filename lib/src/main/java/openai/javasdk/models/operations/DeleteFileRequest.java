@@ -1,11 +1,12 @@
 package openai.javasdk.models.operations;
 
-
+import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class DeleteFileRequest {
-    public DeleteFilePathParams pathParams;
-    public DeleteFileRequest withPathParams(DeleteFilePathParams pathParams) {
-        this.pathParams = pathParams;
+    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=file_id")
+    public String fileId;
+    public DeleteFileRequest withFileId(String fileId) {
+        this.fileId = fileId;
         return this;
     }
     

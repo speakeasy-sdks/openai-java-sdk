@@ -1,17 +1,19 @@
 package openai.javasdk.models.operations;
 
-
+import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class ListFineTuneEventsRequest {
-    public ListFineTuneEventsPathParams pathParams;
-    public ListFineTuneEventsRequest withPathParams(ListFineTuneEventsPathParams pathParams) {
-        this.pathParams = pathParams;
+    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=fine_tune_id")
+    public String fineTuneId;
+    public ListFineTuneEventsRequest withFineTuneId(String fineTuneId) {
+        this.fineTuneId = fineTuneId;
         return this;
     }
     
-    public ListFineTuneEventsQueryParams queryParams;
-    public ListFineTuneEventsRequest withQueryParams(ListFineTuneEventsQueryParams queryParams) {
-        this.queryParams = queryParams;
+    @SpeakeasyMetadata("queryParam:style=form,explode=true,name=stream")
+    public Boolean stream;
+    public ListFineTuneEventsRequest withStream(Boolean stream) {
+        this.stream = stream;
         return this;
     }
     

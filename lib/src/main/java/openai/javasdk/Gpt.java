@@ -16,9 +16,8 @@ public class Gpt {
 	
 	private String _serverUrl;
 	private String _language = "java";
-	private String _sdkVersion = "1.4.1";
-	private String _genVersion = "1.9.2";
-
+	private String _sdkVersion = "1.5.0";
+	private String _genVersion = "1.11.0";
 	public static class Builder {
 		private HTTPClient client;
 		
@@ -71,6 +70,7 @@ public class Gpt {
 		if (this._serverUrl == null) {
 			this._serverUrl = SERVERS[0];
 		}
+		
 		
 		this.openAI = new OpenAI(
 			this._defaultClient,
