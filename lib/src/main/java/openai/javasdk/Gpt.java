@@ -16,8 +16,8 @@ public class Gpt {
 	
 	private String _serverUrl;
 	private String _language = "java";
-	private String _sdkVersion = "1.5.0";
-	private String _genVersion = "1.11.0";
+	private String _sdkVersion = "1.6.0";
+	private String _genVersion = "1.12.0";
 	public static class Builder {
 		private HTTPClient client;
 		
