@@ -14,7 +14,7 @@ public class Application {
                 .build();
 
             CancelFineTuneRequest req = new CancelFineTuneRequest() {{
-                fineTuneId = "unde";
+                fineTuneId = "ft-AF1WoRqd3aJAHsqc9NY7iL8F";
             }}            
 
             CancelFineTuneResponse res = sdk.openAI.cancelFineTune(req);

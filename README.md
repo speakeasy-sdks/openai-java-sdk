@@ -6,7 +6,7 @@
 ### Gradle
 
 ```groovy
-implementation 'openai.javasdk:openai-java-sdk:1.6.0'
+implementation 'openai.javasdk:openai-java-sdk:1.6.1'
 ```
 <!-- End SDK Installation -->
 
@@ -27,7 +27,7 @@ public class Application {
                 .build();
 
             CancelFineTuneRequest req = new CancelFineTuneRequest() {{
-                fineTuneId = "unde";
+                fineTuneId = "ft-AF1WoRqd3aJAHsqc9NY7iL8F";
             }}            
 
             CancelFineTuneResponse res = sdk.openAI.cancelFineTune(req);
