@@ -53,3 +53,9 @@ Based on:
 Based on:
 - OpenAPI Doc 1.2.0 https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml
 - Speakeasy CLI 1.12.4 https://github.com/speakeasy-api/speakeasy
+
+## 2023-03-22 01:15:18
+### Changes
+Based on:
+- OpenAPI Doc 1.2.0 https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml
+- Speakeasy CLI 1.13.0 https://github.com/speakeasy-api/speakeasy
