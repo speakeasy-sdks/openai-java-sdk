@@ -11,7 +11,8 @@ public class RetrieveEngineRequest {
      * The ID of the engine to use for this request
      * 
      */
-    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=engine_id")public String engineId;
+    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=engine_id")
+    public String engineId;
     public RetrieveEngineRequest withEngineId(String engineId) {
         this.engineId = engineId;
         return this;

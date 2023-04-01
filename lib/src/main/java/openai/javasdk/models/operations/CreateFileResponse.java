@@ -7,6 +7,7 @@ package openai.javasdk.models.operations;
 import java.net.http.HttpResponse;
 
 public class CreateFileResponse {
+    
     public String contentType;
     public CreateFileResponse withContentType(String contentType) {
         this.contentType = contentType;
@@ -16,17 +17,20 @@ public class CreateFileResponse {
     /**
      * OK
      */
-    public Object openAIFile;
-    public CreateFileResponse withOpenAIFile(Object openAIFile) {
+    
+    public openai.javasdk.models.shared.OpenAIFile openAIFile;
+    public CreateFileResponse withOpenAIFile(openai.javasdk.models.shared.OpenAIFile openAIFile) {
         this.openAIFile = openAIFile;
         return this;
     }
+    
     
     public Integer statusCode;
     public CreateFileResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     
     public HttpResponse<byte[]> rawResponse;
     public CreateFileResponse withRawResponse(HttpResponse<byte[]> rawResponse) {

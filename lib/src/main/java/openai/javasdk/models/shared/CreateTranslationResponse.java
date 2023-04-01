@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * CreateTranslationResponse - OK
  */
 public class CreateTranslationResponse {
-    @JsonProperty("text")public String text;
+    @JsonProperty("text")
+    public String text;
     public CreateTranslationResponse withText(String text) {
         this.text = text;
         return this;

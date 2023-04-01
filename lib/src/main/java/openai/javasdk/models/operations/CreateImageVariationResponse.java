@@ -7,6 +7,7 @@ package openai.javasdk.models.operations;
 import java.net.http.HttpResponse;
 
 public class CreateImageVariationResponse {
+    
     public String contentType;
     public CreateImageVariationResponse withContentType(String contentType) {
         this.contentType = contentType;
@@ -16,17 +17,20 @@ public class CreateImageVariationResponse {
     /**
      * OK
      */
-    public Object imagesResponse;
-    public CreateImageVariationResponse withImagesResponse(Object imagesResponse) {
+    
+    public openai.javasdk.models.shared.ImagesResponse imagesResponse;
+    public CreateImageVariationResponse withImagesResponse(openai.javasdk.models.shared.ImagesResponse imagesResponse) {
         this.imagesResponse = imagesResponse;
         return this;
     }
+    
     
     public Integer statusCode;
     public CreateImageVariationResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     
     public HttpResponse<byte[]> rawResponse;
     public CreateImageVariationResponse withRawResponse(HttpResponse<byte[]> rawResponse) {

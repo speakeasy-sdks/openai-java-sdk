@@ -13,7 +13,8 @@ public class CreateImageRequest {
      * The number of images to generate. Must be between 1 and 10.
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("n")public Long n;
+    @JsonProperty("n")
+    public Long n;
     public CreateImageRequest withN(Long n) {
         this.n = n;
         return this;
@@ -22,7 +23,8 @@ public class CreateImageRequest {
     /**
      * A text description of the desired image(s). The maximum length is 1000 characters.
      */
-    @JsonProperty("prompt")public String prompt;
+    @JsonProperty("prompt")
+    public String prompt;
     public CreateImageRequest withPrompt(String prompt) {
         this.prompt = prompt;
         return this;
@@ -32,7 +34,8 @@ public class CreateImageRequest {
      * The format in which the generated images are returned. Must be one of `url` or `b64_json`.
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("response_format")public CreateImageRequestResponseFormatEnum responseFormat;
+    @JsonProperty("response_format")
+    public CreateImageRequestResponseFormatEnum responseFormat;
     public CreateImageRequest withResponseFormat(CreateImageRequestResponseFormatEnum responseFormat) {
         this.responseFormat = responseFormat;
         return this;
@@ -42,14 +45,16 @@ public class CreateImageRequest {
      * The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("size")public CreateImageRequestSizeEnum size;
+    @JsonProperty("size")
+    public CreateImageRequestSizeEnum size;
     public CreateImageRequest withSize(CreateImageRequestSizeEnum size) {
         this.size = size;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("user")public Object user;
+    @JsonProperty("user")
+    public Object user;
     public CreateImageRequest withUser(Object user) {
         this.user = user;
         return this;

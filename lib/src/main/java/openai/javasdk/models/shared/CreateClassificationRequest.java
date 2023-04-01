@@ -20,14 +20,16 @@ public class CreateClassificationRequest {
      * 
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("examples")public String[][] examples;
+    @JsonProperty("examples")
+    public String[][] examples;
     public CreateClassificationRequest withExamples(String[][] examples) {
         this.examples = examples;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("expand")public Object expand;
+    @JsonProperty("expand")
+    public Object expand;
     public CreateClassificationRequest withExpand(Object expand) {
         this.expand = expand;
         return this;
@@ -40,7 +42,8 @@ public class CreateClassificationRequest {
      * 
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("file")public String file;
+    @JsonProperty("file")
+    public String file;
     public CreateClassificationRequest withFile(String file) {
         this.file = file;
         return this;
@@ -50,21 +53,24 @@ public class CreateClassificationRequest {
      * The set of categories being classified. If not specified, candidate labels will be automatically collected from the examples you provide. All the label strings will be normalized to be capitalized.
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("labels")public String[] labels;
+    @JsonProperty("labels")
+    public String[] labels;
     public CreateClassificationRequest withLabels(String[] labels) {
         this.labels = labels;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("logit_bias")public Object logitBias;
+    @JsonProperty("logit_bias")
+    public Object logitBias;
     public CreateClassificationRequest withLogitBias(Object logitBias) {
         this.logitBias = logitBias;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("logprobs")public Object logprobs;
+    @JsonProperty("logprobs")
+    public Object logprobs;
     public CreateClassificationRequest withLogprobs(Object logprobs) {
         this.logprobs = logprobs;
         return this;
@@ -74,13 +80,15 @@ public class CreateClassificationRequest {
      * The maximum number of examples to be ranked by [Search](/docs/api-reference/searches/create) when using `file`. Setting it to a higher value leads to improved accuracy but with increased latency and cost.
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("max_examples")public Long maxExamples;
+    @JsonProperty("max_examples")
+    public Long maxExamples;
     public CreateClassificationRequest withMaxExamples(Long maxExamples) {
         this.maxExamples = maxExamples;
         return this;
     }
     
-    @JsonProperty("model")public Object model;
+    @JsonProperty("model")
+    public Object model;
     public CreateClassificationRequest withModel(Object model) {
         this.model = model;
         return this;
@@ -89,28 +97,32 @@ public class CreateClassificationRequest {
     /**
      * Query to be classified.
      */
-    @JsonProperty("query")public String query;
+    @JsonProperty("query")
+    public String query;
     public CreateClassificationRequest withQuery(String query) {
         this.query = query;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("return_metadata")public Object returnMetadata;
+    @JsonProperty("return_metadata")
+    public Object returnMetadata;
     public CreateClassificationRequest withReturnMetadata(Object returnMetadata) {
         this.returnMetadata = returnMetadata;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("return_prompt")public Object returnPrompt;
+    @JsonProperty("return_prompt")
+    public Object returnPrompt;
     public CreateClassificationRequest withReturnPrompt(Object returnPrompt) {
         this.returnPrompt = returnPrompt;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("search_model")public Object searchModel;
+    @JsonProperty("search_model")
+    public Object searchModel;
     public CreateClassificationRequest withSearchModel(Object searchModel) {
         this.searchModel = searchModel;
         return this;
@@ -120,14 +132,16 @@ public class CreateClassificationRequest {
      * What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("temperature")public Double temperature;
+    @JsonProperty("temperature")
+    public Double temperature;
     public CreateClassificationRequest withTemperature(Double temperature) {
         this.temperature = temperature;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("user")public Object user;
+    @JsonProperty("user")
+    public Object user;
     public CreateClassificationRequest withUser(Object user) {
         this.user = user;
         return this;

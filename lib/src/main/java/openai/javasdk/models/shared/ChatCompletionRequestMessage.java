@@ -12,7 +12,8 @@ public class ChatCompletionRequestMessage {
     /**
      * The contents of the message
      */
-    @JsonProperty("content")public String content;
+    @JsonProperty("content")
+    public String content;
     public ChatCompletionRequestMessage withContent(String content) {
         this.content = content;
         return this;
@@ -22,7 +23,8 @@ public class ChatCompletionRequestMessage {
      * The name of the user in a multi-user chat
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("name")public String name;
+    @JsonProperty("name")
+    public String name;
     public ChatCompletionRequestMessage withName(String name) {
         this.name = name;
         return this;
@@ -31,7 +33,8 @@ public class ChatCompletionRequestMessage {
     /**
      * The role of the author of this message.
      */
-    @JsonProperty("role")public ChatCompletionRequestMessageRoleEnum role;
+    @JsonProperty("role")
+    public ChatCompletionRequestMessageRoleEnum role;
     public ChatCompletionRequestMessage withRole(ChatCompletionRequestMessageRoleEnum role) {
         this.role = role;
         return this;

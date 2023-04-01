@@ -10,7 +10,8 @@ public class RetrieveModelRequest {
     /**
      * The ID of the model to use for this request
      */
-    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=model")public String model;
+    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=model")
+    public String model;
     public RetrieveModelRequest withModel(String model) {
         this.model = model;
         return this;

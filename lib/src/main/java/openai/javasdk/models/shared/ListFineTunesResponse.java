@@ -10,13 +10,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * ListFineTunesResponse - OK
  */
 public class ListFineTunesResponse {
-    @JsonProperty("data")public Object[] data;
-    public ListFineTunesResponse withData(Object[] data) {
+    @JsonProperty("data")
+    public FineTune[] data;
+    public ListFineTunesResponse withData(FineTune[] data) {
         this.data = data;
         return this;
     }
     
-    @JsonProperty("object")public String object;
+    @JsonProperty("object")
+    public String object;
     public ListFineTunesResponse withObject(String object) {
         this.object = object;
         return this;

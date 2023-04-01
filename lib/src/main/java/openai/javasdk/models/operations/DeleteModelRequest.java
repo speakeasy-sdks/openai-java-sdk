@@ -10,7 +10,8 @@ public class DeleteModelRequest {
     /**
      * The model to delete
      */
-    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=model")public String model;
+    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=model")
+    public String model;
     public DeleteModelRequest withModel(String model) {
         this.model = model;
         return this;

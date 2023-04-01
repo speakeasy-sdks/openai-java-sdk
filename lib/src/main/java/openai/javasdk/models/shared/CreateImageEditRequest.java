@@ -10,7 +10,8 @@ public class CreateImageEditRequest {
     /**
      * The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
      */
-    @SpeakeasyMetadata("multipartForm:file")public CreateImageEditRequestImage image;
+    @SpeakeasyMetadata("multipartForm:file")
+    public CreateImageEditRequestImage image;
     public CreateImageEditRequest withImage(CreateImageEditRequestImage image) {
         this.image = image;
         return this;
@@ -19,13 +20,15 @@ public class CreateImageEditRequest {
     /**
      * An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
      */
-    @SpeakeasyMetadata("multipartForm:file")public CreateImageEditRequestMask mask;
+    @SpeakeasyMetadata("multipartForm:file")
+    public CreateImageEditRequestMask mask;
     public CreateImageEditRequest withMask(CreateImageEditRequestMask mask) {
         this.mask = mask;
         return this;
     }
     
-    @SpeakeasyMetadata("multipartForm:name=n")public Object n;
+    @SpeakeasyMetadata("multipartForm:name=n")
+    public Object n;
     public CreateImageEditRequest withN(Object n) {
         this.n = n;
         return this;
@@ -34,25 +37,29 @@ public class CreateImageEditRequest {
     /**
      * A text description of the desired image(s). The maximum length is 1000 characters.
      */
-    @SpeakeasyMetadata("multipartForm:name=prompt")public String prompt;
+    @SpeakeasyMetadata("multipartForm:name=prompt")
+    public String prompt;
     public CreateImageEditRequest withPrompt(String prompt) {
         this.prompt = prompt;
         return this;
     }
     
-    @SpeakeasyMetadata("multipartForm:name=response_format")public Object responseFormat;
+    @SpeakeasyMetadata("multipartForm:name=response_format")
+    public Object responseFormat;
     public CreateImageEditRequest withResponseFormat(Object responseFormat) {
         this.responseFormat = responseFormat;
         return this;
     }
     
-    @SpeakeasyMetadata("multipartForm:name=size")public Object size;
+    @SpeakeasyMetadata("multipartForm:name=size")
+    public Object size;
     public CreateImageEditRequest withSize(Object size) {
         this.size = size;
         return this;
     }
     
-    @SpeakeasyMetadata("multipartForm:name=user")public Object user;
+    @SpeakeasyMetadata("multipartForm:name=user")
+    public Object user;
     public CreateImageEditRequest withUser(Object user) {
         this.user = user;
         return this;

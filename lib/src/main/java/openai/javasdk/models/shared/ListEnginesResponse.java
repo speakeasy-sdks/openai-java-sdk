@@ -10,13 +10,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * ListEnginesResponse - OK
  */
 public class ListEnginesResponse {
-    @JsonProperty("data")public Object[] data;
-    public ListEnginesResponse withData(Object[] data) {
+    @JsonProperty("data")
+    public Engine[] data;
+    public ListEnginesResponse withData(Engine[] data) {
         this.data = data;
         return this;
     }
     
-    @JsonProperty("object")public String object;
+    @JsonProperty("object")
+    public String object;
     public ListEnginesResponse withObject(String object) {
         this.object = object;
         return this;

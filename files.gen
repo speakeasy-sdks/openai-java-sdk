@@ -68,6 +68,9 @@ lib/src/main/java/openai/javasdk/models/operations/RetrieveFineTuneRequest.java
 lib/src/main/java/openai/javasdk/models/operations/RetrieveFineTuneResponse.java
 lib/src/main/java/openai/javasdk/models/operations/RetrieveModelRequest.java
 lib/src/main/java/openai/javasdk/models/operations/RetrieveModelResponse.java
+lib/src/main/java/openai/javasdk/models/shared/FineTune.java
+lib/src/main/java/openai/javasdk/models/shared/OpenAIFile.java
+lib/src/main/java/openai/javasdk/models/shared/FineTuneEvent.java
 lib/src/main/java/openai/javasdk/models/shared/CreateAnswerResponseSelectedDocuments.java
 lib/src/main/java/openai/javasdk/models/shared/CreateAnswerResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateAnswerRequest.java
@@ -99,6 +102,8 @@ lib/src/main/java/openai/javasdk/models/shared/CreateEmbeddingRequest.java
 lib/src/main/java/openai/javasdk/models/shared/CreateFileRequestFile.java
 lib/src/main/java/openai/javasdk/models/shared/CreateFileRequest.java
 lib/src/main/java/openai/javasdk/models/shared/CreateFineTuneRequest.java
+lib/src/main/java/openai/javasdk/models/shared/ImagesResponseData.java
+lib/src/main/java/openai/javasdk/models/shared/ImagesResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateImageRequestResponseFormatEnum.java
 lib/src/main/java/openai/javasdk/models/shared/CreateImageRequestSizeEnum.java
 lib/src/main/java/openai/javasdk/models/shared/CreateImageRequest.java
@@ -124,8 +129,10 @@ lib/src/main/java/openai/javasdk/models/shared/CreateTranslationRequest.java
 lib/src/main/java/openai/javasdk/models/shared/DeleteFileResponse.java
 lib/src/main/java/openai/javasdk/models/shared/DeleteModelResponse.java
 lib/src/main/java/openai/javasdk/models/shared/ListEnginesResponse.java
+lib/src/main/java/openai/javasdk/models/shared/Engine.java
 lib/src/main/java/openai/javasdk/models/shared/ListFilesResponse.java
 lib/src/main/java/openai/javasdk/models/shared/ListFineTuneEventsResponse.java
 lib/src/main/java/openai/javasdk/models/shared/ListFineTunesResponse.java
 lib/src/main/java/openai/javasdk/models/shared/ListModelsResponse.java
+lib/src/main/java/openai/javasdk/models/shared/Model.java
 USAGE.md

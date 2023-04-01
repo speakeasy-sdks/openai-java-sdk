@@ -11,7 +11,8 @@ public class CreateTranslationRequest {
      * The audio file to translate, in one of these formats: mp3, mp4, mpeg, mpga, m4a, wav, or webm.
      * 
      */
-    @SpeakeasyMetadata("multipartForm:file")public CreateTranslationRequestFile file;
+    @SpeakeasyMetadata("multipartForm:file")
+    public CreateTranslationRequestFile file;
     public CreateTranslationRequest withFile(CreateTranslationRequestFile file) {
         this.file = file;
         return this;
@@ -21,7 +22,8 @@ public class CreateTranslationRequest {
      * ID of the model to use. Only `whisper-1` is currently available.
      * 
      */
-    @SpeakeasyMetadata("multipartForm:name=model")public String model;
+    @SpeakeasyMetadata("multipartForm:name=model")
+    public String model;
     public CreateTranslationRequest withModel(String model) {
         this.model = model;
         return this;
@@ -31,7 +33,8 @@ public class CreateTranslationRequest {
      * An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.
      * 
      */
-    @SpeakeasyMetadata("multipartForm:name=prompt")public String prompt;
+    @SpeakeasyMetadata("multipartForm:name=prompt")
+    public String prompt;
     public CreateTranslationRequest withPrompt(String prompt) {
         this.prompt = prompt;
         return this;
@@ -41,7 +44,8 @@ public class CreateTranslationRequest {
      * The format of the transcript output, in one of these options: json, text, srt, verbose_json, or vtt.
      * 
      */
-    @SpeakeasyMetadata("multipartForm:name=response_format")public String responseFormat;
+    @SpeakeasyMetadata("multipartForm:name=response_format")
+    public String responseFormat;
     public CreateTranslationRequest withResponseFormat(String responseFormat) {
         this.responseFormat = responseFormat;
         return this;
@@ -51,7 +55,8 @@ public class CreateTranslationRequest {
      * The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.
      * 
      */
-    @SpeakeasyMetadata("multipartForm:name=temperature")public Double temperature;
+    @SpeakeasyMetadata("multipartForm:name=temperature")
+    public Double temperature;
     public CreateTranslationRequest withTemperature(Double temperature) {
         this.temperature = temperature;
         return this;

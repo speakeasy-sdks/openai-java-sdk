@@ -13,7 +13,8 @@ public class CreateFileRequest {
      * If the `purpose` is set to "fine-tune", each line is a JSON record with "prompt" and "completion" fields representing your [training examples](/docs/guides/fine-tuning/prepare-training-data).
      * 
      */
-    @SpeakeasyMetadata("multipartForm:file")public CreateFileRequestFile file;
+    @SpeakeasyMetadata("multipartForm:file")
+    public CreateFileRequestFile file;
     public CreateFileRequest withFile(CreateFileRequestFile file) {
         this.file = file;
         return this;
@@ -25,7 +26,8 @@ public class CreateFileRequest {
      * Use "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tunes). This allows us to validate the format of the uploaded file.
      * 
      */
-    @SpeakeasyMetadata("multipartForm:name=purpose")public String purpose;
+    @SpeakeasyMetadata("multipartForm:name=purpose")
+    public String purpose;
     public CreateFileRequest withPurpose(String purpose) {
         this.purpose = purpose;
         return this;

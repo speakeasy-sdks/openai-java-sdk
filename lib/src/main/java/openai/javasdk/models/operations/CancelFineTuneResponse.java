@@ -7,6 +7,7 @@ package openai.javasdk.models.operations;
 import java.net.http.HttpResponse;
 
 public class CancelFineTuneResponse {
+    
     public String contentType;
     public CancelFineTuneResponse withContentType(String contentType) {
         this.contentType = contentType;
@@ -16,17 +17,20 @@ public class CancelFineTuneResponse {
     /**
      * OK
      */
-    public Object fineTune;
-    public CancelFineTuneResponse withFineTune(Object fineTune) {
+    
+    public openai.javasdk.models.shared.FineTune fineTune;
+    public CancelFineTuneResponse withFineTune(openai.javasdk.models.shared.FineTune fineTune) {
         this.fineTune = fineTune;
         return this;
     }
+    
     
     public Integer statusCode;
     public CancelFineTuneResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     
     public HttpResponse<byte[]> rawResponse;
     public CancelFineTuneResponse withRawResponse(HttpResponse<byte[]> rawResponse) {

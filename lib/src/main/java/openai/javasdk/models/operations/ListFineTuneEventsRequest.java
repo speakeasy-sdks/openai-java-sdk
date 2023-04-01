@@ -11,7 +11,8 @@ public class ListFineTuneEventsRequest {
      * The ID of the fine-tune job to get events for.
      * 
      */
-    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=fine_tune_id")public String fineTuneId;
+    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=fine_tune_id")
+    public String fineTuneId;
     public ListFineTuneEventsRequest withFineTuneId(String fineTuneId) {
         this.fineTuneId = fineTuneId;
         return this;
@@ -28,7 +29,8 @@ public class ListFineTuneEventsRequest {
      * If set to false, only events generated so far will be returned.
      * 
      */
-    @SpeakeasyMetadata("queryParam:style=form,explode=true,name=stream")public Boolean stream;
+    @SpeakeasyMetadata("queryParam:style=form,explode=true,name=stream")
+    public Boolean stream;
     public ListFineTuneEventsRequest withStream(Boolean stream) {
         this.stream = stream;
         return this;

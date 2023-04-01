@@ -13,20 +13,23 @@ public class CreateEmbeddingRequest {
      * Input text to get embeddings for, encoded as a string or array of tokens. To get embeddings for multiple inputs in a single request, pass an array of strings or array of token arrays. Each input must not exceed 8192 tokens in length.
      * 
      */
-    @JsonProperty("input")public Object input;
+    @JsonProperty("input")
+    public Object input;
     public CreateEmbeddingRequest withInput(Object input) {
         this.input = input;
         return this;
     }
     
-    @JsonProperty("model")public Object model;
+    @JsonProperty("model")
+    public Object model;
     public CreateEmbeddingRequest withModel(Object model) {
         this.model = model;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("user")public Object user;
+    @JsonProperty("user")
+    public Object user;
     public CreateEmbeddingRequest withUser(Object user) {
         this.user = user;
         return this;

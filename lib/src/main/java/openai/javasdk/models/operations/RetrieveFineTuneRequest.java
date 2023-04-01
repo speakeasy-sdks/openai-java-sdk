@@ -11,7 +11,8 @@ public class RetrieveFineTuneRequest {
      * The ID of the fine-tune job
      * 
      */
-    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=fine_tune_id")public String fineTuneId;
+    @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=fine_tune_id")
+    public String fineTuneId;
     public RetrieveFineTuneRequest withFineTuneId(String fineTuneId) {
         this.fineTuneId = fineTuneId;
         return this;

@@ -13,7 +13,8 @@ public class CreateEditRequest {
      * The input text to use as a starting point for the edit.
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("input")public String input;
+    @JsonProperty("input")
+    public String input;
     public CreateEditRequest withInput(String input) {
         this.input = input;
         return this;
@@ -22,7 +23,8 @@ public class CreateEditRequest {
     /**
      * The instruction that tells the model how to edit the prompt.
      */
-    @JsonProperty("instruction")public String instruction;
+    @JsonProperty("instruction")
+    public String instruction;
     public CreateEditRequest withInstruction(String instruction) {
         this.instruction = instruction;
         return this;
@@ -31,7 +33,8 @@ public class CreateEditRequest {
     /**
      * ID of the model to use. You can use the `text-davinci-edit-001` or `code-davinci-edit-001` model with this endpoint.
      */
-    @JsonProperty("model")public String model;
+    @JsonProperty("model")
+    public String model;
     public CreateEditRequest withModel(String model) {
         this.model = model;
         return this;
@@ -41,7 +44,8 @@ public class CreateEditRequest {
      * How many edits to generate for the input and instruction.
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("n")public Long n;
+    @JsonProperty("n")
+    public Long n;
     public CreateEditRequest withN(Long n) {
         this.n = n;
         return this;
@@ -51,7 +55,8 @@ public class CreateEditRequest {
      * completions_temperature_description
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("temperature")public Double temperature;
+    @JsonProperty("temperature")
+    public Double temperature;
     public CreateEditRequest withTemperature(Double temperature) {
         this.temperature = temperature;
         return this;
@@ -61,7 +66,8 @@ public class CreateEditRequest {
      * completions_top_p_description
      */
     @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("top_p")public Double topP;
+    @JsonProperty("top_p")
+    public Double topP;
     public CreateEditRequest withTopP(Double topP) {
         this.topP = topP;
         return this;

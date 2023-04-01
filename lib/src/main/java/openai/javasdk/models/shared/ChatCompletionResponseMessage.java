@@ -10,7 +10,8 @@ public class ChatCompletionResponseMessage {
     /**
      * The contents of the message
      */
-    @JsonProperty("content")public String content;
+    @JsonProperty("content")
+    public String content;
     public ChatCompletionResponseMessage withContent(String content) {
         this.content = content;
         return this;
@@ -19,7 +20,8 @@ public class ChatCompletionResponseMessage {
     /**
      * The role of the author of this message.
      */
-    @JsonProperty("role")public ChatCompletionResponseMessageRoleEnum role;
+    @JsonProperty("role")
+    public ChatCompletionResponseMessageRoleEnum role;
     public ChatCompletionResponseMessage withRole(ChatCompletionResponseMessageRoleEnum role) {
         this.role = role;
         return this;

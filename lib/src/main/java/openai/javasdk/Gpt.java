@@ -28,8 +28,8 @@ public class Gpt {
 	
 	private String _serverUrl;
 	private String _language = "java";
-	private String _sdkVersion = "1.9.2";
-	private String _genVersion = "2.16.5";
+	private String _sdkVersion = "1.9.3";
+	private String _genVersion = "2.16.7";
 	/**
 	 * The Builder class allows the configuration of a new instance of the SDK.
 	 */
