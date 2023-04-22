@@ -28,4 +28,10 @@ public class CreateModerationResponseResults {
         return this;
     }
     
+
+    public CreateModerationResponseResults(@JsonProperty("categories") CreateModerationResponseResultsCategories categories, @JsonProperty("category_scores") CreateModerationResponseResultsCategoryScores categoryScores, @JsonProperty("flagged") Boolean flagged) {
+    this.categories = categories;
+this.categoryScores = categoryScores;
+this.flagged = flagged;
+  }
 }

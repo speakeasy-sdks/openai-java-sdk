@@ -41,4 +41,6 @@ public class CreateCompletionResponseChoices {
         return this;
     }
     
+
+    public CreateCompletionResponseChoices(){}
 }

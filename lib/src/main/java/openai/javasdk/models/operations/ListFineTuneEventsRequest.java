@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class ListFineTuneEventsRequest {
@@ -36,4 +37,8 @@ public class ListFineTuneEventsRequest {
         return this;
     }
     
+
+    public ListFineTuneEventsRequest(@JsonProperty("fine_tune_id") String fineTuneId) {
+    this.fineTuneId = fineTuneId;
+  }
 }

@@ -54,11 +54,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CancelFineTuneResponse res = new openai.javasdk.models.operations.CancelFineTuneResponse() {{
+        openai.javasdk.models.operations.CancelFineTuneResponse res = new openai.javasdk.models.operations.CancelFineTuneResponse(contentType, httpRes.statusCode()) {{
             fineTune = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -97,11 +95,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateAnswerResponse res = new openai.javasdk.models.operations.CreateAnswerResponse() {{
+        openai.javasdk.models.operations.CreateAnswerResponse res = new openai.javasdk.models.operations.CreateAnswerResponse(contentType, httpRes.statusCode()) {{
             createAnswerResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -140,11 +136,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateChatCompletionResponse res = new openai.javasdk.models.operations.CreateChatCompletionResponse() {{
+        openai.javasdk.models.operations.CreateChatCompletionResponse res = new openai.javasdk.models.operations.CreateChatCompletionResponse(contentType, httpRes.statusCode()) {{
             createChatCompletionResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -183,11 +177,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateClassificationResponse res = new openai.javasdk.models.operations.CreateClassificationResponse() {{
+        openai.javasdk.models.operations.CreateClassificationResponse res = new openai.javasdk.models.operations.CreateClassificationResponse(contentType, httpRes.statusCode()) {{
             createClassificationResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -226,11 +218,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateCompletionResponse res = new openai.javasdk.models.operations.CreateCompletionResponse() {{
+        openai.javasdk.models.operations.CreateCompletionResponse res = new openai.javasdk.models.operations.CreateCompletionResponse(contentType, httpRes.statusCode()) {{
             createCompletionResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -269,11 +259,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateEditResponse res = new openai.javasdk.models.operations.CreateEditResponse() {{
+        openai.javasdk.models.operations.CreateEditResponse res = new openai.javasdk.models.operations.CreateEditResponse(contentType, httpRes.statusCode()) {{
             createEditResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -312,11 +300,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateEmbeddingResponse res = new openai.javasdk.models.operations.CreateEmbeddingResponse() {{
+        openai.javasdk.models.operations.CreateEmbeddingResponse res = new openai.javasdk.models.operations.CreateEmbeddingResponse(contentType, httpRes.statusCode()) {{
             createEmbeddingResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -355,11 +341,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateFileResponse res = new openai.javasdk.models.operations.CreateFileResponse() {{
+        openai.javasdk.models.operations.CreateFileResponse res = new openai.javasdk.models.operations.CreateFileResponse(contentType, httpRes.statusCode()) {{
             openAIFile = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -398,11 +382,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateFineTuneResponse res = new openai.javasdk.models.operations.CreateFineTuneResponse() {{
+        openai.javasdk.models.operations.CreateFineTuneResponse res = new openai.javasdk.models.operations.CreateFineTuneResponse(contentType, httpRes.statusCode()) {{
             fineTune = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -441,11 +423,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateImageResponse res = new openai.javasdk.models.operations.CreateImageResponse() {{
+        openai.javasdk.models.operations.CreateImageResponse res = new openai.javasdk.models.operations.CreateImageResponse(contentType, httpRes.statusCode()) {{
             imagesResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -484,11 +464,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateImageEditResponse res = new openai.javasdk.models.operations.CreateImageEditResponse() {{
+        openai.javasdk.models.operations.CreateImageEditResponse res = new openai.javasdk.models.operations.CreateImageEditResponse(contentType, httpRes.statusCode()) {{
             imagesResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -527,11 +505,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateImageVariationResponse res = new openai.javasdk.models.operations.CreateImageVariationResponse() {{
+        openai.javasdk.models.operations.CreateImageVariationResponse res = new openai.javasdk.models.operations.CreateImageVariationResponse(contentType, httpRes.statusCode()) {{
             imagesResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -570,11 +546,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateModerationResponse res = new openai.javasdk.models.operations.CreateModerationResponse() {{
+        openai.javasdk.models.operations.CreateModerationResponse res = new openai.javasdk.models.operations.CreateModerationResponse(contentType, httpRes.statusCode()) {{
             createModerationResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -613,11 +587,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateSearchResponse res = new openai.javasdk.models.operations.CreateSearchResponse() {{
+        openai.javasdk.models.operations.CreateSearchResponse res = new openai.javasdk.models.operations.CreateSearchResponse(contentType, httpRes.statusCode()) {{
             createSearchResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -656,11 +628,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateTranscriptionResponse res = new openai.javasdk.models.operations.CreateTranscriptionResponse() {{
+        openai.javasdk.models.operations.CreateTranscriptionResponse res = new openai.javasdk.models.operations.CreateTranscriptionResponse(contentType, httpRes.statusCode()) {{
             createTranscriptionResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -699,11 +669,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.CreateTranslationResponse res = new openai.javasdk.models.operations.CreateTranslationResponse() {{
+        openai.javasdk.models.operations.CreateTranslationResponse res = new openai.javasdk.models.operations.CreateTranslationResponse(contentType, httpRes.statusCode()) {{
             createTranslationResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -737,11 +705,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.DeleteFileResponse res = new openai.javasdk.models.operations.DeleteFileResponse() {{
+        openai.javasdk.models.operations.DeleteFileResponse res = new openai.javasdk.models.operations.DeleteFileResponse(contentType, httpRes.statusCode()) {{
             deleteFileResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -775,11 +741,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.DeleteModelResponse res = new openai.javasdk.models.operations.DeleteModelResponse() {{
+        openai.javasdk.models.operations.DeleteModelResponse res = new openai.javasdk.models.operations.DeleteModelResponse(contentType, httpRes.statusCode()) {{
             deleteModelResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -813,11 +777,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.DownloadFileResponse res = new openai.javasdk.models.operations.DownloadFileResponse() {{
+        openai.javasdk.models.operations.DownloadFileResponse res = new openai.javasdk.models.operations.DownloadFileResponse(contentType, httpRes.statusCode()) {{
             downloadFile200ApplicationJSONString = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -849,11 +811,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.ListEnginesResponse res = new openai.javasdk.models.operations.ListEnginesResponse() {{
+        openai.javasdk.models.operations.ListEnginesResponse res = new openai.javasdk.models.operations.ListEnginesResponse(contentType, httpRes.statusCode()) {{
             listEnginesResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -886,11 +846,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.ListFilesResponse res = new openai.javasdk.models.operations.ListFilesResponse() {{
+        openai.javasdk.models.operations.ListFilesResponse res = new openai.javasdk.models.operations.ListFilesResponse(contentType, httpRes.statusCode()) {{
             listFilesResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -930,11 +888,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.ListFineTuneEventsResponse res = new openai.javasdk.models.operations.ListFineTuneEventsResponse() {{
+        openai.javasdk.models.operations.ListFineTuneEventsResponse res = new openai.javasdk.models.operations.ListFineTuneEventsResponse(contentType, httpRes.statusCode()) {{
             listFineTuneEventsResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -967,11 +923,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.ListFineTunesResponse res = new openai.javasdk.models.operations.ListFineTunesResponse() {{
+        openai.javasdk.models.operations.ListFineTunesResponse res = new openai.javasdk.models.operations.ListFineTunesResponse(contentType, httpRes.statusCode()) {{
             listFineTunesResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -1004,11 +958,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.ListModelsResponse res = new openai.javasdk.models.operations.ListModelsResponse() {{
+        openai.javasdk.models.operations.ListModelsResponse res = new openai.javasdk.models.operations.ListModelsResponse(contentType, httpRes.statusCode()) {{
             listModelsResponse = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -1042,11 +994,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.RetrieveEngineResponse res = new openai.javasdk.models.operations.RetrieveEngineResponse() {{
+        openai.javasdk.models.operations.RetrieveEngineResponse res = new openai.javasdk.models.operations.RetrieveEngineResponse(contentType, httpRes.statusCode()) {{
             engine = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -1080,11 +1030,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.RetrieveFileResponse res = new openai.javasdk.models.operations.RetrieveFileResponse() {{
+        openai.javasdk.models.operations.RetrieveFileResponse res = new openai.javasdk.models.operations.RetrieveFileResponse(contentType, httpRes.statusCode()) {{
             openAIFile = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -1118,11 +1066,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.RetrieveFineTuneResponse res = new openai.javasdk.models.operations.RetrieveFineTuneResponse() {{
+        openai.javasdk.models.operations.RetrieveFineTuneResponse res = new openai.javasdk.models.operations.RetrieveFineTuneResponse(contentType, httpRes.statusCode()) {{
             fineTune = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
@@ -1156,11 +1102,9 @@ public class OpenAI {
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
-        openai.javasdk.models.operations.RetrieveModelResponse res = new openai.javasdk.models.operations.RetrieveModelResponse() {{
+        openai.javasdk.models.operations.RetrieveModelResponse res = new openai.javasdk.models.operations.RetrieveModelResponse(contentType, httpRes.statusCode()) {{
             model = null;
         }};
-        res.statusCode = httpRes.statusCode();
-        res.contentType = contentType;
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {

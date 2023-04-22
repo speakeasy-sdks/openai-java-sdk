@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.shared;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class CreateFileRequest {
@@ -33,4 +34,9 @@ public class CreateFileRequest {
         return this;
     }
     
+
+    public CreateFileRequest(@JsonProperty("file") CreateFileRequestFile file, @JsonProperty("purpose") String purpose) {
+    this.file = file;
+this.purpose = purpose;
+  }
 }

@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.shared;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class CreateImageEditRequest {
@@ -65,4 +66,9 @@ public class CreateImageEditRequest {
         return this;
     }
     
+
+    public CreateImageEditRequest(@JsonProperty("image") CreateImageEditRequestImage image, @JsonProperty("prompt") String prompt) {
+    this.image = image;
+this.prompt = prompt;
+  }
 }

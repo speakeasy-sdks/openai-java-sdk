@@ -24,4 +24,9 @@ public class ListFineTuneEventsResponse {
         return this;
     }
     
+
+    public ListFineTuneEventsResponse(@JsonProperty("data") FineTuneEvent[] data, @JsonProperty("object") String object) {
+    this.data = data;
+this.object = object;
+  }
 }

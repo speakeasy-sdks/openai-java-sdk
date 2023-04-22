@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class RetrieveEngineRequest {
@@ -18,4 +19,8 @@ public class RetrieveEngineRequest {
         return this;
     }
     
+
+    public RetrieveEngineRequest(@JsonProperty("engine_id") String engineId) {
+    this.engineId = engineId;
+  }
 }

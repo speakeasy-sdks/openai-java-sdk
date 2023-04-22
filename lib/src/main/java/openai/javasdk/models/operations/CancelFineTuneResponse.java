@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.net.http.HttpResponse;
 
 public class CancelFineTuneResponse {
@@ -38,4 +39,9 @@ public class CancelFineTuneResponse {
         return this;
     }
     
+
+    public CancelFineTuneResponse(@JsonProperty("ContentType") String contentType, @JsonProperty("StatusCode") Integer statusCode) {
+    this.contentType = contentType;
+this.statusCode = statusCode;
+  }
 }

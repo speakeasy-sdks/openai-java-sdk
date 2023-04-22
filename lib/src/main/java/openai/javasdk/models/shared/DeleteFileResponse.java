@@ -31,4 +31,10 @@ public class DeleteFileResponse {
         return this;
     }
     
+
+    public DeleteFileResponse(@JsonProperty("deleted") Boolean deleted, @JsonProperty("id") String id, @JsonProperty("object") String object) {
+    this.deleted = deleted;
+this.id = id;
+this.object = object;
+  }
 }

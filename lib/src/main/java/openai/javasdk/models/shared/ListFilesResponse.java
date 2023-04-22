@@ -24,4 +24,9 @@ public class ListFilesResponse {
         return this;
     }
     
+
+    public ListFilesResponse(@JsonProperty("data") OpenAIFile[] data, @JsonProperty("object") String object) {
+    this.data = data;
+this.object = object;
+  }
 }

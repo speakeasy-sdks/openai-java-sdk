@@ -56,4 +56,14 @@ public class CreateModerationResponseResultsCategories {
         return this;
     }
     
+
+    public CreateModerationResponseResultsCategories(@JsonProperty("hate") Boolean hate, @JsonProperty("hate/threatening") Boolean hateThreatening, @JsonProperty("self-harm") Boolean selfHarm, @JsonProperty("sexual") Boolean sexual, @JsonProperty("sexual/minors") Boolean sexualMinors, @JsonProperty("violence") Boolean violence, @JsonProperty("violence/graphic") Boolean violenceGraphic) {
+    this.hate = hate;
+this.hateThreatening = hateThreatening;
+this.selfHarm = selfHarm;
+this.sexual = sexual;
+this.sexualMinors = sexualMinors;
+this.violence = violence;
+this.violenceGraphic = violenceGraphic;
+  }
 }

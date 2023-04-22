@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.shared;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class CreateTranslationRequest {
@@ -62,4 +63,9 @@ public class CreateTranslationRequest {
         return this;
     }
     
+
+    public CreateTranslationRequest(@JsonProperty("file") CreateTranslationRequestFile file, @JsonProperty("model") String model) {
+    this.file = file;
+this.model = model;
+  }
 }

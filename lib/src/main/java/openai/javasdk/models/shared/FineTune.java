@@ -104,4 +104,19 @@ public class FineTune {
         return this;
     }
     
+
+    public FineTune(@JsonProperty("created_at") Long createdAt, @JsonProperty("fine_tuned_model") String fineTunedModel, @JsonProperty("hyperparams") java.util.Map<String, Object> hyperparams, @JsonProperty("id") String id, @JsonProperty("model") String model, @JsonProperty("object") String object, @JsonProperty("organization_id") String organizationId, @JsonProperty("result_files") OpenAIFile[] resultFiles, @JsonProperty("status") String status, @JsonProperty("training_files") OpenAIFile[] trainingFiles, @JsonProperty("updated_at") Long updatedAt, @JsonProperty("validation_files") OpenAIFile[] validationFiles) {
+    this.createdAt = createdAt;
+this.fineTunedModel = fineTunedModel;
+this.hyperparams = hyperparams;
+this.id = id;
+this.model = model;
+this.object = object;
+this.organizationId = organizationId;
+this.resultFiles = resultFiles;
+this.status = status;
+this.trainingFiles = trainingFiles;
+this.updatedAt = updatedAt;
+this.validationFiles = validationFiles;
+  }
 }

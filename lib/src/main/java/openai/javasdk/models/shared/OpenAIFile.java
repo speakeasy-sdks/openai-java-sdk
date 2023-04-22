@@ -70,4 +70,13 @@ public class OpenAIFile {
         return this;
     }
     
+
+    public OpenAIFile(@JsonProperty("bytes") Long bytes, @JsonProperty("created_at") Long createdAt, @JsonProperty("filename") String filename, @JsonProperty("id") String id, @JsonProperty("object") String object, @JsonProperty("purpose") String purpose) {
+    this.bytes = bytes;
+this.createdAt = createdAt;
+this.filename = filename;
+this.id = id;
+this.object = object;
+this.purpose = purpose;
+  }
 }

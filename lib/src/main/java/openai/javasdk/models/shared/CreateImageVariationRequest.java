@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.shared;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class CreateImageVariationRequest {
@@ -45,4 +46,8 @@ public class CreateImageVariationRequest {
         return this;
     }
     
+
+    public CreateImageVariationRequest(@JsonProperty("image") CreateImageVariationRequestImage image) {
+    this.image = image;
+  }
 }

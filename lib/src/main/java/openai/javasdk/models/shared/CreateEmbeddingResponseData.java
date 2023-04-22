@@ -28,4 +28,10 @@ public class CreateEmbeddingResponseData {
         return this;
     }
     
+
+    public CreateEmbeddingResponseData(@JsonProperty("embedding") Double[] embedding, @JsonProperty("index") Long index, @JsonProperty("object") String object) {
+    this.embedding = embedding;
+this.index = index;
+this.object = object;
+  }
 }

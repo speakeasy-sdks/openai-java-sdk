@@ -35,4 +35,9 @@ public class CreateEmbeddingRequest {
         return this;
     }
     
+
+    public CreateEmbeddingRequest(@JsonProperty("input") Object input, @JsonProperty("model") Object model) {
+    this.input = input;
+this.model = model;
+  }
 }

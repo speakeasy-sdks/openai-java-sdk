@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.net.http.HttpResponse;
 
 public class CreateModerationResponse {
@@ -38,4 +39,9 @@ public class CreateModerationResponse {
         return this;
     }
     
+
+    public CreateModerationResponse(@JsonProperty("ContentType") String contentType, @JsonProperty("StatusCode") Integer statusCode) {
+    this.contentType = contentType;
+this.statusCode = statusCode;
+  }
 }

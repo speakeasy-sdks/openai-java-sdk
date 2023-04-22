@@ -33,4 +33,6 @@ public class CreateClassificationResponseSelectedExamples {
         return this;
     }
     
+
+    public CreateClassificationResponseSelectedExamples(){}
 }

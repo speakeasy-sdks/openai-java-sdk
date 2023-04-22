@@ -38,4 +38,11 @@ public class CreateEditResponse {
         return this;
     }
     
+
+    public CreateEditResponse(@JsonProperty("choices") CreateEditResponseChoices[] choices, @JsonProperty("created") Long created, @JsonProperty("object") String object, @JsonProperty("usage") CreateEditResponseUsage usage) {
+    this.choices = choices;
+this.created = created;
+this.object = object;
+this.usage = usage;
+  }
 }

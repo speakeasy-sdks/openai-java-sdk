@@ -38,4 +38,11 @@ public class Model {
         return this;
     }
     
+
+    public Model(@JsonProperty("created") Long created, @JsonProperty("id") String id, @JsonProperty("object") String object, @JsonProperty("owned_by") String ownedBy) {
+    this.created = created;
+this.id = id;
+this.object = object;
+this.ownedBy = ownedBy;
+  }
 }

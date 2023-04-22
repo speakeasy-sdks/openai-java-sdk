@@ -17,4 +17,8 @@ public class CreateTranslationResponse {
         return this;
     }
     
+
+    public CreateTranslationResponse(@JsonProperty("text") String text) {
+    this.text = text;
+  }
 }

@@ -147,4 +147,9 @@ public class CreateClassificationRequest {
         return this;
     }
     
+
+    public CreateClassificationRequest(@JsonProperty("model") Object model, @JsonProperty("query") String query) {
+    this.model = model;
+this.query = query;
+  }
 }

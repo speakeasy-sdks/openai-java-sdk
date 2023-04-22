@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class RetrieveFileRequest {
@@ -17,4 +18,8 @@ public class RetrieveFileRequest {
         return this;
     }
     
+
+    public RetrieveFileRequest(@JsonProperty("file_id") String fileId) {
+    this.fileId = fileId;
+  }
 }

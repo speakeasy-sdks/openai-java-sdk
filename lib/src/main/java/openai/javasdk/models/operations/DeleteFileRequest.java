@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class DeleteFileRequest {
@@ -17,4 +18,8 @@ public class DeleteFileRequest {
         return this;
     }
     
+
+    public DeleteFileRequest(@JsonProperty("file_id") String fileId) {
+    this.fileId = fileId;
+  }
 }

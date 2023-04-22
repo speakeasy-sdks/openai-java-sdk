@@ -60,4 +60,6 @@ public class CreateClassificationResponse {
         return this;
     }
     
+
+    public CreateClassificationResponse(){}
 }

@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class RetrieveFineTuneRequest {
@@ -18,4 +19,8 @@ public class RetrieveFineTuneRequest {
         return this;
     }
     
+
+    public RetrieveFineTuneRequest(@JsonProperty("fine_tune_id") String fineTuneId) {
+    this.fineTuneId = fineTuneId;
+  }
 }

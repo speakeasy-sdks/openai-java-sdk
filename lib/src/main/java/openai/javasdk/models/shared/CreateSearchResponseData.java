@@ -33,4 +33,6 @@ public class CreateSearchResponseData {
         return this;
     }
     
+
+    public CreateSearchResponseData(){}
 }

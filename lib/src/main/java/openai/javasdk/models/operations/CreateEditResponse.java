@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.net.http.HttpResponse;
 
 public class CreateEditResponse {
@@ -38,4 +39,9 @@ public class CreateEditResponse {
         return this;
     }
     
+
+    public CreateEditResponse(@JsonProperty("ContentType") String contentType, @JsonProperty("StatusCode") Integer statusCode) {
+    this.contentType = contentType;
+this.statusCode = statusCode;
+  }
 }

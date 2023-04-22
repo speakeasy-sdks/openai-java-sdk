@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.shared;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class CreateImageEditRequestMask {
@@ -21,4 +22,9 @@ public class CreateImageEditRequestMask {
         return this;
     }
     
+
+    public CreateImageEditRequestMask(@JsonProperty("content") byte[] content, @JsonProperty("mask") String mask) {
+    this.content = content;
+this.mask = mask;
+  }
 }

@@ -217,4 +217,8 @@ public class CreateFineTuneRequest {
         return this;
     }
     
+
+    public CreateFineTuneRequest(@JsonProperty("training_file") String trainingFile) {
+    this.trainingFile = trainingFile;
+  }
 }

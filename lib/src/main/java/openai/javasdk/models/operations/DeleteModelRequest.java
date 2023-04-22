@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class DeleteModelRequest {
@@ -17,4 +18,8 @@ public class DeleteModelRequest {
         return this;
     }
     
+
+    public DeleteModelRequest(@JsonProperty("model") String model) {
+    this.model = model;
+  }
 }

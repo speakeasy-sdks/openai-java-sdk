@@ -60,4 +60,8 @@ public class CreateImageRequest {
         return this;
     }
     
+
+    public CreateImageRequest(@JsonProperty("prompt") String prompt) {
+    this.prompt = prompt;
+  }
 }

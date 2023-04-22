@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.net.http.HttpResponse;
 
 public class RetrieveEngineResponse {
@@ -38,4 +39,9 @@ public class RetrieveEngineResponse {
         return this;
     }
     
+
+    public RetrieveEngineResponse(@JsonProperty("ContentType") String contentType, @JsonProperty("StatusCode") Integer statusCode) {
+    this.contentType = contentType;
+this.statusCode = statusCode;
+  }
 }

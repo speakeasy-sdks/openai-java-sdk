@@ -205,4 +205,11 @@ public class CreateAnswerRequest {
         return this;
     }
     
+
+    public CreateAnswerRequest(@JsonProperty("examples") String[][] examples, @JsonProperty("examples_context") String examplesContext, @JsonProperty("model") String model, @JsonProperty("question") String question) {
+    this.examples = examples;
+this.examplesContext = examplesContext;
+this.model = model;
+this.question = question;
+  }
 }

@@ -38,4 +38,11 @@ public class Engine {
         return this;
     }
     
+
+    public Engine(@JsonProperty("created") Long created, @JsonProperty("id") String id, @JsonProperty("object") String object, @JsonProperty("ready") Boolean ready) {
+    this.created = created;
+this.id = id;
+this.object = object;
+this.ready = ready;
+  }
 }

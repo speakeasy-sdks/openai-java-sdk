@@ -24,4 +24,9 @@ public class ImagesResponse {
         return this;
     }
     
+
+    public ImagesResponse(@JsonProperty("created") Long created, @JsonProperty("data") ImagesResponseData[] data) {
+    this.created = created;
+this.data = data;
+  }
 }

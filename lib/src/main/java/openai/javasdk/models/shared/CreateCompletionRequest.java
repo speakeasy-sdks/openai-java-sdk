@@ -222,4 +222,8 @@ public class CreateCompletionRequest {
         return this;
     }
     
+
+    public CreateCompletionRequest(@JsonProperty("model") String model) {
+    this.model = model;
+  }
 }

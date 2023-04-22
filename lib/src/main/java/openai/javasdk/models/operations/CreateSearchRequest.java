@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 public class CreateSearchRequest {
@@ -24,4 +25,9 @@ public class CreateSearchRequest {
         return this;
     }
     
+
+    public CreateSearchRequest(@JsonProperty("CreateSearchRequest") openai.javasdk.models.shared.CreateSearchRequest createSearchRequest, @JsonProperty("engine_id") String engineId) {
+    this.createSearchRequest = createSearchRequest;
+this.engineId = engineId;
+  }
 }

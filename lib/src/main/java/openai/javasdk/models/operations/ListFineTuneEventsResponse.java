@@ -4,6 +4,7 @@
 
 package openai.javasdk.models.operations;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.net.http.HttpResponse;
 
 public class ListFineTuneEventsResponse {
@@ -38,4 +39,9 @@ public class ListFineTuneEventsResponse {
         return this;
     }
     
+
+    public ListFineTuneEventsResponse(@JsonProperty("ContentType") String contentType, @JsonProperty("StatusCode") Integer statusCode) {
+    this.contentType = contentType;
+this.statusCode = statusCode;
+  }
 }
