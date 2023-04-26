@@ -135,4 +135,6 @@ lib/src/main/java/openai/javasdk/models/shared/ListFineTuneEventsResponse.java
 lib/src/main/java/openai/javasdk/models/shared/ListFineTunesResponse.java
 lib/src/main/java/openai/javasdk/models/shared/ListModelsResponse.java
 lib/src/main/java/openai/javasdk/models/shared/Model.java
+docs/gpt/README.md
+docs/openai/README.md
 USAGE.md

@@ -85,8 +85,7 @@ public class CreateSearchRequest {
         return this;
     }
     
-
     public CreateSearchRequest(@JsonProperty("query") String query) {
-    this.query = query;
+        this.query = query;
   }
 }

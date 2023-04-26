@@ -66,9 +66,8 @@ public class CreateImageEditRequest {
         return this;
     }
     
-
     public CreateImageEditRequest(@JsonProperty("image") CreateImageEditRequestImage image, @JsonProperty("prompt") String prompt) {
-    this.image = image;
-this.prompt = prompt;
+        this.image = image;
+        this.prompt = prompt;
   }
 }

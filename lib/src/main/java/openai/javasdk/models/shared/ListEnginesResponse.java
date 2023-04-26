@@ -24,9 +24,8 @@ public class ListEnginesResponse {
         return this;
     }
     
-
     public ListEnginesResponse(@JsonProperty("data") Engine[] data, @JsonProperty("object") String object) {
-    this.data = data;
-this.object = object;
+        this.data = data;
+        this.object = object;
   }
 }

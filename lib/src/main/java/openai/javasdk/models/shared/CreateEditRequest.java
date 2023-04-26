@@ -73,9 +73,8 @@ public class CreateEditRequest {
         return this;
     }
     
-
     public CreateEditRequest(@JsonProperty("instruction") String instruction, @JsonProperty("model") String model) {
-    this.instruction = instruction;
-this.model = model;
+        this.instruction = instruction;
+        this.model = model;
   }
 }

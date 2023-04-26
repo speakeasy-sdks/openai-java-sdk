@@ -17,8 +17,7 @@ public class CreateTranscriptionResponse {
         return this;
     }
     
-
     public CreateTranscriptionResponse(@JsonProperty("text") String text) {
-    this.text = text;
+        this.text = text;
   }
 }

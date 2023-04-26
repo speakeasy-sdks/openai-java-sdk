@@ -28,10 +28,9 @@ public class CreateChatCompletionResponseUsage {
         return this;
     }
     
-
     public CreateChatCompletionResponseUsage(@JsonProperty("completion_tokens") Long completionTokens, @JsonProperty("prompt_tokens") Long promptTokens, @JsonProperty("total_tokens") Long totalTokens) {
-    this.completionTokens = completionTokens;
-this.promptTokens = promptTokens;
-this.totalTokens = totalTokens;
+        this.completionTokens = completionTokens;
+        this.promptTokens = promptTokens;
+        this.totalTokens = totalTokens;
   }
 }

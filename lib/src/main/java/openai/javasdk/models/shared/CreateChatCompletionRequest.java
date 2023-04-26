@@ -142,9 +142,8 @@ public class CreateChatCompletionRequest {
         return this;
     }
     
-
     public CreateChatCompletionRequest(@JsonProperty("messages") ChatCompletionRequestMessage[] messages, @JsonProperty("model") String model) {
-    this.messages = messages;
-this.model = model;
+        this.messages = messages;
+        this.model = model;
   }
 }

@@ -22,9 +22,8 @@ public class CreateImageEditRequestMask {
         return this;
     }
     
-
     public CreateImageEditRequestMask(@JsonProperty("content") byte[] content, @JsonProperty("mask") String mask) {
-    this.content = content;
-this.mask = mask;
+        this.content = content;
+        this.mask = mask;
   }
 }

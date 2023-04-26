@@ -19,8 +19,7 @@ public class CancelFineTuneRequest {
         return this;
     }
     
-
     public CancelFineTuneRequest(@JsonProperty("fine_tune_id") String fineTuneId) {
-    this.fineTuneId = fineTuneId;
+        this.fineTuneId = fineTuneId;
   }
 }

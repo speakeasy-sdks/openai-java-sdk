@@ -24,9 +24,8 @@ public class ListModelsResponse {
         return this;
     }
     
-
     public ListModelsResponse(@JsonProperty("data") Model[] data, @JsonProperty("object") String object) {
-    this.data = data;
-this.object = object;
+        this.data = data;
+        this.object = object;
   }
 }

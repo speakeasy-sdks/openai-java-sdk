@@ -25,6 +25,5 @@ public class ImagesResponseData {
         return this;
     }
     
-
     public ImagesResponseData(){}
 }

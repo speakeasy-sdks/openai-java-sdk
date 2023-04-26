@@ -19,8 +19,7 @@ public class RetrieveEngineRequest {
         return this;
     }
     
-
     public RetrieveEngineRequest(@JsonProperty("engine_id") String engineId) {
-    this.engineId = engineId;
+        this.engineId = engineId;
   }
 }

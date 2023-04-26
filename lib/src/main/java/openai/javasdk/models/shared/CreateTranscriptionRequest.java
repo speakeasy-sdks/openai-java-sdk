@@ -74,9 +74,8 @@ public class CreateTranscriptionRequest {
         return this;
     }
     
-
     public CreateTranscriptionRequest(@JsonProperty("file") CreateTranscriptionRequestFile file, @JsonProperty("model") String model) {
-    this.file = file;
-this.model = model;
+        this.file = file;
+        this.model = model;
   }
 }

@@ -33,8 +33,7 @@ public class CreateModerationRequest {
         return this;
     }
     
-
     public CreateModerationRequest(@JsonProperty("input") Object input) {
-    this.input = input;
+        this.input = input;
   }
 }

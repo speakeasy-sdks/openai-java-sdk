@@ -55,12 +55,11 @@ public class CreateChatCompletionResponse {
         return this;
     }
     
-
     public CreateChatCompletionResponse(@JsonProperty("choices") CreateChatCompletionResponseChoices[] choices, @JsonProperty("created") Long created, @JsonProperty("id") String id, @JsonProperty("model") String model, @JsonProperty("object") String object) {
-    this.choices = choices;
-this.created = created;
-this.id = id;
-this.model = model;
-this.object = object;
+        this.choices = choices;
+        this.created = created;
+        this.id = id;
+        this.model = model;
+        this.object = object;
   }
 }

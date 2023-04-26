@@ -41,6 +41,5 @@ public class CreateEditResponseChoices {
         return this;
     }
     
-
     public CreateEditResponseChoices(){}
 }

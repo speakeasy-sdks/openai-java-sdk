@@ -31,10 +31,9 @@ public class DeleteModelResponse {
         return this;
     }
     
-
     public DeleteModelResponse(@JsonProperty("deleted") Boolean deleted, @JsonProperty("id") String id, @JsonProperty("object") String object) {
-    this.deleted = deleted;
-this.id = id;
-this.object = object;
+        this.deleted = deleted;
+        this.id = id;
+        this.object = object;
   }
 }

@@ -25,9 +25,8 @@ public class CreateSearchRequest {
         return this;
     }
     
-
     public CreateSearchRequest(@JsonProperty("CreateSearchRequest") openai.javasdk.models.shared.CreateSearchRequest createSearchRequest, @JsonProperty("engine_id") String engineId) {
-    this.createSearchRequest = createSearchRequest;
-this.engineId = engineId;
+        this.createSearchRequest = createSearchRequest;
+        this.engineId = engineId;
   }
 }

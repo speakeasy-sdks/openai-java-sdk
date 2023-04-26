@@ -40,9 +40,8 @@ public class ChatCompletionRequestMessage {
         return this;
     }
     
-
     public ChatCompletionRequestMessage(@JsonProperty("content") String content, @JsonProperty("role") ChatCompletionRequestMessageRoleEnum role) {
-    this.content = content;
-this.role = role;
+        this.content = content;
+        this.role = role;
   }
 }

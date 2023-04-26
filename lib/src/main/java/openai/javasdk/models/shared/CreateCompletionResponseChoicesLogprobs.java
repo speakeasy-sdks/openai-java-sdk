@@ -41,6 +41,5 @@ public class CreateCompletionResponseChoicesLogprobs {
         return this;
     }
     
-
     public CreateCompletionResponseChoicesLogprobs(){}
 }

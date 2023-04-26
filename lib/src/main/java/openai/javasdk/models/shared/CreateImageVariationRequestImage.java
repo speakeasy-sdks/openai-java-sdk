@@ -22,9 +22,8 @@ public class CreateImageVariationRequestImage {
         return this;
     }
     
-
     public CreateImageVariationRequestImage(@JsonProperty("content") byte[] content, @JsonProperty("image") String image) {
-    this.content = content;
-this.image = image;
+        this.content = content;
+        this.image = image;
   }
 }

@@ -56,14 +56,13 @@ public class CreateModerationResponseResultsCategoryScores {
         return this;
     }
     
-
     public CreateModerationResponseResultsCategoryScores(@JsonProperty("hate") Double hate, @JsonProperty("hate/threatening") Double hateThreatening, @JsonProperty("self-harm") Double selfHarm, @JsonProperty("sexual") Double sexual, @JsonProperty("sexual/minors") Double sexualMinors, @JsonProperty("violence") Double violence, @JsonProperty("violence/graphic") Double violenceGraphic) {
-    this.hate = hate;
-this.hateThreatening = hateThreatening;
-this.selfHarm = selfHarm;
-this.sexual = sexual;
-this.sexualMinors = sexualMinors;
-this.violence = violence;
-this.violenceGraphic = violenceGraphic;
+        this.hate = hate;
+        this.hateThreatening = hateThreatening;
+        this.selfHarm = selfHarm;
+        this.sexual = sexual;
+        this.sexualMinors = sexualMinors;
+        this.violence = violence;
+        this.violenceGraphic = violenceGraphic;
   }
 }

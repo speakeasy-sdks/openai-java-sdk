@@ -21,9 +21,8 @@ public class CreateEmbeddingResponseUsage {
         return this;
     }
     
-
     public CreateEmbeddingResponseUsage(@JsonProperty("prompt_tokens") Long promptTokens, @JsonProperty("total_tokens") Long totalTokens) {
-    this.promptTokens = promptTokens;
-this.totalTokens = totalTokens;
+        this.promptTokens = promptTokens;
+        this.totalTokens = totalTokens;
   }
 }

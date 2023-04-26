@@ -25,6 +25,5 @@ public class CreateAnswerResponseSelectedDocuments {
         return this;
     }
     
-
     public CreateAnswerResponseSelectedDocuments(){}
 }

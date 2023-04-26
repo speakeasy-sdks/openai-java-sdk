@@ -60,6 +60,5 @@ public class CreateAnswerResponse {
         return this;
     }
     
-
     public CreateAnswerResponse(){}
 }

@@ -46,8 +46,7 @@ public class CreateImageVariationRequest {
         return this;
     }
     
-
     public CreateImageVariationRequest(@JsonProperty("image") CreateImageVariationRequestImage image) {
-    this.image = image;
+        this.image = image;
   }
 }

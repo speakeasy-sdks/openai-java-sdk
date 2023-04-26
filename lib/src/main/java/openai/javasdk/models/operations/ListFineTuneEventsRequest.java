@@ -37,8 +37,7 @@ public class ListFineTuneEventsRequest {
         return this;
     }
     
-
     public ListFineTuneEventsRequest(@JsonProperty("fine_tune_id") String fineTuneId) {
-    this.fineTuneId = fineTuneId;
+        this.fineTuneId = fineTuneId;
   }
 }

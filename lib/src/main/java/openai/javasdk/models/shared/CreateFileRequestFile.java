@@ -22,9 +22,8 @@ public class CreateFileRequestFile {
         return this;
     }
     
-
     public CreateFileRequestFile(@JsonProperty("content") byte[] content, @JsonProperty("file") String file) {
-    this.content = content;
-this.file = file;
+        this.content = content;
+        this.file = file;
   }
 }

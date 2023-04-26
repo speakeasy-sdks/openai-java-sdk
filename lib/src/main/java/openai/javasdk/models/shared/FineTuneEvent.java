@@ -35,11 +35,10 @@ public class FineTuneEvent {
         return this;
     }
     
-
     public FineTuneEvent(@JsonProperty("created_at") Long createdAt, @JsonProperty("level") String level, @JsonProperty("message") String message, @JsonProperty("object") String object) {
-    this.createdAt = createdAt;
-this.level = level;
-this.message = message;
-this.object = object;
+        this.createdAt = createdAt;
+        this.level = level;
+        this.message = message;
+        this.object = object;
   }
 }

@@ -39,9 +39,8 @@ public class CreateCompletionResponse {
         return this;
     }
     
-
     public CreateCompletionResponse(@JsonProperty("ContentType") String contentType, @JsonProperty("StatusCode") Integer statusCode) {
-    this.contentType = contentType;
-this.statusCode = statusCode;
+        this.contentType = contentType;
+        this.statusCode = statusCode;
   }
 }

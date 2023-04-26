@@ -38,11 +38,10 @@ public class CreateEmbeddingResponse {
         return this;
     }
     
-
     public CreateEmbeddingResponse(@JsonProperty("data") CreateEmbeddingResponseData[] data, @JsonProperty("model") String model, @JsonProperty("object") String object, @JsonProperty("usage") CreateEmbeddingResponseUsage usage) {
-    this.data = data;
-this.model = model;
-this.object = object;
-this.usage = usage;
+        this.data = data;
+        this.model = model;
+        this.object = object;
+        this.usage = usage;
   }
 }

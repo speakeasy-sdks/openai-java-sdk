@@ -18,8 +18,7 @@ public class RetrieveFileRequest {
         return this;
     }
     
-
     public RetrieveFileRequest(@JsonProperty("file_id") String fileId) {
-    this.fileId = fileId;
+        this.fileId = fileId;
   }
 }

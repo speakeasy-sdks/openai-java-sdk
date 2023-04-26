@@ -31,10 +31,9 @@ public class CreateModerationResponse {
         return this;
     }
     
-
     public CreateModerationResponse(@JsonProperty("id") String id, @JsonProperty("model") String model, @JsonProperty("results") CreateModerationResponseResults[] results) {
-    this.id = id;
-this.model = model;
-this.results = results;
+        this.id = id;
+        this.model = model;
+        this.results = results;
   }
 }

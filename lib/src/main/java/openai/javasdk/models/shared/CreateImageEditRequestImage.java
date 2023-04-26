@@ -22,9 +22,8 @@ public class CreateImageEditRequestImage {
         return this;
     }
     
-
     public CreateImageEditRequestImage(@JsonProperty("content") byte[] content, @JsonProperty("image") String image) {
-    this.content = content;
-this.image = image;
+        this.content = content;
+        this.image = image;
   }
 }

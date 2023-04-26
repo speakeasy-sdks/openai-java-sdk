@@ -3,7 +3,6 @@
 package hello.world;
 
 import openai.javasdk.Gpt;
-
 import openai.javasdk.models.operations.CancelFineTuneRequest;
 import openai.javasdk.models.operations.CancelFineTuneResponse;
 
@@ -17,11 +16,13 @@ public class Application {
 
             CancelFineTuneResponse res = sdk.openAI.cancelFineTune(req);
 
-            if (res.fineTune.isPresent()) {
+            if (res.fineTune != null) {
                 // handle response
             }
         } catch (Exception e) {
             // handle exception
         }
+    }
+}
 ```
 <!-- End SDK Example Usage -->

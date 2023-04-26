@@ -41,6 +41,5 @@ public class CreateEditResponseChoicesLogprobs {
         return this;
     }
     
-
     public CreateEditResponseChoicesLogprobs(){}
 }

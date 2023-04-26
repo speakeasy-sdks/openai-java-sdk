@@ -18,8 +18,7 @@ public class DownloadFileRequest {
         return this;
     }
     
-
     public DownloadFileRequest(@JsonProperty("file_id") String fileId) {
-    this.fileId = fileId;
+        this.fileId = fileId;
   }
 }

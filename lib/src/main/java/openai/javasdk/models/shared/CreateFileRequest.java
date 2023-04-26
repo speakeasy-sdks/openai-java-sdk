@@ -34,9 +34,8 @@ public class CreateFileRequest {
         return this;
     }
     
-
     public CreateFileRequest(@JsonProperty("file") CreateFileRequestFile file, @JsonProperty("purpose") String purpose) {
-    this.file = file;
-this.purpose = purpose;
+        this.file = file;
+        this.purpose = purpose;
   }
 }

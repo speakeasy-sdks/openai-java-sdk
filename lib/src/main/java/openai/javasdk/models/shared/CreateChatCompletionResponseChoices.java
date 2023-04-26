@@ -33,6 +33,5 @@ public class CreateChatCompletionResponseChoices {
         return this;
     }
     
-
     public CreateChatCompletionResponseChoices(){}
 }

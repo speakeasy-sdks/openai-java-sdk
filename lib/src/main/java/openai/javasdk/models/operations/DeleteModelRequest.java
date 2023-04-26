@@ -18,8 +18,7 @@ public class DeleteModelRequest {
         return this;
     }
     
-
     public DeleteModelRequest(@JsonProperty("model") String model) {
-    this.model = model;
+        this.model = model;
   }
 }

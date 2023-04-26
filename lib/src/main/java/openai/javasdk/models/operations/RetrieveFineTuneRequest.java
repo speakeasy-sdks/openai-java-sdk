@@ -19,8 +19,7 @@ public class RetrieveFineTuneRequest {
         return this;
     }
     
-
     public RetrieveFineTuneRequest(@JsonProperty("fine_tune_id") String fineTuneId) {
-    this.fineTuneId = fineTuneId;
+        this.fineTuneId = fineTuneId;
   }
 }

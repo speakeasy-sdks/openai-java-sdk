@@ -18,8 +18,7 @@ public class RetrieveModelRequest {
         return this;
     }
     
-
     public RetrieveModelRequest(@JsonProperty("model") String model) {
-    this.model = model;
+        this.model = model;
   }
 }
