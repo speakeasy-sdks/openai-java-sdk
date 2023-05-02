@@ -28,8 +28,8 @@ public class Gpt {
 	
 	private String _serverUrl;
 	private String _language = "java";
-	private String _sdkVersion = "1.16.1";
-	private String _genVersion = "2.23.4";
+	private String _sdkVersion = "1.16.2";
+	private String _genVersion = "2.23.6";
 	/**
 	 * The Builder class allows the configuration of a new instance of the SDK.
 	 */
@@ -110,6 +110,11 @@ public class Gpt {
 		if (this._serverUrl == null) {
 			this._serverUrl = SERVERS[0];
 		}
+
+		if (this._serverUrl.endsWith("/")) {
+            this._serverUrl = this._serverUrl.substring(0, this._serverUrl.length() - 1);
+        }
+
 		
 		
 		this.openAI = new OpenAI(
