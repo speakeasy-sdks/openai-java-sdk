@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Model {
     @JsonProperty("created")
     public Long created;
+
     public Model withCreated(Long created) {
         this.created = created;
         return this;
@@ -19,6 +20,7 @@ public class Model {
     
     @JsonProperty("id")
     public String id;
+
     public Model withId(String id) {
         this.id = id;
         return this;
@@ -26,6 +28,7 @@ public class Model {
     
     @JsonProperty("object")
     public String object;
+
     public Model withObject(String object) {
         this.object = object;
         return this;
@@ -33,6 +36,7 @@ public class Model {
     
     @JsonProperty("owned_by")
     public String ownedBy;
+
     public Model withOwnedBy(String ownedBy) {
         this.ownedBy = ownedBy;
         return this;

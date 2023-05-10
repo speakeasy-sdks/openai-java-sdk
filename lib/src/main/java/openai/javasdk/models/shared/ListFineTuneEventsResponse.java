@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ListFineTuneEventsResponse {
     @JsonProperty("data")
     public FineTuneEvent[] data;
+
     public ListFineTuneEventsResponse withData(FineTuneEvent[] data) {
         this.data = data;
         return this;
@@ -19,6 +20,7 @@ public class ListFineTuneEventsResponse {
     
     @JsonProperty("object")
     public String object;
+
     public ListFineTuneEventsResponse withObject(String object) {
         this.object = object;
         return this;

@@ -14,6 +14,7 @@ public class CreateTranslationRequest {
      */
     @SpeakeasyMetadata("multipartForm:file")
     public CreateTranslationRequestFile file;
+
     public CreateTranslationRequest withFile(CreateTranslationRequestFile file) {
         this.file = file;
         return this;
@@ -25,6 +26,7 @@ public class CreateTranslationRequest {
      */
     @SpeakeasyMetadata("multipartForm:name=model")
     public String model;
+
     public CreateTranslationRequest withModel(String model) {
         this.model = model;
         return this;
@@ -36,6 +38,7 @@ public class CreateTranslationRequest {
      */
     @SpeakeasyMetadata("multipartForm:name=prompt")
     public String prompt;
+
     public CreateTranslationRequest withPrompt(String prompt) {
         this.prompt = prompt;
         return this;
@@ -47,6 +50,7 @@ public class CreateTranslationRequest {
      */
     @SpeakeasyMetadata("multipartForm:name=response_format")
     public String responseFormat;
+
     public CreateTranslationRequest withResponseFormat(String responseFormat) {
         this.responseFormat = responseFormat;
         return this;
@@ -58,6 +62,7 @@ public class CreateTranslationRequest {
      */
     @SpeakeasyMetadata("multipartForm:name=temperature")
     public Double temperature;
+
     public CreateTranslationRequest withTemperature(Double temperature) {
         this.temperature = temperature;
         return this;

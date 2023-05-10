@@ -10,6 +10,7 @@ import java.net.http.HttpResponse;
 public class CreateImageResponse {
     
     public String contentType;
+
     public CreateImageResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
@@ -20,6 +21,7 @@ public class CreateImageResponse {
      */
     
     public openai.javasdk.models.shared.ImagesResponse imagesResponse;
+
     public CreateImageResponse withImagesResponse(openai.javasdk.models.shared.ImagesResponse imagesResponse) {
         this.imagesResponse = imagesResponse;
         return this;
@@ -27,6 +29,7 @@ public class CreateImageResponse {
     
     
     public Integer statusCode;
+
     public CreateImageResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
@@ -34,6 +37,7 @@ public class CreateImageResponse {
     
     
     public HttpResponse<byte[]> rawResponse;
+
     public CreateImageResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
         this.rawResponse = rawResponse;
         return this;

@@ -15,6 +15,7 @@ public class CreateEmbeddingRequest {
      */
     @JsonProperty("input")
     public Object input;
+
     public CreateEmbeddingRequest withInput(Object input) {
         this.input = input;
         return this;
@@ -22,6 +23,7 @@ public class CreateEmbeddingRequest {
     
     @JsonProperty("model")
     public Object model;
+
     public CreateEmbeddingRequest withModel(Object model) {
         this.model = model;
         return this;
@@ -30,6 +32,7 @@ public class CreateEmbeddingRequest {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("user")
     public Object user;
+
     public CreateEmbeddingRequest withUser(Object user) {
         this.user = user;
         return this;

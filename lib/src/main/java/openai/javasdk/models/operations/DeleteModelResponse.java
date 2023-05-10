@@ -10,6 +10,7 @@ import java.net.http.HttpResponse;
 public class DeleteModelResponse {
     
     public String contentType;
+
     public DeleteModelResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
@@ -20,6 +21,7 @@ public class DeleteModelResponse {
      */
     
     public openai.javasdk.models.shared.DeleteModelResponse deleteModelResponse;
+
     public DeleteModelResponse withDeleteModelResponse(openai.javasdk.models.shared.DeleteModelResponse deleteModelResponse) {
         this.deleteModelResponse = deleteModelResponse;
         return this;
@@ -27,6 +29,7 @@ public class DeleteModelResponse {
     
     
     public Integer statusCode;
+
     public DeleteModelResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
@@ -34,6 +37,7 @@ public class DeleteModelResponse {
     
     
     public HttpResponse<byte[]> rawResponse;
+
     public DeleteModelResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
         this.rawResponse = rawResponse;
         return this;

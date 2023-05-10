@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Engine {
     @JsonProperty("created")
     public Long created;
+
     public Engine withCreated(Long created) {
         this.created = created;
         return this;
@@ -19,6 +20,7 @@ public class Engine {
     
     @JsonProperty("id")
     public String id;
+
     public Engine withId(String id) {
         this.id = id;
         return this;
@@ -26,6 +28,7 @@ public class Engine {
     
     @JsonProperty("object")
     public String object;
+
     public Engine withObject(String object) {
         this.object = object;
         return this;
@@ -33,6 +36,7 @@ public class Engine {
     
     @JsonProperty("ready")
     public Boolean ready;
+
     public Engine withReady(Boolean ready) {
         this.ready = ready;
         return this;

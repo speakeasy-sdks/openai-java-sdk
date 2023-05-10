@@ -10,6 +10,7 @@ import java.net.http.HttpResponse;
 public class RetrieveFineTuneResponse {
     
     public String contentType;
+
     public RetrieveFineTuneResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
@@ -20,6 +21,7 @@ public class RetrieveFineTuneResponse {
      */
     
     public openai.javasdk.models.shared.FineTune fineTune;
+
     public RetrieveFineTuneResponse withFineTune(openai.javasdk.models.shared.FineTune fineTune) {
         this.fineTune = fineTune;
         return this;
@@ -27,6 +29,7 @@ public class RetrieveFineTuneResponse {
     
     
     public Integer statusCode;
+
     public RetrieveFineTuneResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
@@ -34,6 +37,7 @@ public class RetrieveFineTuneResponse {
     
     
     public HttpResponse<byte[]> rawResponse;
+
     public RetrieveFineTuneResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
         this.rawResponse = rawResponse;
         return this;

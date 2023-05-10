@@ -10,6 +10,7 @@ import java.net.http.HttpResponse;
 public class DeleteFileResponse {
     
     public String contentType;
+
     public DeleteFileResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
@@ -20,6 +21,7 @@ public class DeleteFileResponse {
      */
     
     public openai.javasdk.models.shared.DeleteFileResponse deleteFileResponse;
+
     public DeleteFileResponse withDeleteFileResponse(openai.javasdk.models.shared.DeleteFileResponse deleteFileResponse) {
         this.deleteFileResponse = deleteFileResponse;
         return this;
@@ -27,6 +29,7 @@ public class DeleteFileResponse {
     
     
     public Integer statusCode;
+
     public DeleteFileResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
@@ -34,6 +37,7 @@ public class DeleteFileResponse {
     
     
     public HttpResponse<byte[]> rawResponse;
+
     public DeleteFileResponse withRawResponse(HttpResponse<byte[]> rawResponse) {
         this.rawResponse = rawResponse;
         return this;

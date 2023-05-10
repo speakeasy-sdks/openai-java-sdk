@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class DeleteFileResponse {
     @JsonProperty("deleted")
     public Boolean deleted;
+
     public DeleteFileResponse withDeleted(Boolean deleted) {
         this.deleted = deleted;
         return this;
@@ -19,6 +20,7 @@ public class DeleteFileResponse {
     
     @JsonProperty("id")
     public String id;
+
     public DeleteFileResponse withId(String id) {
         this.id = id;
         return this;
@@ -26,6 +28,7 @@ public class DeleteFileResponse {
     
     @JsonProperty("object")
     public String object;
+
     public DeleteFileResponse withObject(String object) {
         this.object = object;
         return this;

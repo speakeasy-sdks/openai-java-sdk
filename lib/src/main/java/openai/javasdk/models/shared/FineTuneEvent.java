@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class FineTuneEvent {
     @JsonProperty("created_at")
     public Long createdAt;
+
     public FineTuneEvent withCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -16,6 +17,7 @@ public class FineTuneEvent {
     
     @JsonProperty("level")
     public String level;
+
     public FineTuneEvent withLevel(String level) {
         this.level = level;
         return this;
@@ -23,6 +25,7 @@ public class FineTuneEvent {
     
     @JsonProperty("message")
     public String message;
+
     public FineTuneEvent withMessage(String message) {
         this.message = message;
         return this;
@@ -30,6 +33,7 @@ public class FineTuneEvent {
     
     @JsonProperty("object")
     public String object;
+
     public FineTuneEvent withObject(String object) {
         this.object = object;
         return this;

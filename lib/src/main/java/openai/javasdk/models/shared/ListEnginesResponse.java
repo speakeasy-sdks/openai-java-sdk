@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ListEnginesResponse {
     @JsonProperty("data")
     public Engine[] data;
+
     public ListEnginesResponse withData(Engine[] data) {
         this.data = data;
         return this;
@@ -19,6 +20,7 @@ public class ListEnginesResponse {
     
     @JsonProperty("object")
     public String object;
+
     public ListEnginesResponse withObject(String object) {
         this.object = object;
         return this;

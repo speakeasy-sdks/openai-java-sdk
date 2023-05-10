@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class CreateEmbeddingResponseData {
     @JsonProperty("embedding")
     public Double[] embedding;
+
     public CreateEmbeddingResponseData withEmbedding(Double[] embedding) {
         this.embedding = embedding;
         return this;
@@ -16,6 +17,7 @@ public class CreateEmbeddingResponseData {
     
     @JsonProperty("index")
     public Long index;
+
     public CreateEmbeddingResponseData withIndex(Long index) {
         this.index = index;
         return this;
@@ -23,6 +25,7 @@ public class CreateEmbeddingResponseData {
     
     @JsonProperty("object")
     public String object;
+
     public CreateEmbeddingResponseData withObject(String object) {
         this.object = object;
         return this;

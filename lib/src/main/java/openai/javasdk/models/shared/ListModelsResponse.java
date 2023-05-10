@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ListModelsResponse {
     @JsonProperty("data")
     public Model[] data;
+
     public ListModelsResponse withData(Model[] data) {
         this.data = data;
         return this;
@@ -19,6 +20,7 @@ public class ListModelsResponse {
     
     @JsonProperty("object")
     public String object;
+
     public ListModelsResponse withObject(String object) {
         this.object = object;
         return this;
