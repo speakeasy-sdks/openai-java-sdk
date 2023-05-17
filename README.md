@@ -6,7 +6,7 @@
 ### Gradle
 
 ```groovy
-implementation 'openai.javasdk:openai-java-sdk:1.20.0'
+implementation 'openai.javasdk:openai-java-sdk:1.21.0'
 ```
 <!-- End SDK Installation -->
 
