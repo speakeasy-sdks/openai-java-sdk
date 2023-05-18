@@ -48,6 +48,7 @@ public class OpenAI {
         req.setMethod("POST");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -91,6 +92,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -132,6 +134,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -175,6 +178,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -216,6 +220,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -257,6 +262,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -298,6 +304,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -339,6 +346,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -380,6 +388,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -421,6 +430,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -462,6 +472,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -503,6 +514,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -544,6 +556,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -587,6 +600,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -628,6 +642,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -669,6 +684,7 @@ public class OpenAI {
         }
         req.setBody(serializedRequestBody);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -705,6 +721,7 @@ public class OpenAI {
         req.setMethod("DELETE");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -741,6 +758,7 @@ public class OpenAI {
         req.setMethod("DELETE");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -777,6 +795,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -813,6 +832,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -848,6 +868,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -884,6 +905,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         java.util.List<NameValuePair> queryParams = openai.javasdk.utils.Utils.getQueryParams(openai.javasdk.models.operations.ListFineTuneEventsRequest.class, request, null);
         if (queryParams != null) {
             for (NameValuePair queryParam : queryParams) {
@@ -925,6 +947,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -960,6 +983,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -998,6 +1022,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -1034,6 +1059,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -1070,6 +1096,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
@@ -1106,6 +1133,7 @@ public class OpenAI {
         req.setMethod("GET");
         req.setURL(url);
         
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
         
         HTTPClient client = this._defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
