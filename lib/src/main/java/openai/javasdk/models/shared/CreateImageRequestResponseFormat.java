@@ -7,16 +7,16 @@ package openai.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * CreateImageRequestResponseFormatEnum - The format in which the generated images are returned. Must be one of `url` or `b64_json`.
+ * CreateImageRequestResponseFormat - The format in which the generated images are returned. Must be one of `url` or `b64_json`.
  */
-public enum CreateImageRequestResponseFormatEnum {
+public enum CreateImageRequestResponseFormat {
     URL("url"),
     B64_JSON("b64_json");
 
     @JsonValue
     public final String value;
 
-    private CreateImageRequestResponseFormatEnum(String value) {
+    private CreateImageRequestResponseFormat(String value) {
         this.value = value;
     }
 }

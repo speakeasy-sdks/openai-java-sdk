@@ -186,7 +186,7 @@ package hello.world;
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateChatCompletionResponse;
 import openai.javasdk.models.shared.ChatCompletionRequestMessage;
-import openai.javasdk.models.shared.ChatCompletionRequestMessageRoleEnum;
+import openai.javasdk.models.shared.ChatCompletionRequestMessageRole;
 import openai.javasdk.models.shared.CreateChatCompletionRequest;
 
 public class Application {
@@ -196,20 +196,20 @@ public class Application {
                 .build();
 
             openai.javasdk.models.shared.CreateChatCompletionRequest req = new CreateChatCompletionRequest(                new openai.javasdk.models.shared.ChatCompletionRequestMessage[]{{
-                                add(new ChatCompletionRequestMessage("at", ChatCompletionRequestMessageRoleEnum.ASSISTANT) {{
+                                add(new ChatCompletionRequestMessage("at", ChatCompletionRequestMessageRole.ASSISTANT) {{
                                     content = "perferendis";
                                     name = "Estelle Will";
-                                    role = ChatCompletionRequestMessageRoleEnum.ASSISTANT;
+                                    role = ChatCompletionRequestMessageRole.ASSISTANT;
                                 }}),
-                                add(new ChatCompletionRequestMessage("dicta", ChatCompletionRequestMessageRoleEnum.ASSISTANT) {{
+                                add(new ChatCompletionRequestMessage("dicta", ChatCompletionRequestMessageRole.ASSISTANT) {{
                                     content = "molestiae";
                                     name = "Forrest Koepp";
-                                    role = ChatCompletionRequestMessageRoleEnum.ASSISTANT;
+                                    role = ChatCompletionRequestMessageRole.ASSISTANT;
                                 }}),
-                                add(new ChatCompletionRequestMessage("beatae", ChatCompletionRequestMessageRoleEnum.USER) {{
+                                add(new ChatCompletionRequestMessage("beatae", ChatCompletionRequestMessageRole.USER) {{
                                     content = "officia";
                                     name = "Wayne Lind";
-                                    role = ChatCompletionRequestMessageRoleEnum.USER;
+                                    role = ChatCompletionRequestMessageRole.USER;
                                 }}),
                             }}, "molestiae") {{
                 frequencyPenalty = 2645.55;
@@ -540,8 +540,8 @@ package hello.world;
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateImageResponse;
 import openai.javasdk.models.shared.CreateImageRequest;
-import openai.javasdk.models.shared.CreateImageRequestResponseFormatEnum;
-import openai.javasdk.models.shared.CreateImageRequestSizeEnum;
+import openai.javasdk.models.shared.CreateImageRequestResponseFormat;
+import openai.javasdk.models.shared.CreateImageRequestSize;
 
 public class Application {
     public static void main(String[] args) {
@@ -551,8 +551,8 @@ public class Application {
 
             openai.javasdk.models.shared.CreateImageRequest req = new CreateImageRequest("A cute baby sea otter") {{
                 n = 1L;
-                responseFormat = CreateImageRequestResponseFormatEnum.URL;
-                size = CreateImageRequestSizeEnum.ONE_THOUSAND_AND_TWENTY_FOURX1024;
+                responseFormat = CreateImageRequestResponseFormat.URL;
+                size = CreateImageRequestSize.ONE_THOUSAND_AND_TWENTY_FOURX1024;
                 user = "animi";
             }};            
 

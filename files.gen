@@ -77,10 +77,10 @@ lib/src/main/java/openai/javasdk/models/shared/CreateAnswerRequest.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponseChoices.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponseUsage.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponse.java
-lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessageRoleEnum.java
+lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessageRole.java
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessage.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequest.java
-lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessageRoleEnum.java
+lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessageRole.java
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessage.java
 lib/src/main/java/openai/javasdk/models/shared/CreateClassificationResponseSelectedExamples.java
 lib/src/main/java/openai/javasdk/models/shared/CreateClassificationResponse.java
@@ -104,8 +104,8 @@ lib/src/main/java/openai/javasdk/models/shared/CreateFileRequest.java
 lib/src/main/java/openai/javasdk/models/shared/CreateFineTuneRequest.java
 lib/src/main/java/openai/javasdk/models/shared/ImagesResponseData.java
 lib/src/main/java/openai/javasdk/models/shared/ImagesResponse.java
-lib/src/main/java/openai/javasdk/models/shared/CreateImageRequestResponseFormatEnum.java
-lib/src/main/java/openai/javasdk/models/shared/CreateImageRequestSizeEnum.java
+lib/src/main/java/openai/javasdk/models/shared/CreateImageRequestResponseFormat.java
+lib/src/main/java/openai/javasdk/models/shared/CreateImageRequestSize.java
 lib/src/main/java/openai/javasdk/models/shared/CreateImageRequest.java
 lib/src/main/java/openai/javasdk/models/shared/CreateImageEditRequestImage.java
 lib/src/main/java/openai/javasdk/models/shared/CreateImageEditRequestMask.java

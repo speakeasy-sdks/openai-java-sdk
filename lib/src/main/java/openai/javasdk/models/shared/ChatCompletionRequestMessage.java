@@ -36,14 +36,14 @@ public class ChatCompletionRequestMessage {
      * The role of the author of this message.
      */
     @JsonProperty("role")
-    public ChatCompletionRequestMessageRoleEnum role;
+    public ChatCompletionRequestMessageRole role;
 
-    public ChatCompletionRequestMessage withRole(ChatCompletionRequestMessageRoleEnum role) {
+    public ChatCompletionRequestMessage withRole(ChatCompletionRequestMessageRole role) {
         this.role = role;
         return this;
     }
     
-    public ChatCompletionRequestMessage(@JsonProperty("content") String content, @JsonProperty("role") ChatCompletionRequestMessageRoleEnum role) {
+    public ChatCompletionRequestMessage(@JsonProperty("content") String content, @JsonProperty("role") ChatCompletionRequestMessageRole role) {
         this.content = content;
         this.role = role;
   }

@@ -37,9 +37,9 @@ public class CreateImageRequest {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("response_format")
-    public CreateImageRequestResponseFormatEnum responseFormat;
+    public CreateImageRequestResponseFormat responseFormat;
 
-    public CreateImageRequest withResponseFormat(CreateImageRequestResponseFormatEnum responseFormat) {
+    public CreateImageRequest withResponseFormat(CreateImageRequestResponseFormat responseFormat) {
         this.responseFormat = responseFormat;
         return this;
     }
@@ -49,9 +49,9 @@ public class CreateImageRequest {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("size")
-    public CreateImageRequestSizeEnum size;
+    public CreateImageRequestSize size;
 
-    public CreateImageRequest withSize(CreateImageRequestSizeEnum size) {
+    public CreateImageRequest withSize(CreateImageRequestSize size) {
         this.size = size;
         return this;
     }
