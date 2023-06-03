@@ -23,21 +23,13 @@ public class Gpt {
      */
     public OpenAI openAI;	
 
-	private HTTPClient _defaultClient;
-	private HTTPClient _securityClient;
-	
-	private String _serverUrl;
-	private String _language = "java";
-	private String _sdkVersion = "1.25.1";
-	private String _genVersion = "2.34.7";
+	private SDKConfiguration sdkConfiguration;
+
 	/**
 	 * The Builder class allows the configuration of a new instance of the SDK.
 	 */
 	public static class Builder {
-		private HTTPClient client;
-		
-		private String serverUrl;
-		private java.util.Map<String, String> params = new java.util.HashMap<String, String>();
+		private SDKConfiguration sdkConfiguration = new SDKConfiguration();
 
 		private Builder() {
 		}
@@ -48,7 +40,7 @@ public class Gpt {
 		 * @return The builder instance.
 		 */
 		public Builder setClient(HTTPClient client) {
-			this.client = client;
+			this.sdkConfiguration.defaultClient = client;
 			return this;
 		}
 		
@@ -58,7 +50,7 @@ public class Gpt {
 		 * @return The builder instance.
 		 */
 		public Builder setServerURL(String serverUrl) {
-			this.serverUrl = serverUrl;
+			this.sdkConfiguration.serverUrl = serverUrl;
 			return this;
 		}
 		
@@ -69,8 +61,18 @@ public class Gpt {
 		 * @return The builder instance.
 		 */
 		public Builder setServerURL(String serverUrl, java.util.Map<String, String> params) {
-			this.serverUrl = serverUrl;
-			this.params = params;
+			this.sdkConfiguration.serverUrl = openai.javasdk.utils.Utils.templateUrl(serverUrl, params);
+			return this;
+		}
+		
+		/**
+		 * Allows the overriding of the default server by index
+		 * @param serverIdx The server to use for all requests.
+		 * @return The builder instance.
+		 */
+		public Builder setServerIndex(int serverIdx) {
+			this.sdkConfiguration.serverIdx = serverIdx;
+			this.sdkConfiguration.serverUrl = SERVERS[serverIdx];
 			return this;
 		}
 		
@@ -80,7 +82,24 @@ public class Gpt {
 		 * @throws Exception Thrown if the SDK could not be built.
 		 */
 		public Gpt build() throws Exception {
-			return new Gpt(this.client, this.serverUrl, this.params);
+			if (this.sdkConfiguration.defaultClient == null) {
+				this.sdkConfiguration.defaultClient = new SpeakeasyHTTPClient();
+			}
+			
+			if (this.sdkConfiguration.securityClient == null) {
+				this.sdkConfiguration.securityClient = this.sdkConfiguration.defaultClient;
+			}
+			
+			if (this.sdkConfiguration.serverUrl == null || this.sdkConfiguration.serverUrl.isBlank()) {
+				this.sdkConfiguration.serverUrl = SERVERS[0];
+				this.sdkConfiguration.serverIdx = 0;
+			}
+
+			if (this.sdkConfiguration.serverUrl.endsWith("/")) {
+				this.sdkConfiguration.serverUrl = this.sdkConfiguration.serverUrl.substring(0, this.sdkConfiguration.serverUrl.length() - 1);
+			}
+			
+			return new Gpt(this.sdkConfiguration);
 		}
 	}
 
@@ -92,38 +111,9 @@ public class Gpt {
 		return new Builder();
 	}
 
-	private Gpt(HTTPClient client, String serverUrl, java.util.Map<String, String> params) throws Exception {
-		this._defaultClient = client;
+	private Gpt(SDKConfiguration sdkConfiguration) throws Exception {
+		this.sdkConfiguration = sdkConfiguration;
 		
-		if (this._defaultClient == null) {
-			this._defaultClient = new SpeakeasyHTTPClient();
-		}
-		
-		if (this._securityClient == null) {
-			this._securityClient = this._defaultClient;
-		}
-
-		if (serverUrl != null && !serverUrl.isBlank()) {
-			this._serverUrl = openai.javasdk.utils.Utils.templateUrl(serverUrl, params);
-		}
-		
-		if (this._serverUrl == null) {
-			this._serverUrl = SERVERS[0];
-		}
-
-		if (this._serverUrl.endsWith("/")) {
-            this._serverUrl = this._serverUrl.substring(0, this._serverUrl.length() - 1);
-        }
-
-		
-		
-		this.openAI = new OpenAI(
-			this._defaultClient,
-			this._securityClient,
-			this._serverUrl,
-			this._language,
-			this._sdkVersion,
-			this._genVersion
-		);
+		this.openAI = new OpenAI(this.sdkConfiguration);
 	}
 }

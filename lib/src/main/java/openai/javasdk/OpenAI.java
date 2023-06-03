@@ -18,20 +18,10 @@ import org.apache.http.NameValuePair;
  */
 public class OpenAI {
 	
-	private HTTPClient _defaultClient;
-	private HTTPClient _securityClient;
-	private String _serverUrl;
-	private String _language;
-	private String _sdkVersion;
-	private String _genVersion;
+	private SDKConfiguration sdkConfiguration;
 
-	public OpenAI(HTTPClient defaultClient, HTTPClient securityClient, String serverUrl, String language, String sdkVersion, String genVersion) {
-		this._defaultClient = defaultClient;
-		this._securityClient = securityClient;
-		this._serverUrl = serverUrl;
-		this._language = language;
-		this._sdkVersion = sdkVersion;
-		this._genVersion = genVersion;
+	public OpenAI(SDKConfiguration sdkConfiguration) {
+		this.sdkConfiguration = sdkConfiguration;
 	}
 
     /**
@@ -41,7 +31,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CancelFineTuneResponse cancelFineTune(openai.javasdk.models.operations.CancelFineTuneRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.CancelFineTuneRequest.class, baseUrl, "/fine-tunes/{fine_tune_id}/cancel", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -49,9 +39,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -81,7 +71,7 @@ public class OpenAI {
      */
     @Deprecated
     public openai.javasdk.models.operations.CreateAnswerResponse createAnswer(openai.javasdk.models.shared.CreateAnswerRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/answers");
         
         HTTPRequest req = new HTTPRequest();
@@ -94,9 +84,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -124,7 +114,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateChatCompletionResponse createChatCompletion(openai.javasdk.models.shared.CreateChatCompletionRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/chat/completions");
         
         HTTPRequest req = new HTTPRequest();
@@ -137,9 +127,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -169,7 +159,7 @@ public class OpenAI {
      */
     @Deprecated
     public openai.javasdk.models.operations.CreateClassificationResponse createClassification(openai.javasdk.models.shared.CreateClassificationRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/classifications");
         
         HTTPRequest req = new HTTPRequest();
@@ -182,9 +172,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -212,7 +202,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateCompletionResponse createCompletion(openai.javasdk.models.shared.CreateCompletionRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/completions");
         
         HTTPRequest req = new HTTPRequest();
@@ -225,9 +215,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -255,7 +245,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateEditResponse createEdit(openai.javasdk.models.shared.CreateEditRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/edits");
         
         HTTPRequest req = new HTTPRequest();
@@ -268,9 +258,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -298,7 +288,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateEmbeddingResponse createEmbedding(openai.javasdk.models.shared.CreateEmbeddingRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/embeddings");
         
         HTTPRequest req = new HTTPRequest();
@@ -311,9 +301,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -341,7 +331,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateFileResponse createFile(openai.javasdk.models.shared.CreateFileRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/files");
         
         HTTPRequest req = new HTTPRequest();
@@ -354,9 +344,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -384,7 +374,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateFineTuneResponse createFineTune(openai.javasdk.models.shared.CreateFineTuneRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/fine-tunes");
         
         HTTPRequest req = new HTTPRequest();
@@ -397,9 +387,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -427,7 +417,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateImageResponse createImage(openai.javasdk.models.shared.CreateImageRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/images/generations");
         
         HTTPRequest req = new HTTPRequest();
@@ -440,9 +430,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -470,7 +460,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateImageEditResponse createImageEdit(openai.javasdk.models.shared.CreateImageEditRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/images/edits");
         
         HTTPRequest req = new HTTPRequest();
@@ -483,9 +473,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -513,7 +503,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateImageVariationResponse createImageVariation(openai.javasdk.models.shared.CreateImageVariationRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/images/variations");
         
         HTTPRequest req = new HTTPRequest();
@@ -526,9 +516,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -556,7 +546,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateModerationResponse createModeration(openai.javasdk.models.shared.CreateModerationRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/moderations");
         
         HTTPRequest req = new HTTPRequest();
@@ -569,9 +559,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -601,7 +591,7 @@ public class OpenAI {
      */
     @Deprecated
     public openai.javasdk.models.operations.CreateSearchResponse createSearch(openai.javasdk.models.operations.CreateSearchRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.CreateSearchRequest.class, baseUrl, "/engines/{engine_id}/search", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -614,9 +604,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -644,7 +634,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateTranscriptionResponse createTranscription(openai.javasdk.models.shared.CreateTranscriptionRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/audio/transcriptions");
         
         HTTPRequest req = new HTTPRequest();
@@ -657,9 +647,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -687,7 +677,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.CreateTranslationResponse createTranslation(openai.javasdk.models.shared.CreateTranslationRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/audio/translations");
         
         HTTPRequest req = new HTTPRequest();
@@ -700,9 +690,9 @@ public class OpenAI {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -730,7 +720,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.DeleteFileResponse deleteFile(openai.javasdk.models.operations.DeleteFileRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.DeleteFileRequest.class, baseUrl, "/files/{file_id}", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -738,9 +728,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -768,7 +758,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.DeleteModelResponse deleteModel(openai.javasdk.models.operations.DeleteModelRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.DeleteModelRequest.class, baseUrl, "/models/{model}", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -776,9 +766,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -806,7 +796,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.DownloadFileResponse downloadFile(openai.javasdk.models.operations.DownloadFileRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.DownloadFileRequest.class, baseUrl, "/files/{file_id}/content", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -814,9 +804,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -844,7 +834,7 @@ public class OpenAI {
      */
     @Deprecated
     public openai.javasdk.models.operations.ListEnginesResponse listEngines() throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/engines");
         
         HTTPRequest req = new HTTPRequest();
@@ -852,9 +842,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -881,7 +871,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.ListFilesResponse listFiles() throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/files");
         
         HTTPRequest req = new HTTPRequest();
@@ -889,9 +879,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -919,7 +909,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.ListFineTuneEventsResponse listFineTuneEvents(openai.javasdk.models.operations.ListFineTuneEventsRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.ListFineTuneEventsRequest.class, baseUrl, "/fine-tunes/{fine_tune_id}/events", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -927,7 +917,7 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         java.util.List<NameValuePair> queryParams = openai.javasdk.utils.Utils.getQueryParams(openai.javasdk.models.operations.ListFineTuneEventsRequest.class, request, null);
         if (queryParams != null) {
             for (NameValuePair queryParam : queryParams) {
@@ -935,7 +925,7 @@ public class OpenAI {
             }
         }
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -962,7 +952,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.ListFineTunesResponse listFineTunes() throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/fine-tunes");
         
         HTTPRequest req = new HTTPRequest();
@@ -970,9 +960,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -999,7 +989,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.ListModelsResponse listModels() throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/models");
         
         HTTPRequest req = new HTTPRequest();
@@ -1007,9 +997,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -1039,7 +1029,7 @@ public class OpenAI {
      */
     @Deprecated
     public openai.javasdk.models.operations.RetrieveEngineResponse retrieveEngine(openai.javasdk.models.operations.RetrieveEngineRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.RetrieveEngineRequest.class, baseUrl, "/engines/{engine_id}", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -1047,9 +1037,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -1077,7 +1067,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.RetrieveFileResponse retrieveFile(openai.javasdk.models.operations.RetrieveFileRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.RetrieveFileRequest.class, baseUrl, "/files/{file_id}", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -1085,9 +1075,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -1115,7 +1105,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.RetrieveFineTuneResponse retrieveFineTune(openai.javasdk.models.operations.RetrieveFineTuneRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.RetrieveFineTuneRequest.class, baseUrl, "/fine-tunes/{fine_tune_id}", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -1123,9 +1113,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
@@ -1153,7 +1143,7 @@ public class OpenAI {
      * @throws Exception if the API call fails
      */
     public openai.javasdk.models.operations.RetrieveModelResponse retrieveModel(openai.javasdk.models.operations.RetrieveModelRequest request) throws Exception {
-        String baseUrl = this._serverUrl;
+        String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.RetrieveModelRequest.class, baseUrl, "/models/{model}", request, null);
         
         HTTPRequest req = new HTTPRequest();
@@ -1161,9 +1151,9 @@ public class OpenAI {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this._language, this._sdkVersion, this._genVersion));
+        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion));
         
-        HTTPClient client = this._defaultClient;
+        HTTPClient client = this.sdkConfiguration.defaultClient;
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
