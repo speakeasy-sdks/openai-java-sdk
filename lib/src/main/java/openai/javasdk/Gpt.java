@@ -8,7 +8,7 @@ import openai.javasdk.utils.HTTPClient;
 import openai.javasdk.utils.SpeakeasyHTTPClient;
 
 /**
- * APIs for sampling from and fine-tuning language models
+ * OpenAI API: APIs for sampling from and fine-tuning language models
  */
 public class Gpt {
 	/**
