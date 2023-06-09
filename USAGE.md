@@ -2,29 +2,27 @@
 ```java
 package hello.world;
 
-import openai.javasdk.Openai;
-import openai.javasdk.models.shared.Security;
+import openai.javasdk.Gpt;
+import openai.javasdk.models.operations.CancelFineTuneRequest;
+import openai.javasdk.models.operations.CancelFineTuneResponse;
 
 public class Application {
     public static void main(String[] args) {
         try {
-            Openai.Builder builder = Openai.builder();
+            Gpt sdk = Gpt.builder()
+                .build();
 
-            Openai sdk = builder.build();
-
-            CancelFineTuneRequest req = new CancelFineTuneRequest() {{
-                pathParams = new CancelFineTunePathParams() {{
-                    fineTuneId = "unde";
-                }};
-            }};
+            CancelFineTuneRequest req = new CancelFineTuneRequest("ft-AF1WoRqd3aJAHsqc9NY7iL8F");            
 
             CancelFineTuneResponse res = sdk.openAI.cancelFineTune(req);
 
-            if (res.fineTune.isPresent()) {
+            if (res.fineTune != null) {
                 // handle response
             }
         } catch (Exception e) {
             // handle exception
         }
+    }
+}
 ```
 <!-- End SDK Example Usage -->
