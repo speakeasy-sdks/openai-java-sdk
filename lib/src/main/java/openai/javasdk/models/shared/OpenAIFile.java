@@ -71,9 +71,9 @@ public class OpenAIFile {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("status_details")
-    public java.util.Map<String, Object> statusDetails;
+    public OpenAIFileStatusDetails statusDetails;
 
-    public OpenAIFile withStatusDetails(java.util.Map<String, Object> statusDetails) {
+    public OpenAIFile withStatusDetails(OpenAIFileStatusDetails statusDetails) {
         this.statusDetails = statusDetails;
         return this;
     }

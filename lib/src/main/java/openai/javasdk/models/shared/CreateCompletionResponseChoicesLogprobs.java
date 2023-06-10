@@ -38,9 +38,9 @@ public class CreateCompletionResponseChoicesLogprobs {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("top_logprobs")
-    public java.util.Map<String, Object>[] topLogprobs;
+    public CreateCompletionResponseChoicesLogprobsTopLogprobs[] topLogprobs;
 
-    public CreateCompletionResponseChoicesLogprobs withTopLogprobs(java.util.Map<String, Object>[] topLogprobs) {
+    public CreateCompletionResponseChoicesLogprobs withTopLogprobs(CreateCompletionResponseChoicesLogprobsTopLogprobs[] topLogprobs) {
         this.topLogprobs = topLogprobs;
         return this;
     }

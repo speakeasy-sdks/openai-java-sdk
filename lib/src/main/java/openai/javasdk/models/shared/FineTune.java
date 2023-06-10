@@ -38,9 +38,9 @@ public class FineTune {
     }
     
     @JsonProperty("hyperparams")
-    public java.util.Map<String, Object> hyperparams;
+    public FineTuneHyperparams hyperparams;
 
-    public FineTune withHyperparams(java.util.Map<String, Object> hyperparams) {
+    public FineTune withHyperparams(FineTuneHyperparams hyperparams) {
         this.hyperparams = hyperparams;
         return this;
     }
@@ -117,7 +117,7 @@ public class FineTune {
         return this;
     }
     
-    public FineTune(@JsonProperty("created_at") Long createdAt, @JsonProperty("fine_tuned_model") String fineTunedModel, @JsonProperty("hyperparams") java.util.Map<String, Object> hyperparams, @JsonProperty("id") String id, @JsonProperty("model") String model, @JsonProperty("object") String object, @JsonProperty("organization_id") String organizationId, @JsonProperty("result_files") OpenAIFile[] resultFiles, @JsonProperty("status") String status, @JsonProperty("training_files") OpenAIFile[] trainingFiles, @JsonProperty("updated_at") Long updatedAt, @JsonProperty("validation_files") OpenAIFile[] validationFiles) {
+    public FineTune(@JsonProperty("created_at") Long createdAt, @JsonProperty("fine_tuned_model") String fineTunedModel, @JsonProperty("hyperparams") FineTuneHyperparams hyperparams, @JsonProperty("id") String id, @JsonProperty("model") String model, @JsonProperty("object") String object, @JsonProperty("organization_id") String organizationId, @JsonProperty("result_files") OpenAIFile[] resultFiles, @JsonProperty("status") String status, @JsonProperty("training_files") OpenAIFile[] trainingFiles, @JsonProperty("updated_at") Long updatedAt, @JsonProperty("validation_files") OpenAIFile[] validationFiles) {
         this.createdAt = createdAt;
         this.fineTunedModel = fineTunedModel;
         this.hyperparams = hyperparams;

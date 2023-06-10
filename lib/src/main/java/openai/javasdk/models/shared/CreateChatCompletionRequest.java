@@ -29,9 +29,9 @@ public class CreateChatCompletionRequest {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("logit_bias")
-    public java.util.Map<String, Object> logitBias;
+    public CreateChatCompletionRequestLogitBias logitBias;
 
-    public CreateChatCompletionRequest withLogitBias(java.util.Map<String, Object> logitBias) {
+    public CreateChatCompletionRequest withLogitBias(CreateChatCompletionRequestLogitBias logitBias) {
         this.logitBias = logitBias;
         return this;
     }
