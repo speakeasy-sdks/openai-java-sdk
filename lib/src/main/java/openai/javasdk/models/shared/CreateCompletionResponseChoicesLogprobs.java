@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class CreateCompletionResponseChoicesLogprobs {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("text_offset")

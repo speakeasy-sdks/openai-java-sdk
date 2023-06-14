@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * OpenAIFile - OK
  */
+
 public class OpenAIFile {
     @JsonProperty("bytes")
     public Long bytes;

@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Model - OK
  */
+
 public class Model {
     @JsonProperty("created")
     public Long created;

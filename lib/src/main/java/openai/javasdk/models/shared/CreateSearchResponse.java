@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * CreateSearchResponse - OK
  */
+
 public class CreateSearchResponse {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("data")

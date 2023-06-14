@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * CreateCompletionResponse - OK
  */
+
 public class CreateCompletionResponse {
     @JsonProperty("choices")
     public CreateCompletionResponseChoices[] choices;

@@ -6,6 +6,7 @@ package openai.javasdk.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class FineTuneEvent {
     @JsonProperty("created_at")
     public Long createdAt;

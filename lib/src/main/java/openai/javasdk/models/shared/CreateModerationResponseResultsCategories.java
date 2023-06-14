@@ -6,6 +6,7 @@ package openai.javasdk.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class CreateModerationResponseResultsCategories {
     @JsonProperty("hate")
     public Boolean hate;

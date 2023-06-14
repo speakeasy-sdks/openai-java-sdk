@@ -14,6 +14,7 @@ package openai.javasdk.models.shared;
  * As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt; token from being generated.
  * 
  */
+
 public class CreateCompletionRequestLogitBias {
     public CreateCompletionRequestLogitBias(){}
 }

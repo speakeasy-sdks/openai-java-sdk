@@ -6,6 +6,7 @@ package openai.javasdk.models.shared;
 
 
 
+
 public class CreateCompletionResponseChoicesLogprobsTopLogprobs {
     public CreateCompletionResponseChoicesLogprobsTopLogprobs(){}
 }

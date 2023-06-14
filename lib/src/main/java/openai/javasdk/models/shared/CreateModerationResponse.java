@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * CreateModerationResponse - OK
  */
+
 public class CreateModerationResponse {
     @JsonProperty("id")
     public String id;

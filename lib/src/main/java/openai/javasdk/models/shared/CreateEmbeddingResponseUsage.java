@@ -6,6 +6,7 @@ package openai.javasdk.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class CreateEmbeddingResponseUsage {
     @JsonProperty("prompt_tokens")
     public Long promptTokens;

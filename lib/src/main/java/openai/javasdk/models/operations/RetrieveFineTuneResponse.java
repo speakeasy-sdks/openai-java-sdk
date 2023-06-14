@@ -7,6 +7,7 @@ package openai.javasdk.models.operations;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.net.http.HttpResponse;
 
+
 public class RetrieveFineTuneResponse {
     
     public String contentType;

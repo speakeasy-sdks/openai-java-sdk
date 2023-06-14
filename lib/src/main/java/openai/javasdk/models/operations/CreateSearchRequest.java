@@ -7,6 +7,7 @@ package openai.javasdk.models.operations;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
+
 public class CreateSearchRequest {
     @SpeakeasyMetadata("request:mediaType=application/json")
     public openai.javasdk.models.shared.CreateSearchRequest createSearchRequest;

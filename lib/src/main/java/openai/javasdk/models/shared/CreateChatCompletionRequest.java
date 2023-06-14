@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class CreateChatCompletionRequest {
     /**
      * completions_frequency_penalty_description
@@ -18,6 +19,30 @@ public class CreateChatCompletionRequest {
 
     public CreateChatCompletionRequest withFrequencyPenalty(Double frequencyPenalty) {
         this.frequencyPenalty = frequencyPenalty;
+        return this;
+    }
+    
+    /**
+     * Controls how the model responds to function calls. "none" means the model does not call a function, and responds to the end-user. "auto" means the model can pick between an end-user or calling a function.  Specifying a particular function via `{"name":\ "my_function"}` forces the model to call that function. "none" is the default when no functions are present. "auto" is the default if functions are present.
+     */
+    @JsonInclude(Include.NON_ABSENT)
+    @JsonProperty("function_call")
+    public Object functionCall;
+
+    public CreateChatCompletionRequest withFunctionCall(Object functionCall) {
+        this.functionCall = functionCall;
+        return this;
+    }
+    
+    /**
+     * A list of functions the model may generate JSON inputs for.
+     */
+    @JsonInclude(Include.NON_ABSENT)
+    @JsonProperty("functions")
+    public ChatCompletionFunctions[] functions;
+
+    public CreateChatCompletionRequest withFunctions(ChatCompletionFunctions[] functions) {
+        this.functions = functions;
         return this;
     }
     
@@ -37,7 +62,9 @@ public class CreateChatCompletionRequest {
     }
     
     /**
-     * The maximum number of tokens allowed for the generated answer. By default, the number of tokens the model can return will be (4096 - prompt tokens).
+     * The maximum number of [tokens](/tokenizer) to generate in the chat completion.
+     * 
+     * The total length of input tokens and generated tokens is limited by the model's context length. [Example Python code](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb) for counting tokens.
      * 
      */
     @JsonInclude(Include.NON_ABSENT)
@@ -50,7 +77,7 @@ public class CreateChatCompletionRequest {
     }
     
     /**
-     * The messages to generate chat completions for, in the [chat format](/docs/guides/chat/introduction).
+     * A list of messages comprising the conversation so far. [Example Python code](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_format_inputs_to_ChatGPT_models.ipynb).
      */
     @JsonProperty("messages")
     public ChatCompletionRequestMessage[] messages;
@@ -61,7 +88,7 @@ public class CreateChatCompletionRequest {
     }
     
     /**
-     * ID of the model to use. Currently, only `gpt-3.5-turbo` and `gpt-3.5-turbo-0301` are supported.
+     * ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
      */
     @JsonProperty("model")
     public String model;
@@ -109,7 +136,7 @@ public class CreateChatCompletionRequest {
     }
     
     /**
-     * If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message.
+     * If set, partial message deltas will be sent, like in ChatGPT. Tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_stream_completions.ipynb).
      * 
      */
     @JsonInclude(Include.NON_ABSENT)

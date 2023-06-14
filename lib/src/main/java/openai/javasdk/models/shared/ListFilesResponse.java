@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * ListFilesResponse - OK
  */
+
 public class ListFilesResponse {
     @JsonProperty("data")
     public OpenAIFile[] data;

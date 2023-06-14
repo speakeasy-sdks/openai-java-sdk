@@ -7,9 +7,10 @@ package openai.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
+
 public class CreateTranscriptionRequest {
     /**
-     * The audio file to transcribe, in one of these formats: mp3, mp4, mpeg, mpga, m4a, wav, or webm.
+     * The audio file object (not file name) to transcribe, in one of these formats: mp3, mp4, mpeg, mpga, m4a, wav, or webm.
      * 
      */
     @SpeakeasyMetadata("multipartForm:file")

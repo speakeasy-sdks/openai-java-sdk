@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * FineTune - OK
  */
+
 public class FineTune {
     @JsonProperty("created_at")
     public Long createdAt;

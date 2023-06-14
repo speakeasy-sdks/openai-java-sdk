@@ -7,6 +7,7 @@ package openai.javasdk.models.operations;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
+
 public class CancelFineTuneRequest {
     /**
      * The ID of the fine-tune job to cancel

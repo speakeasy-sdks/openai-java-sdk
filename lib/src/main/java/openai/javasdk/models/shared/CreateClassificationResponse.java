@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * CreateClassificationResponse - OK
  */
+
 public class CreateClassificationResponse {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("completion")

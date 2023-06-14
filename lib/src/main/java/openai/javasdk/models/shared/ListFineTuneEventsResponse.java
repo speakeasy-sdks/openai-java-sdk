@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * ListFineTuneEventsResponse - OK
  */
+
 public class ListFineTuneEventsResponse {
     @JsonProperty("data")
     public FineTuneEvent[] data;

@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * DeleteFileResponse - OK
  */
+
 public class DeleteFileResponse {
     @JsonProperty("deleted")
     public Boolean deleted;

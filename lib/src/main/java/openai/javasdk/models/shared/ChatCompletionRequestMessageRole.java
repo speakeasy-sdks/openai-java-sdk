@@ -7,12 +7,13 @@ package openai.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * ChatCompletionRequestMessageRole - The role of the author of this message.
+ * ChatCompletionRequestMessageRole - The role of the messages author. One of `system`, `user`, `assistant`, or `function`.
  */
 public enum ChatCompletionRequestMessageRole {
     SYSTEM("system"),
     USER("user"),
-    ASSISTANT("assistant");
+    ASSISTANT("assistant"),
+    FUNCTION("function");
 
     @JsonValue
     public final String value;

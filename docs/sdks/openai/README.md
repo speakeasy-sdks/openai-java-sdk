@@ -12,7 +12,7 @@ The OpenAI REST API
 
 The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions).
  :warning: **Deprecated**
-* [createChatCompletion](#createchatcompletion) - Creates a completion for the chat message
+* [createChatCompletion](#createchatcompletion) - Creates a model response for the given chat conversation.
 * [~~createClassification~~](#createclassification) - Classifies the specified `query` using provided examples.
 
 The endpoint first [searches](/docs/api-reference/searches) over the labeled examples
@@ -23,7 +23,7 @@ are combined with the query to construct a prompt to produce the final label via
 Labeled examples can be provided via an uploaded `file`, or explicitly listed in the
 request using the `examples` parameter for quick tests and small scale use cases.
  :warning: **Deprecated**
-* [createCompletion](#createcompletion) - Creates a completion for the provided prompt and parameters
+* [createCompletion](#createcompletion) - Creates a completion for the provided prompt and parameters.
 * [createEdit](#createedit) - Creates a new edit for the provided input, instruction, and parameters.
 * [createEmbedding](#createembedding) - Creates an embedding vector representing the input text.
 * [createFile](#createfile) - Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.
@@ -200,7 +200,7 @@ public class Application {
 
 ## createChatCompletion
 
-Creates a completion for the chat message
+Creates a model response for the given chat conversation.
 
 ### Example Usage
 
@@ -209,9 +209,13 @@ package hello.world;
 
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateChatCompletionResponse;
+import openai.javasdk.models.shared.ChatCompletionFunctions;
 import openai.javasdk.models.shared.ChatCompletionRequestMessage;
+import openai.javasdk.models.shared.ChatCompletionRequestMessageFunctionCall;
 import openai.javasdk.models.shared.ChatCompletionRequestMessageRole;
 import openai.javasdk.models.shared.CreateChatCompletionRequest;
+import openai.javasdk.models.shared.CreateChatCompletionRequestFunctionCall1;
+import openai.javasdk.models.shared.CreateChatCompletionRequestFunctionCall2;
 import openai.javasdk.models.shared.CreateChatCompletionRequestLogitBias;
 
 public class Application {
@@ -221,35 +225,67 @@ public class Application {
                 .build();
 
             openai.javasdk.models.shared.CreateChatCompletionRequest req = new CreateChatCompletionRequest(                new openai.javasdk.models.shared.ChatCompletionRequestMessage[]{{
-                                add(new ChatCompletionRequestMessage("at", ChatCompletionRequestMessageRole.ASSISTANT) {{
+                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.ASSISTANT) {{
                                     content = "perferendis";
-                                    name = "Estelle Will";
-                                    role = ChatCompletionRequestMessageRole.ASSISTANT;
-                                }}),
-                                add(new ChatCompletionRequestMessage("dicta", ChatCompletionRequestMessageRole.ASSISTANT) {{
-                                    content = "molestiae";
-                                    name = "Forrest Koepp";
-                                    role = ChatCompletionRequestMessageRole.ASSISTANT;
-                                }}),
-                                add(new ChatCompletionRequestMessage("beatae", ChatCompletionRequestMessageRole.USER) {{
-                                    content = "officia";
-                                    name = "Wayne Lind";
+                                    functionCall = new ChatCompletionRequestMessageFunctionCall() {{
+                                        arguments = "ipsam";
+                                        name = "Timmy Satterfield";
+                                    }};
+                                    name = "Emilio Krajcik";
                                     role = ChatCompletionRequestMessageRole.USER;
                                 }}),
-                            }}, "molestiae") {{
-                frequencyPenalty = 2645.55d;
-                logitBias = new CreateChatCompletionRequestLogitBias();;
-                maxTokens = 186332L;
-                n = 1L;
-                presencePenalty = 7742.34d;
-                stop = new String[]{{
-                    add("ipsum"),
-                    add("excepturi"),
+                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.USER) {{
+                                    content = "porro";
+                                    functionCall = new ChatCompletionRequestMessageFunctionCall() {{
+                                        arguments = "dolorum";
+                                        name = "Antoinette Nikolaus";
+                                    }};
+                                    name = "Irvin Rosenbaum III";
+                                    role = ChatCompletionRequestMessageRole.USER;
+                                }}),
+                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.ASSISTANT) {{
+                                    content = "qui";
+                                    functionCall = new ChatCompletionRequestMessageFunctionCall() {{
+                                        arguments = "impedit";
+                                        name = "Cory Emmerich";
+                                    }};
+                                    name = "Cathy Mosciski";
+                                    role = ChatCompletionRequestMessageRole.SYSTEM;
+                                }}),
+                            }}, "laboriosam") {{
+                frequencyPenalty = 9437.49d;
+                functionCall = new CreateChatCompletionRequestFunctionCall2("fuga");;
+                functions = new openai.javasdk.models.shared.ChatCompletionFunctions[]{{
+                    add(new ChatCompletionFunctions("enim") {{
+                        description = "corporis";
+                        name = "Brad Turcotte Jr.";
+                        parameters = new java.util.HashMap<String, Object>() {{
+                            put("est", "mollitia");
+                            put("laborum", "dolores");
+                            put("dolorem", "corporis");
+                            put("explicabo", "nobis");
+                        }};
+                    }}),
+                    add(new ChatCompletionFunctions("occaecati") {{
+                        description = "omnis";
+                        name = "Ms. Cathy Marks";
+                        parameters = new java.util.HashMap<String, Object>() {{
+                            put("sapiente", "architecto");
+                            put("mollitia", "dolorem");
+                            put("culpa", "consequuntur");
+                            put("repellat", "mollitia");
+                        }};
+                    }}),
                 }};
+                logitBias = new CreateChatCompletionRequestLogitBias();;
+                maxTokens = 253291L;
+                n = 1L;
+                presencePenalty = 4143.69d;
+                stop = "molestiae";
                 stream = false;
                 temperature = 1d;
                 topP = 1d;
-                user = "aspernatur";
+                user = "velit";
             }};            
 
             CreateChatCompletionResponse res = sdk.openAI.createChatCompletion(req);
@@ -306,33 +342,26 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateClassificationRequest req = new CreateClassificationRequest("perferendis", "The plot is not very attractive.") {{
+            openai.javasdk.models.shared.CreateClassificationRequest req = new CreateClassificationRequest("error", "The plot is not very attractive.") {{
                 examples = new String[][]{{
                     add(new String[]{{
-                        add("sed"),
-                        add("iste"),
-                        add("dolor"),
-                    }}),
-                    add(new String[]{{
-                        add("laboriosam"),
-                        add("hic"),
-                        add("saepe"),
+                        add("vitae"),
+                        add("laborum"),
                     }}),
                 }};
-                expand = "fuga";
-                file = "in";
+                expand = "animi";
+                file = "enim";
                 labels = new String[]{{
-                    add("iste"),
-                    add("iure"),
+                    add("quo"),
                 }};
-                logitBias = "saepe";
-                logprobs = "quidem";
-                maxExamples = 99280L;
-                returnMetadata = "ipsa";
-                returnPrompt = "reiciendis";
-                searchModel = "est";
+                logitBias = "sequi";
+                logprobs = "tenetur";
+                maxExamples = 368725L;
+                returnMetadata = "id";
+                returnPrompt = "possimus";
+                searchModel = "aut";
                 temperature = 0d;
-                user = "mollitia";
+                user = "quasi";
             }};            
 
             CreateClassificationResponse res = sdk.openAI.createClassification(req);
@@ -361,7 +390,7 @@ public class Application {
 
 ## createCompletion
 
-Creates a completion for the provided prompt and parameters
+Creates a completion for the provided prompt and parameters.
 
 ### Example Usage
 
@@ -379,31 +408,33 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateCompletionRequest req = new CreateCompletionRequest("laborum") {{
-                bestOf = 170909L;
+            openai.javasdk.models.shared.CreateCompletionRequest req = new CreateCompletionRequest("error") {{
+                bestOf = 837945L;
                 echo = false;
-                frequencyPenalty = 2103.82d;
+                frequencyPenalty = 6736.6d;
                 logitBias = new CreateCompletionRequestLogitBias();;
-                logprobs = 358152L;
+                logprobs = 96098L;
                 maxTokens = 16L;
                 n = 1L;
-                presencePenalty = 1289.26d;
+                presencePenalty = 9719.45d;
                 prompt = new Long[][]{{
                     add(new Long[]{{
-                        add(363711L),
-                        add(325047L),
-                        add(570197L),
+                        add(509624L),
+                        add(976762L),
                     }}),
                     add(new Long[]{{
-                        add(438601L),
+                        add(604846L),
+                    }}),
+                    add(new Long[]{{
+                        add(739264L),
+                        add(19987L),
+                    }}),
+                    add(new Long[]{{
+                        add(441711L),
                     }}),
                 }};
-                stop = new String[]{{
-                    add("["\n"]"),
-                    add("["\n"]"),
-                    add("["\n"]"),
-                    add("["\n"]"),
-                }};
+                stop = "
+            ";
                 stream = false;
                 suffix = "test.";
                 temperature = 1d;
@@ -454,7 +485,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateEditRequest req = new CreateEditRequest("Fix the spelling mistakes.", "sapiente") {{
+            openai.javasdk.models.shared.CreateEditRequest req = new CreateEditRequest("Fix the spelling mistakes.", "maiores") {{
                 input = "What day of the wek is it?";
                 n = 1L;
                 temperature = 1d;
@@ -504,8 +535,8 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateEmbeddingRequest req = new CreateEmbeddingRequest("This is a test.", "mollitia") {{
-                user = "dolorem";
+            openai.javasdk.models.shared.CreateEmbeddingRequest req = new CreateEmbeddingRequest("This is a test.", "corporis") {{
+                user = "dolore";
             }};            
 
             CreateEmbeddingResponse res = sdk.openAI.createEmbedding(req);
@@ -553,7 +584,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateFileRequest req = new CreateFileRequest(                new CreateFileRequestFile("culpa".getBytes(), "consequuntur");, "repellat");            
+            openai.javasdk.models.shared.CreateFileRequest req = new CreateFileRequest(                new CreateFileRequestFile("iusto".getBytes(), "dicta");, "harum");            
 
             CreateFileResponse res = sdk.openAI.createFile(req);
 
@@ -604,20 +635,21 @@ public class Application {
                 .build();
 
             openai.javasdk.models.shared.CreateFineTuneRequest req = new CreateFineTuneRequest("file-ajSREls59WBbvgSzJSVWxMCB") {{
-                batchSize = 653108L;
+                batchSize = 317983L;
                 classificationBetas = new Double[]{{
-                    add(2532.91d),
-                    add(4143.69d),
-                    add(4663.11d),
+                    add(4142.63d),
+                    add(9182.36d),
+                    add(641.47d),
+                    add(2168.22d),
                 }};
-                classificationNClasses = 474697L;
-                classificationPositiveClass = "velit";
+                classificationNClasses = 692472L;
+                classificationPositiveClass = "molestias";
                 computeClassificationMetrics = false;
-                learningRateMultiplier = 6235.1d;
-                model = "quia";
-                nEpochs = 338007L;
-                promptLossWeight = 1103.75d;
-                suffix = "laborum";
+                learningRateMultiplier = 5666.02d;
+                model = "pariatur";
+                nEpochs = 265389L;
+                promptLossWeight = 5089.69d;
+                suffix = "rem";
                 validationFile = "file-XjSREls59WBbvgSzJSVWxMCa";
             }};            
 
@@ -670,7 +702,7 @@ public class Application {
                 n = 1L;
                 responseFormat = CreateImageRequestResponseFormat.URL;
                 size = CreateImageRequestSize.ONE_THOUSAND_AND_TWENTY_FOURX1024;
-                user = "animi";
+                user = "voluptates";
             }};            
 
             CreateImageResponse res = sdk.openAI.createImage(req);
@@ -718,12 +750,12 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateImageEditRequest req = new CreateImageEditRequest(                new CreateImageEditRequestImage("enim".getBytes(), "odit");, "A cute baby sea otter wearing a beret") {{
-                mask = new CreateImageEditRequestMask("quo".getBytes(), "sequi");;
-                n = "tenetur";
-                responseFormat = "ipsam";
-                size = "id";
-                user = "possimus";
+            openai.javasdk.models.shared.CreateImageEditRequest req = new CreateImageEditRequest(                new CreateImageEditRequestImage("quasi".getBytes(), "repudiandae");, "A cute baby sea otter wearing a beret") {{
+                mask = new CreateImageEditRequestMask("sint".getBytes(), "veritatis");;
+                n = "itaque";
+                responseFormat = "incidunt";
+                size = "enim";
+                user = "consequatur";
             }};            
 
             CreateImageEditResponse res = sdk.openAI.createImageEdit(req);
@@ -770,11 +802,11 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateImageVariationRequest req = new CreateImageVariationRequest(                new CreateImageVariationRequestImage("aut".getBytes(), "quasi");) {{
-                n = "error";
-                responseFormat = "temporibus";
-                size = "laborum";
-                user = "quasi";
+            openai.javasdk.models.shared.CreateImageVariationRequest req = new CreateImageVariationRequest(                new CreateImageVariationRequestImage("est".getBytes(), "quibusdam");) {{
+                n = "explicabo";
+                responseFormat = "deserunt";
+                size = "distinctio";
+                user = "quibusdam";
             }};            
 
             CreateImageVariationResponse res = sdk.openAI.createImageVariation(req);
@@ -820,12 +852,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateModerationRequest req = new CreateModerationRequest(                new String[]{{
-                                add("I want to kill them."),
-                                add("I want to kill them."),
-                                add("I want to kill them."),
-                                add("I want to kill them."),
-                            }}) {{
+            openai.javasdk.models.shared.CreateModerationRequest req = new CreateModerationRequest("I want to kill them.") {{
                 model = "text-moderation-stable";
             }};            
 
@@ -882,15 +909,13 @@ public class Application {
 
             CreateSearchRequest req = new CreateSearchRequest(                new CreateSearchRequest("the president") {{
                                 documents = new String[]{{
-                                    add("nihil"),
-                                    add("praesentium"),
-                                    add("voluptatibus"),
-                                    add("ipsa"),
+                                    add("qui"),
+                                    add("aliquid"),
                                 }};
-                                file = "omnis";
-                                maxRerank = 451159L;
+                                file = "cupiditate";
+                                maxRerank = 552822L;
                                 returnMetadata = false;
-                                user = "cum";
+                                user = "perferendis";
                             }};, "davinci");            
 
             CreateSearchResponse res = sdk.openAI.createSearch(req);
@@ -937,11 +962,11 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateTranscriptionRequest req = new CreateTranscriptionRequest(                new CreateTranscriptionRequestFile("perferendis".getBytes(), "doloremque");, "reprehenderit") {{
-                language = "ut";
-                prompt = "maiores";
-                responseFormat = "dicta";
-                temperature = 3594.44d;
+            openai.javasdk.models.shared.CreateTranscriptionRequest req = new CreateTranscriptionRequest(                new CreateTranscriptionRequestFile("magni".getBytes(), "assumenda");, "ipsam") {{
+                language = "alias";
+                prompt = "fugit";
+                responseFormat = "dolorum";
+                temperature = 5696.18d;
             }};            
 
             CreateTranscriptionResponse res = sdk.openAI.createTranscription(req);
@@ -988,10 +1013,10 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateTranslationRequest req = new CreateTranslationRequest(                new CreateTranslationRequestFile("dolore".getBytes(), "iusto");, "dicta") {{
-                prompt = "harum";
-                responseFormat = "enim";
-                temperature = 8804.76d;
+            openai.javasdk.models.shared.CreateTranslationRequest req = new CreateTranslationRequest(                new CreateTranslationRequestFile("tempora".getBytes(), "facilis");, "tempore") {{
+                prompt = "labore";
+                responseFormat = "delectus";
+                temperature = 4332.88d;
             }};            
 
             CreateTranslationResponse res = sdk.openAI.createTranslation(req);
@@ -1037,7 +1062,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            DeleteFileRequest req = new DeleteFileRequest("commodi");            
+            DeleteFileRequest req = new DeleteFileRequest("non");            
 
             DeleteFileResponse res = sdk.openAI.deleteFile(req);
 
@@ -1127,7 +1152,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            DownloadFileRequest req = new DownloadFileRequest("repudiandae");            
+            DownloadFileRequest req = new DownloadFileRequest("eligendi");            
 
             DownloadFileResponse res = sdk.openAI.downloadFile(req);
 
@@ -1414,7 +1439,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            RetrieveFileRequest req = new RetrieveFileRequest("quae");            
+            RetrieveFileRequest req = new RetrieveFileRequest("sint");            
 
             RetrieveFileResponse res = sdk.openAI.retrieveFile(req);
 

@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * CreateEmbeddingResponse - OK
  */
+
 public class CreateEmbeddingResponse {
     @JsonProperty("data")
     public CreateEmbeddingResponseData[] data;

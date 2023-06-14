@@ -6,6 +6,7 @@ package openai.javasdk.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class CreateChatCompletionResponseUsage {
     @JsonProperty("completion_tokens")
     public Long completionTokens;

@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * CreateTranscriptionResponse - OK
  */
+
 public class CreateTranscriptionResponse {
     @JsonProperty("text")
     public String text;
