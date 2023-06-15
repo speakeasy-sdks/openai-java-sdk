@@ -149,7 +149,6 @@ public class CreateCompletionRequest {
      * Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.
      * 
      */
-    @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("prompt")
     public Object prompt;
 
@@ -239,7 +238,8 @@ public class CreateCompletionRequest {
         return this;
     }
     
-    public CreateCompletionRequest(@JsonProperty("model") String model) {
+    public CreateCompletionRequest(@JsonProperty("model") String model, @JsonProperty("prompt") Object prompt) {
         this.model = model;
+        this.prompt = prompt;
   }
 }

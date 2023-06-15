@@ -408,31 +408,28 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateCompletionRequest req = new CreateCompletionRequest("error") {{
-                bestOf = 837945L;
+            openai.javasdk.models.shared.CreateCompletionRequest req = new CreateCompletionRequest("error",                 new Long[][]{{
+                                add(new Long[]{{
+                                    add(971945L),
+                                }}),
+                                add(new Long[]{{
+                                    add(878194L),
+                                    add(468651L),
+                                    add(509624L),
+                                    add(976762L),
+                                }}),
+                                add(new Long[]{{
+                                    add(604846L),
+                                }}),
+                            }}) {{
+                bestOf = 451159L;
                 echo = false;
-                frequencyPenalty = 6736.6d;
+                frequencyPenalty = 7392.64d;
                 logitBias = new CreateCompletionRequestLogitBias();;
-                logprobs = 96098L;
+                logprobs = 19987L;
                 maxTokens = 16L;
                 n = 1L;
-                presencePenalty = 9719.45d;
-                prompt = new Long[][]{{
-                    add(new Long[]{{
-                        add(509624L),
-                        add(976762L),
-                    }}),
-                    add(new Long[]{{
-                        add(604846L),
-                    }}),
-                    add(new Long[]{{
-                        add(739264L),
-                        add(19987L),
-                    }}),
-                    add(new Long[]{{
-                        add(441711L),
-                    }}),
-                }};
+                presencePenalty = 391.87d;
                 stop = "
             ";
                 stream = false;
@@ -485,7 +482,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateEditRequest req = new CreateEditRequest("Fix the spelling mistakes.", "maiores") {{
+            openai.javasdk.models.shared.CreateEditRequest req = new CreateEditRequest("Fix the spelling mistakes.", "ut") {{
                 input = "What day of the wek is it?";
                 n = 1L;
                 temperature = 1d;
@@ -535,8 +532,13 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateEmbeddingRequest req = new CreateEmbeddingRequest("This is a test.", "corporis") {{
-                user = "dolore";
+            openai.javasdk.models.shared.CreateEmbeddingRequest req = new CreateEmbeddingRequest(                new Long[][]{{
+                                add(new Long[]{{
+                                    add(296140L),
+                                    add(480894L),
+                                }}),
+                            }}, "dicta") {{
+                user = "harum";
             }};            
 
             CreateEmbeddingResponse res = sdk.openAI.createEmbedding(req);
@@ -584,7 +586,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateFileRequest req = new CreateFileRequest(                new CreateFileRequestFile("iusto".getBytes(), "dicta");, "harum");            
+            openai.javasdk.models.shared.CreateFileRequest req = new CreateFileRequest(                new CreateFileRequestFile("enim".getBytes(), "accusamus");, "commodi");            
 
             CreateFileResponse res = sdk.openAI.createFile(req);
 
@@ -635,11 +637,8 @@ public class Application {
                 .build();
 
             openai.javasdk.models.shared.CreateFineTuneRequest req = new CreateFineTuneRequest("file-ajSREls59WBbvgSzJSVWxMCB") {{
-                batchSize = 317983L;
+                batchSize = 918236L;
                 classificationBetas = new Double[]{{
-                    add(4142.63d),
-                    add(9182.36d),
-                    add(641.47d),
                     add(2168.22d),
                 }};
                 classificationNClasses = 692472L;
