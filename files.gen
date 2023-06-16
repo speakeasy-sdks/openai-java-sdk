@@ -2,7 +2,6 @@ lib/src/main/java/openai/javasdk/SDKConfiguration.java
 lib/src/main/java/openai/javasdk/OpenAI.java
 lib/src/main/java/openai/javasdk/Gpt.java
 .gitattributes
-.gitignore
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
 gradlew
