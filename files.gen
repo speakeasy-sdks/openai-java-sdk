@@ -76,6 +76,7 @@ lib/src/main/java/openai/javasdk/models/shared/FineTuneEvent.java
 lib/src/main/java/openai/javasdk/models/shared/CreateAnswerResponseSelectedDocuments.java
 lib/src/main/java/openai/javasdk/models/shared/CreateAnswerResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateAnswerRequest.java
+lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponseChoicesFinishReason.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponseChoices.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponseUsage.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponse.java
@@ -93,6 +94,7 @@ lib/src/main/java/openai/javasdk/models/shared/ChatCompletionFunctions.java
 lib/src/main/java/openai/javasdk/models/shared/CreateClassificationResponseSelectedExamples.java
 lib/src/main/java/openai/javasdk/models/shared/CreateClassificationResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateClassificationRequest.java
+lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoicesFinishReason.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoicesLogprobsTopLogprobs.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoicesLogprobs.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoices.java
@@ -100,6 +102,7 @@ lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseUsage.jav
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionRequestLogitBias.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionRequest.java
+lib/src/main/java/openai/javasdk/models/shared/CreateEditResponseChoicesFinishReason.java
 lib/src/main/java/openai/javasdk/models/shared/CreateEditResponseChoicesLogprobsTopLogprobs.java
 lib/src/main/java/openai/javasdk/models/shared/CreateEditResponseChoicesLogprobs.java
 lib/src/main/java/openai/javasdk/models/shared/CreateEditResponseChoices.java
@@ -195,6 +198,7 @@ docs/models/shared/FineTuneEvent.md
 docs/models/shared/CreateAnswerResponseSelectedDocuments.md
 docs/models/shared/CreateAnswerResponse.md
 docs/models/shared/CreateAnswerRequest.md
+docs/models/shared/CreateChatCompletionResponseChoicesFinishReason.md
 docs/models/shared/CreateChatCompletionResponseChoices.md
 docs/models/shared/CreateChatCompletionResponseUsage.md
 docs/models/shared/CreateChatCompletionResponse.md
@@ -212,6 +216,7 @@ docs/models/shared/ChatCompletionFunctions.md
 docs/models/shared/CreateClassificationResponseSelectedExamples.md
 docs/models/shared/CreateClassificationResponse.md
 docs/models/shared/CreateClassificationRequest.md
+docs/models/shared/CreateCompletionResponseChoicesFinishReason.md
 docs/models/shared/CreateCompletionResponseChoicesLogprobsTopLogprobs.md
 docs/models/shared/CreateCompletionResponseChoicesLogprobs.md
 docs/models/shared/CreateCompletionResponseChoices.md
@@ -219,6 +224,7 @@ docs/models/shared/CreateCompletionResponseUsage.md
 docs/models/shared/CreateCompletionResponse.md
 docs/models/shared/CreateCompletionRequestLogitBias.md
 docs/models/shared/CreateCompletionRequest.md
+docs/models/shared/CreateEditResponseChoicesFinishReason.md
 docs/models/shared/CreateEditResponseChoicesLogprobsTopLogprobs.md
 docs/models/shared/CreateEditResponseChoicesLogprobs.md
 docs/models/shared/CreateEditResponseChoices.md

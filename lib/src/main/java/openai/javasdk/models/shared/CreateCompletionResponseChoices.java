@@ -9,9 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CreateCompletionResponseChoices {
     @JsonProperty("finish_reason")
-    public String finishReason;
+    public CreateCompletionResponseChoicesFinishReason finishReason;
 
-    public CreateCompletionResponseChoices withFinishReason(String finishReason) {
+    public CreateCompletionResponseChoices withFinishReason(CreateCompletionResponseChoicesFinishReason finishReason) {
         this.finishReason = finishReason;
         return this;
     }
@@ -40,7 +40,7 @@ public class CreateCompletionResponseChoices {
         return this;
     }
     
-    public CreateCompletionResponseChoices(@JsonProperty("finish_reason") String finishReason, @JsonProperty("index") Long index, @JsonProperty("logprobs") CreateCompletionResponseChoicesLogprobs logprobs, @JsonProperty("text") String text) {
+    public CreateCompletionResponseChoices(@JsonProperty("finish_reason") CreateCompletionResponseChoicesFinishReason finishReason, @JsonProperty("index") Long index, @JsonProperty("logprobs") CreateCompletionResponseChoicesLogprobs logprobs, @JsonProperty("text") String text) {
         this.finishReason = finishReason;
         this.index = index;
         this.logprobs = logprobs;

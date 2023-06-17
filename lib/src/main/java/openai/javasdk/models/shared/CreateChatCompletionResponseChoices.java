@@ -12,9 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class CreateChatCompletionResponseChoices {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("finish_reason")
-    public String finishReason;
+    public CreateChatCompletionResponseChoicesFinishReason finishReason;
 
-    public CreateChatCompletionResponseChoices withFinishReason(String finishReason) {
+    public CreateChatCompletionResponseChoices withFinishReason(CreateChatCompletionResponseChoicesFinishReason finishReason) {
         this.finishReason = finishReason;
         return this;
     }
