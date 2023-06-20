@@ -91,9 +91,9 @@ public class CreateChatCompletionRequest {
      * ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.
      */
     @JsonProperty("model")
-    public String model;
+    public Object model;
 
-    public CreateChatCompletionRequest withModel(String model) {
+    public CreateChatCompletionRequest withModel(Object model) {
         this.model = model;
         return this;
     }
@@ -181,7 +181,7 @@ public class CreateChatCompletionRequest {
         return this;
     }
     
-    public CreateChatCompletionRequest(@JsonProperty("messages") ChatCompletionRequestMessage[] messages, @JsonProperty("model") String model) {
+    public CreateChatCompletionRequest(@JsonProperty("messages") ChatCompletionRequestMessage[] messages, @JsonProperty("model") Object model) {
         this.messages = messages;
         this.model = model;
   }

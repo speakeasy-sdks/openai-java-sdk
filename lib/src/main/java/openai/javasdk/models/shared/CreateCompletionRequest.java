@@ -104,11 +104,12 @@ public class CreateCompletionRequest {
     
     /**
      * ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
+     * 
      */
     @JsonProperty("model")
-    public String model;
+    public Object model;
 
-    public CreateCompletionRequest withModel(String model) {
+    public CreateCompletionRequest withModel(Object model) {
         this.model = model;
         return this;
     }
@@ -238,7 +239,7 @@ public class CreateCompletionRequest {
         return this;
     }
     
-    public CreateCompletionRequest(@JsonProperty("model") String model, @JsonProperty("prompt") Object prompt) {
+    public CreateCompletionRequest(@JsonProperty("model") Object model, @JsonProperty("prompt") Object prompt) {
         this.model = model;
         this.prompt = prompt;
   }

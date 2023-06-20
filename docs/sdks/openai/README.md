@@ -8,21 +8,7 @@ The OpenAI REST API
 
 * [cancelFineTune](#cancelfinetune) - Immediately cancel a fine-tune job.
 
-* [~~createAnswer~~](#createanswer) - Answers the specified question using the provided documents and examples.
-
-The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions).
- :warning: **Deprecated**
 * [createChatCompletion](#createchatcompletion) - Creates a model response for the given chat conversation.
-* [~~createClassification~~](#createclassification) - Classifies the specified `query` using provided examples.
-
-The endpoint first [searches](/docs/api-reference/searches) over the labeled examples
-to select the ones most relevant for the particular query. Then, the relevant examples
-are combined with the query to construct a prompt to produce the final label via the
-[completions](/docs/api-reference/completions) endpoint.
-
-Labeled examples can be provided via an uploaded `file`, or explicitly listed in the
-request using the `examples` parameter for quick tests and small scale use cases.
- :warning: **Deprecated**
 * [createCompletion](#createcompletion) - Creates a completion for the provided prompt and parameters.
 * [createEdit](#createedit) - Creates a new edit for the provided input, instruction, and parameters.
 * [createEmbedding](#createembedding) - Creates an embedding vector representing the input text.
@@ -38,25 +24,17 @@ Response includes details of the enqueued job including job status and the name 
 * [createImageEdit](#createimageedit) - Creates an edited or extended image given an original image and a prompt.
 * [createImageVariation](#createimagevariation) - Creates a variation of a given image.
 * [createModeration](#createmoderation) - Classifies if text violates OpenAI's Content Policy
-* [~~createSearch~~](#createsearch) - The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.
-
-To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores.
-
-The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query.
- :warning: **Deprecated**
 * [createTranscription](#createtranscription) - Transcribes audio into the input language.
-* [createTranslation](#createtranslation) - Translates audio into into English.
+* [createTranslation](#createtranslation) - Translates audio into English.
 * [deleteFile](#deletefile) - Delete a file.
 * [deleteModel](#deletemodel) - Delete a fine-tuned model. You must have the Owner role in your organization.
 * [downloadFile](#downloadfile) - Returns the contents of the specified file
-* [~~listEngines~~](#listengines) - Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability. :warning: **Deprecated**
 * [listFiles](#listfiles) - Returns a list of files that belong to the user's organization.
 * [listFineTuneEvents](#listfinetuneevents) - Get fine-grained status updates for a fine-tune job.
 
 * [listFineTunes](#listfinetunes) - List your organization's fine-tuning jobs
 
 * [listModels](#listmodels) - Lists the currently available models, and provides basic information about each one such as the owner and availability.
-* [~~retrieveEngine~~](#retrieveengine) - Retrieves a model instance, providing basic information about it such as the owner and availability. :warning: **Deprecated**
 * [retrieveFile](#retrievefile) - Returns information about a specific file.
 * [retrieveFineTune](#retrievefinetune) - Gets info about the fine-tune job.
 
@@ -110,94 +88,6 @@ public class Application {
 **[openai.javasdk.models.operations.CancelFineTuneResponse](../../models/operations/CancelFineTuneResponse.md)**
 
 
-## ~~createAnswer~~
-
-Answers the specified question using the provided documents and examples.
-
-The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions).
-
-
-> :warning: **DEPRECATED**: this method will be removed in a future release, please migrate away from it as soon as possible.
-
-### Example Usage
-
-```java
-package hello.world;
-
-import openai.javasdk.Gpt;
-import openai.javasdk.models.operations.CreateAnswerResponse;
-import openai.javasdk.models.shared.CreateAnswerRequest;
-
-public class Application {
-    public static void main(String[] args) {
-        try {
-            Gpt sdk = Gpt.builder()
-                .build();
-
-            openai.javasdk.models.shared.CreateAnswerRequest req = new CreateAnswerRequest(                new String[][]{{
-                                add(new String[]{{
-                                    add("distinctio"),
-                                    add("quibusdam"),
-                                    add("unde"),
-                                }}),
-                                add(new String[]{{
-                                    add("corrupti"),
-                                    add("illum"),
-                                    add("vel"),
-                                    add("error"),
-                                }}),
-                                add(new String[]{{
-                                    add("suscipit"),
-                                    add("iure"),
-                                    add("magnam"),
-                                }}),
-                            }}, "Ottawa, Canada's capital, is located in the east of southern Ontario, near the city of Montréal and the U.S. border.", "debitis", "What is the capital of Japan?") {{
-                documents = new String[]{{
-                    add("delectus"),
-                }};
-                expand = new Object[]{{
-                    add("suscipit"),
-                    add("molestiae"),
-                }};
-                file = "minus";
-                logitBias = "placeat";
-                logprobs = 528895L;
-                maxRerank = 479977L;
-                maxTokens = 568045L;
-                n = 392785L;
-                returnMetadata = "recusandae";
-                returnPrompt = false;
-                searchModel = "temporibus";
-                stop = "
-            ";
-                temperature = 3373.96d;
-                user = "veritatis";
-            }};            
-
-            CreateAnswerResponse res = sdk.openAI.createAnswer(req);
-
-            if (res.createAnswerResponse != null) {
-                // handle response
-            }
-        } catch (Exception e) {
-            // handle exception
-        }
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [openai.javasdk.models.shared.CreateAnswerRequest](../../models/shared/CreateAnswerRequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-
-
-### Response
-
-**[openai.javasdk.models.operations.CreateAnswerResponse](../../models/operations/CreateAnswerResponse.md)**
-
-
 ## createChatCompletion
 
 Creates a model response for the given chat conversation.
@@ -217,6 +107,7 @@ import openai.javasdk.models.shared.CreateChatCompletionRequest;
 import openai.javasdk.models.shared.CreateChatCompletionRequestFunctionCall1;
 import openai.javasdk.models.shared.CreateChatCompletionRequestFunctionCall2;
 import openai.javasdk.models.shared.CreateChatCompletionRequestLogitBias;
+import openai.javasdk.models.shared.CreateChatCompletionRequestModel2;
 
 public class Application {
     public static void main(String[] args) {
@@ -225,67 +116,73 @@ public class Application {
                 .build();
 
             openai.javasdk.models.shared.CreateChatCompletionRequest req = new CreateChatCompletionRequest(                new openai.javasdk.models.shared.ChatCompletionRequestMessage[]{{
-                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.ASSISTANT) {{
-                                    content = "perferendis";
+                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.FUNCTION) {{
+                                    content = "provident";
                                     functionCall = new ChatCompletionRequestMessageFunctionCall() {{
-                                        arguments = "ipsam";
-                                        name = "Timmy Satterfield";
+                                        arguments = "distinctio";
+                                        name = "Stuart Stiedemann";
                                     }};
-                                    name = "Emilio Krajcik";
+                                    name = "Sabrina Oberbrunner";
                                     role = ChatCompletionRequestMessageRole.USER;
                                 }}),
-                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.USER) {{
-                                    content = "porro";
+                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.SYSTEM) {{
+                                    content = "ipsa";
                                     functionCall = new ChatCompletionRequestMessageFunctionCall() {{
-                                        arguments = "dolorum";
-                                        name = "Antoinette Nikolaus";
+                                        arguments = "delectus";
+                                        name = "Laurie Kreiger";
                                     }};
-                                    name = "Irvin Rosenbaum III";
+                                    name = "Ted Mante";
+                                    role = ChatCompletionRequestMessageRole.FUNCTION;
+                                }}),
+                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.FUNCTION) {{
+                                    content = "quis";
+                                    functionCall = new ChatCompletionRequestMessageFunctionCall() {{
+                                        arguments = "veritatis";
+                                        name = "Christopher Hills";
+                                    }};
+                                    name = "Fred Strosin";
                                     role = ChatCompletionRequestMessageRole.USER;
                                 }}),
-                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.ASSISTANT) {{
-                                    content = "qui";
-                                    functionCall = new ChatCompletionRequestMessageFunctionCall() {{
-                                        arguments = "impedit";
-                                        name = "Cory Emmerich";
-                                    }};
-                                    name = "Cathy Mosciski";
-                                    role = ChatCompletionRequestMessageRole.SYSTEM;
-                                }}),
-                            }}, "laboriosam") {{
-                frequencyPenalty = 9437.49d;
-                functionCall = new CreateChatCompletionRequestFunctionCall2("fuga");;
+                            }}, CreateChatCompletionRequestModel2.GPT35_TURBO) {{
+                frequencyPenalty = 4614.79d;
+                functionCall = new CreateChatCompletionRequestFunctionCall2("porro");;
                 functions = new openai.javasdk.models.shared.ChatCompletionFunctions[]{{
-                    add(new ChatCompletionFunctions("enim") {{
-                        description = "corporis";
-                        name = "Brad Turcotte Jr.";
+                    add(new ChatCompletionFunctions("cum") {{
+                        description = "dicta";
+                        name = "Luke McCullough";
                         parameters = new java.util.HashMap<String, Object>() {{
-                            put("est", "mollitia");
-                            put("laborum", "dolores");
-                            put("dolorem", "corporis");
-                            put("explicabo", "nobis");
+                            put("optio", "totam");
+                            put("beatae", "commodi");
+                            put("molestiae", "modi");
+                            put("qui", "impedit");
                         }};
                     }}),
-                    add(new ChatCompletionFunctions("occaecati") {{
-                        description = "omnis";
-                        name = "Ms. Cathy Marks";
+                    add(new ChatCompletionFunctions("natus") {{
+                        description = "esse";
+                        name = "Mrs. Miriam Collier";
                         parameters = new java.util.HashMap<String, Object>() {{
-                            put("sapiente", "architecto");
-                            put("mollitia", "dolorem");
-                            put("culpa", "consequuntur");
-                            put("repellat", "mollitia");
+                            put("iste", "dolor");
+                        }};
+                    }}),
+                    add(new ChatCompletionFunctions("est") {{
+                        description = "laboriosam";
+                        name = "Elias Parker";
+                        parameters = new java.util.HashMap<String, Object>() {{
+                            put("iure", "saepe");
+                            put("quidem", "architecto");
+                            put("ipsa", "reiciendis");
                         }};
                     }}),
                 }};
                 logitBias = new CreateChatCompletionRequestLogitBias();;
-                maxTokens = 253291L;
+                maxTokens = 653140L;
                 n = 1L;
-                presencePenalty = 4143.69d;
-                stop = "molestiae";
+                presencePenalty = 6706.38d;
+                stop = "dolorem";
                 stream = false;
                 temperature = 1d;
                 topP = 1d;
-                user = "velit";
+                user = "corporis";
             }};            
 
             CreateChatCompletionResponse res = sdk.openAI.createChatCompletion(req);
@@ -312,82 +209,6 @@ public class Application {
 **[openai.javasdk.models.operations.CreateChatCompletionResponse](../../models/operations/CreateChatCompletionResponse.md)**
 
 
-## ~~createClassification~~
-
-Classifies the specified `query` using provided examples.
-
-The endpoint first [searches](/docs/api-reference/searches) over the labeled examples
-to select the ones most relevant for the particular query. Then, the relevant examples
-are combined with the query to construct a prompt to produce the final label via the
-[completions](/docs/api-reference/completions) endpoint.
-
-Labeled examples can be provided via an uploaded `file`, or explicitly listed in the
-request using the `examples` parameter for quick tests and small scale use cases.
-
-
-> :warning: **DEPRECATED**: this method will be removed in a future release, please migrate away from it as soon as possible.
-
-### Example Usage
-
-```java
-package hello.world;
-
-import openai.javasdk.Gpt;
-import openai.javasdk.models.operations.CreateClassificationResponse;
-import openai.javasdk.models.shared.CreateClassificationRequest;
-
-public class Application {
-    public static void main(String[] args) {
-        try {
-            Gpt sdk = Gpt.builder()
-                .build();
-
-            openai.javasdk.models.shared.CreateClassificationRequest req = new CreateClassificationRequest("error", "The plot is not very attractive.") {{
-                examples = new String[][]{{
-                    add(new String[]{{
-                        add("vitae"),
-                        add("laborum"),
-                    }}),
-                }};
-                expand = "animi";
-                file = "enim";
-                labels = new String[]{{
-                    add("quo"),
-                }};
-                logitBias = "sequi";
-                logprobs = "tenetur";
-                maxExamples = 368725L;
-                returnMetadata = "id";
-                returnPrompt = "possimus";
-                searchModel = "aut";
-                temperature = 0d;
-                user = "quasi";
-            }};            
-
-            CreateClassificationResponse res = sdk.openAI.createClassification(req);
-
-            if (res.createClassificationResponse != null) {
-                // handle response
-            }
-        } catch (Exception e) {
-            // handle exception
-        }
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [openai.javasdk.models.shared.CreateClassificationRequest](../../models/shared/CreateClassificationRequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-
-
-### Response
-
-**[openai.javasdk.models.operations.CreateClassificationResponse](../../models/operations/CreateClassificationResponse.md)**
-
-
 ## createCompletion
 
 Creates a completion for the provided prompt and parameters.
@@ -401,6 +222,7 @@ import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateCompletionResponse;
 import openai.javasdk.models.shared.CreateCompletionRequest;
 import openai.javasdk.models.shared.CreateCompletionRequestLogitBias;
+import openai.javasdk.models.shared.CreateCompletionRequestModel2;
 
 public class Application {
     public static void main(String[] args) {
@@ -408,28 +230,19 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateCompletionRequest req = new CreateCompletionRequest("error",                 new Long[][]{{
-                                add(new Long[]{{
-                                    add(971945L),
-                                }}),
-                                add(new Long[]{{
-                                    add(878194L),
-                                    add(468651L),
-                                    add(509624L),
-                                    add(976762L),
-                                }}),
-                                add(new Long[]{{
-                                    add(604846L),
-                                }}),
+            openai.javasdk.models.shared.CreateCompletionRequest req = new CreateCompletionRequest("nobis",                 new String[]{{
+                                add("This is a test."),
+                                add("This is a test."),
+                                add("This is a test."),
                             }}) {{
-                bestOf = 451159L;
+                bestOf = 363711L;
                 echo = false;
-                frequencyPenalty = 7392.64d;
+                frequencyPenalty = 3250.47d;
                 logitBias = new CreateCompletionRequestLogitBias();;
-                logprobs = 19987L;
+                logprobs = 570197L;
                 maxTokens = 16L;
                 n = 1L;
-                presencePenalty = 391.87d;
+                presencePenalty = 384.25d;
                 stop = "
             ";
                 stream = false;
@@ -475,6 +288,7 @@ package hello.world;
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateEditResponse;
 import openai.javasdk.models.shared.CreateEditRequest;
+import openai.javasdk.models.shared.CreateEditRequestModel2;
 
 public class Application {
     public static void main(String[] args) {
@@ -482,7 +296,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateEditRequest req = new CreateEditRequest("Fix the spelling mistakes.", "ut") {{
+            openai.javasdk.models.shared.CreateEditRequest req = new CreateEditRequest("Fix the spelling mistakes.", CreateEditRequestModel2.TEXT_DAVINCI_EDIT001) {{
                 input = "What day of the wek is it?";
                 n = 1L;
                 temperature = 1d;
@@ -525,6 +339,7 @@ package hello.world;
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateEmbeddingResponse;
 import openai.javasdk.models.shared.CreateEmbeddingRequest;
+import openai.javasdk.models.shared.CreateEmbeddingRequestModel2;
 
 public class Application {
     public static void main(String[] args) {
@@ -534,11 +349,21 @@ public class Application {
 
             openai.javasdk.models.shared.CreateEmbeddingRequest req = new CreateEmbeddingRequest(                new Long[][]{{
                                 add(new Long[]{{
-                                    add(296140L),
-                                    add(480894L),
+                                    add(652790L),
                                 }}),
-                            }}, "dicta") {{
-                user = "harum";
+                                add(new Long[]{{
+                                    add(635059L),
+                                }}),
+                                add(new Long[]{{
+                                    add(995300L),
+                                }}),
+                                add(new Long[]{{
+                                    add(581850L),
+                                    add(253291L),
+                                    add(414369L),
+                                }}),
+                            }}, "text-embedding-ada-002") {{
+                user = "molestiae";
             }};            
 
             CreateEmbeddingResponse res = sdk.openAI.createEmbedding(req);
@@ -586,7 +411,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateFileRequest req = new CreateFileRequest(                new CreateFileRequestFile("enim".getBytes(), "accusamus");, "commodi");            
+            openai.javasdk.models.shared.CreateFileRequest req = new CreateFileRequest(                new CreateFileRequestFile("velit".getBytes(), "error");, "quia");            
 
             CreateFileResponse res = sdk.openAI.createFile(req);
 
@@ -629,6 +454,7 @@ package hello.world;
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateFineTuneResponse;
 import openai.javasdk.models.shared.CreateFineTuneRequest;
+import openai.javasdk.models.shared.CreateFineTuneRequestModel2;
 
 public class Application {
     public static void main(String[] args) {
@@ -637,18 +463,18 @@ public class Application {
                 .build();
 
             openai.javasdk.models.shared.CreateFineTuneRequest req = new CreateFineTuneRequest("file-ajSREls59WBbvgSzJSVWxMCB") {{
-                batchSize = 918236L;
+                batchSize = 338007L;
                 classificationBetas = new Double[]{{
-                    add(2168.22d),
+                    add(6747.52d),
                 }};
-                classificationNClasses = 692472L;
-                classificationPositiveClass = "molestias";
+                classificationNClasses = 656330L;
+                classificationPositiveClass = "enim";
                 computeClassificationMetrics = false;
-                learningRateMultiplier = 5666.02d;
-                model = "pariatur";
-                nEpochs = 265389L;
-                promptLossWeight = 5089.69d;
-                suffix = "rem";
+                learningRateMultiplier = 1381.83d;
+                model = CreateFineTuneRequestModel2.CURIE;
+                nEpochs = 196582L;
+                promptLossWeight = 9495.72d;
+                suffix = "ipsam";
                 validationFile = "file-XjSREls59WBbvgSzJSVWxMCa";
             }};            
 
@@ -701,7 +527,7 @@ public class Application {
                 n = 1L;
                 responseFormat = CreateImageRequestResponseFormat.URL;
                 size = CreateImageRequestSize.ONE_THOUSAND_AND_TWENTY_FOURX1024;
-                user = "voluptates";
+                user = "id";
             }};            
 
             CreateImageResponse res = sdk.openAI.createImage(req);
@@ -749,12 +575,12 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateImageEditRequest req = new CreateImageEditRequest(                new CreateImageEditRequestImage("quasi".getBytes(), "repudiandae");, "A cute baby sea otter wearing a beret") {{
-                mask = new CreateImageEditRequestMask("sint".getBytes(), "veritatis");;
-                n = "itaque";
-                responseFormat = "incidunt";
-                size = "enim";
-                user = "consequatur";
+            openai.javasdk.models.shared.CreateImageEditRequest req = new CreateImageEditRequest(                new CreateImageEditRequestImage("possimus".getBytes(), "aut");, "A cute baby sea otter wearing a beret") {{
+                mask = new CreateImageEditRequestMask("quasi".getBytes(), "error");;
+                n = "temporibus";
+                responseFormat = "laborum";
+                size = "quasi";
+                user = "reiciendis";
             }};            
 
             CreateImageEditResponse res = sdk.openAI.createImageEdit(req);
@@ -801,11 +627,11 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateImageVariationRequest req = new CreateImageVariationRequest(                new CreateImageVariationRequestImage("est".getBytes(), "quibusdam");) {{
-                n = "explicabo";
-                responseFormat = "deserunt";
-                size = "distinctio";
-                user = "quibusdam";
+            openai.javasdk.models.shared.CreateImageVariationRequest req = new CreateImageVariationRequest(                new CreateImageVariationRequestImage("voluptatibus".getBytes(), "vero");) {{
+                n = "nihil";
+                responseFormat = "praesentium";
+                size = "voluptatibus";
+                user = "ipsa";
             }};            
 
             CreateImageVariationResponse res = sdk.openAI.createImageVariation(req);
@@ -844,6 +670,7 @@ package hello.world;
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateModerationResponse;
 import openai.javasdk.models.shared.CreateModerationRequest;
+import openai.javasdk.models.shared.CreateModerationRequestModel2;
 
 public class Application {
     public static void main(String[] args) {
@@ -851,8 +678,11 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateModerationRequest req = new CreateModerationRequest("I want to kill them.") {{
-                model = "text-moderation-stable";
+            openai.javasdk.models.shared.CreateModerationRequest req = new CreateModerationRequest(                new String[]{{
+                                add("I want to kill them."),
+                                add("I want to kill them."),
+                            }}) {{
+                model = CreateModerationRequestModel2.TEXT_MODERATION_STABLE;
             }};            
 
             CreateModerationResponse res = sdk.openAI.createModeration(req);
@@ -879,68 +709,6 @@ public class Application {
 **[openai.javasdk.models.operations.CreateModerationResponse](../../models/operations/CreateModerationResponse.md)**
 
 
-## ~~createSearch~~
-
-The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.
-
-To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores.
-
-The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query.
-
-
-> :warning: **DEPRECATED**: this method will be removed in a future release, please migrate away from it as soon as possible.
-
-### Example Usage
-
-```java
-package hello.world;
-
-import openai.javasdk.Gpt;
-import openai.javasdk.models.operations.CreateSearchRequest;
-import openai.javasdk.models.operations.CreateSearchResponse;
-import openai.javasdk.models.shared.CreateSearchRequest;
-
-public class Application {
-    public static void main(String[] args) {
-        try {
-            Gpt sdk = Gpt.builder()
-                .build();
-
-            CreateSearchRequest req = new CreateSearchRequest(                new CreateSearchRequest("the president") {{
-                                documents = new String[]{{
-                                    add("qui"),
-                                    add("aliquid"),
-                                }};
-                                file = "cupiditate";
-                                maxRerank = 552822L;
-                                returnMetadata = false;
-                                user = "perferendis";
-                            }};, "davinci");            
-
-            CreateSearchResponse res = sdk.openAI.createSearch(req);
-
-            if (res.createSearchResponse != null) {
-                // handle response
-            }
-        } catch (Exception e) {
-            // handle exception
-        }
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [openai.javasdk.models.operations.CreateSearchRequest](../../models/operations/CreateSearchRequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-
-
-### Response
-
-**[openai.javasdk.models.operations.CreateSearchResponse](../../models/operations/CreateSearchResponse.md)**
-
-
 ## createTranscription
 
 Transcribes audio into the input language.
@@ -954,6 +722,7 @@ import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateTranscriptionResponse;
 import openai.javasdk.models.shared.CreateTranscriptionRequest;
 import openai.javasdk.models.shared.CreateTranscriptionRequestFile;
+import openai.javasdk.models.shared.CreateTranscriptionRequestModel2;
 
 public class Application {
     public static void main(String[] args) {
@@ -961,11 +730,11 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateTranscriptionRequest req = new CreateTranscriptionRequest(                new CreateTranscriptionRequestFile("magni".getBytes(), "assumenda");, "ipsam") {{
-                language = "alias";
-                prompt = "fugit";
-                responseFormat = "dolorum";
-                temperature = 5696.18d;
+            openai.javasdk.models.shared.CreateTranscriptionRequest req = new CreateTranscriptionRequest(                new CreateTranscriptionRequestFile("perferendis".getBytes(), "doloremque");, "whisper-1") {{
+                language = "ut";
+                prompt = "maiores";
+                responseFormat = "dicta";
+                temperature = 3594.44d;
             }};            
 
             CreateTranscriptionResponse res = sdk.openAI.createTranscription(req);
@@ -994,7 +763,7 @@ public class Application {
 
 ## createTranslation
 
-Translates audio into into English.
+Translates audio into English.
 
 ### Example Usage
 
@@ -1005,6 +774,7 @@ import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateTranslationResponse;
 import openai.javasdk.models.shared.CreateTranslationRequest;
 import openai.javasdk.models.shared.CreateTranslationRequestFile;
+import openai.javasdk.models.shared.CreateTranslationRequestModel2;
 
 public class Application {
     public static void main(String[] args) {
@@ -1012,10 +782,10 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateTranslationRequest req = new CreateTranslationRequest(                new CreateTranslationRequestFile("tempora".getBytes(), "facilis");, "tempore") {{
-                prompt = "labore";
-                responseFormat = "delectus";
-                temperature = 4332.88d;
+            openai.javasdk.models.shared.CreateTranslationRequest req = new CreateTranslationRequest(                new CreateTranslationRequestFile("dolore".getBytes(), "iusto");, "whisper-1") {{
+                prompt = "harum";
+                responseFormat = "enim";
+                temperature = 8804.76d;
             }};            
 
             CreateTranslationResponse res = sdk.openAI.createTranslation(req);
@@ -1061,7 +831,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            DeleteFileRequest req = new DeleteFileRequest("non");            
+            DeleteFileRequest req = new DeleteFileRequest("commodi");            
 
             DeleteFileResponse res = sdk.openAI.deleteFile(req);
 
@@ -1151,7 +921,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            DownloadFileRequest req = new DownloadFileRequest("eligendi");            
+            DownloadFileRequest req = new DownloadFileRequest("repudiandae");            
 
             DownloadFileResponse res = sdk.openAI.downloadFile(req);
 
@@ -1175,44 +945,6 @@ public class Application {
 ### Response
 
 **[openai.javasdk.models.operations.DownloadFileResponse](../../models/operations/DownloadFileResponse.md)**
-
-
-## ~~listEngines~~
-
-Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability.
-
-> :warning: **DEPRECATED**: this method will be removed in a future release, please migrate away from it as soon as possible.
-
-### Example Usage
-
-```java
-package hello.world;
-
-import openai.javasdk.Gpt;
-import openai.javasdk.models.operations.ListEnginesResponse;
-
-public class Application {
-    public static void main(String[] args) {
-        try {
-            Gpt sdk = Gpt.builder()
-                .build();
-
-            ListEnginesResponse res = sdk.openAI.listEngines();
-
-            if (res.listEnginesResponse != null) {
-                // handle response
-            }
-        } catch (Exception e) {
-            // handle exception
-        }
-    }
-}
-```
-
-
-### Response
-
-**[openai.javasdk.models.operations.ListEnginesResponse](../../models/operations/ListEnginesResponse.md)**
 
 
 ## listFiles
@@ -1372,53 +1104,6 @@ public class Application {
 **[openai.javasdk.models.operations.ListModelsResponse](../../models/operations/ListModelsResponse.md)**
 
 
-## ~~retrieveEngine~~
-
-Retrieves a model instance, providing basic information about it such as the owner and availability.
-
-> :warning: **DEPRECATED**: this method will be removed in a future release, please migrate away from it as soon as possible.
-
-### Example Usage
-
-```java
-package hello.world;
-
-import openai.javasdk.Gpt;
-import openai.javasdk.models.operations.RetrieveEngineRequest;
-import openai.javasdk.models.operations.RetrieveEngineResponse;
-
-public class Application {
-    public static void main(String[] args) {
-        try {
-            Gpt sdk = Gpt.builder()
-                .build();
-
-            RetrieveEngineRequest req = new RetrieveEngineRequest("davinci");            
-
-            RetrieveEngineResponse res = sdk.openAI.retrieveEngine(req);
-
-            if (res.engine != null) {
-                // handle response
-            }
-        } catch (Exception e) {
-            // handle exception
-        }
-    }
-}
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [openai.javasdk.models.operations.RetrieveEngineRequest](../../models/operations/RetrieveEngineRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-
-
-### Response
-
-**[openai.javasdk.models.operations.RetrieveEngineResponse](../../models/operations/RetrieveEngineResponse.md)**
-
-
 ## retrieveFile
 
 Returns information about a specific file.
@@ -1438,7 +1123,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            RetrieveFileRequest req = new RetrieveFileRequest("sint");            
+            RetrieveFileRequest req = new RetrieveFileRequest("quae");            
 
             RetrieveFileResponse res = sdk.openAI.retrieveFile(req);
 

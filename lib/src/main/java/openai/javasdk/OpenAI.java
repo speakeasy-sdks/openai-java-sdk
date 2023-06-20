@@ -63,51 +63,6 @@ public class OpenAI {
     }
 
     /**
-     * Answers the specified question using the provided documents and examples. -  - The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions). - 
-     * @param request the request object containing all of the parameters for the API call
-     * @return the response from the API call
-     * @throws Exception if the API call fails
-     * @deprecated this method will be removed in a future release, please migrate away from it as soon as possible
-     */
-    @Deprecated
-    public openai.javasdk.models.operations.CreateAnswerResponse createAnswer(openai.javasdk.models.shared.CreateAnswerRequest request) throws Exception {
-        String baseUrl = this.sdkConfiguration.serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/answers");
-        
-        HTTPRequest req = new HTTPRequest();
-        req.setMethod("POST");
-        req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
-        if (serializedRequestBody == null) {
-            throw new Exception("Request body is required");
-        }
-        req.setBody(serializedRequestBody);
-
-        req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
-        
-        HTTPClient client = this.sdkConfiguration.defaultClient;
-        HttpResponse<byte[]> httpRes = client.send(req);
-
-        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        openai.javasdk.models.operations.CreateAnswerResponse res = new openai.javasdk.models.operations.CreateAnswerResponse(contentType, httpRes.statusCode()) {{
-            createAnswerResponse = null;
-        }};
-        res.rawResponse = httpRes;
-        
-        if (httpRes.statusCode() == 200) {
-            if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = JSON.getMapper();
-                openai.javasdk.models.shared.CreateAnswerResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.CreateAnswerResponse.class);
-                res.createAnswerResponse = out;
-            }
-        }
-
-        return res;
-    }
-
-    /**
      * Creates a model response for the given chat conversation.
      * @param request the request object containing all of the parameters for the API call
      * @return the response from the API call
@@ -144,51 +99,6 @@ public class OpenAI {
                 ObjectMapper mapper = JSON.getMapper();
                 openai.javasdk.models.shared.CreateChatCompletionResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.CreateChatCompletionResponse.class);
                 res.createChatCompletionResponse = out;
-            }
-        }
-
-        return res;
-    }
-
-    /**
-     * Classifies the specified `query` using provided examples. -  - The endpoint first [searches](/docs/api-reference/searches) over the labeled examples - to select the ones most relevant for the particular query. Then, the relevant examples - are combined with the query to construct a prompt to produce the final label via the - [completions](/docs/api-reference/completions) endpoint. -  - Labeled examples can be provided via an uploaded `file`, or explicitly listed in the - request using the `examples` parameter for quick tests and small scale use cases. - 
-     * @param request the request object containing all of the parameters for the API call
-     * @return the response from the API call
-     * @throws Exception if the API call fails
-     * @deprecated this method will be removed in a future release, please migrate away from it as soon as possible
-     */
-    @Deprecated
-    public openai.javasdk.models.operations.CreateClassificationResponse createClassification(openai.javasdk.models.shared.CreateClassificationRequest request) throws Exception {
-        String baseUrl = this.sdkConfiguration.serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/classifications");
-        
-        HTTPRequest req = new HTTPRequest();
-        req.setMethod("POST");
-        req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "request", "json");
-        if (serializedRequestBody == null) {
-            throw new Exception("Request body is required");
-        }
-        req.setBody(serializedRequestBody);
-
-        req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
-        
-        HTTPClient client = this.sdkConfiguration.defaultClient;
-        HttpResponse<byte[]> httpRes = client.send(req);
-
-        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        openai.javasdk.models.operations.CreateClassificationResponse res = new openai.javasdk.models.operations.CreateClassificationResponse(contentType, httpRes.statusCode()) {{
-            createClassificationResponse = null;
-        }};
-        res.rawResponse = httpRes;
-        
-        if (httpRes.statusCode() == 200) {
-            if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = JSON.getMapper();
-                openai.javasdk.models.shared.CreateClassificationResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.CreateClassificationResponse.class);
-                res.createClassificationResponse = out;
             }
         }
 
@@ -583,51 +493,6 @@ public class OpenAI {
     }
 
     /**
-     * The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them. -  - To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores. -  - The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query. - 
-     * @param request the request object containing all of the parameters for the API call
-     * @return the response from the API call
-     * @throws Exception if the API call fails
-     * @deprecated this method will be removed in a future release, please migrate away from it as soon as possible
-     */
-    @Deprecated
-    public openai.javasdk.models.operations.CreateSearchResponse createSearch(openai.javasdk.models.operations.CreateSearchRequest request) throws Exception {
-        String baseUrl = this.sdkConfiguration.serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.CreateSearchRequest.class, baseUrl, "/engines/{engine_id}/search", request, null);
-        
-        HTTPRequest req = new HTTPRequest();
-        req.setMethod("POST");
-        req.setURL(url);
-        SerializedBody serializedRequestBody = openai.javasdk.utils.Utils.serializeRequestBody(request, "createSearchRequest", "json");
-        if (serializedRequestBody == null) {
-            throw new Exception("Request body is required");
-        }
-        req.setBody(serializedRequestBody);
-
-        req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
-        
-        HTTPClient client = this.sdkConfiguration.defaultClient;
-        HttpResponse<byte[]> httpRes = client.send(req);
-
-        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        openai.javasdk.models.operations.CreateSearchResponse res = new openai.javasdk.models.operations.CreateSearchResponse(contentType, httpRes.statusCode()) {{
-            createSearchResponse = null;
-        }};
-        res.rawResponse = httpRes;
-        
-        if (httpRes.statusCode() == 200) {
-            if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = JSON.getMapper();
-                openai.javasdk.models.shared.CreateSearchResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.CreateSearchResponse.class);
-                res.createSearchResponse = out;
-            }
-        }
-
-        return res;
-    }
-
-    /**
      * Transcribes audio into the input language.
      * @param request the request object containing all of the parameters for the API call
      * @return the response from the API call
@@ -671,7 +536,7 @@ public class OpenAI {
     }
 
     /**
-     * Translates audio into into English.
+     * Translates audio into English.
      * @param request the request object containing all of the parameters for the API call
      * @return the response from the API call
      * @throws Exception if the API call fails
@@ -827,45 +692,6 @@ public class OpenAI {
     }
 
     /**
-     * Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability.
-     * @return the response from the API call
-     * @throws Exception if the API call fails
-     * @deprecated this method will be removed in a future release, please migrate away from it as soon as possible
-     */
-    @Deprecated
-    public openai.javasdk.models.operations.ListEnginesResponse listEngines() throws Exception {
-        String baseUrl = this.sdkConfiguration.serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/engines");
-        
-        HTTPRequest req = new HTTPRequest();
-        req.setMethod("GET");
-        req.setURL(url);
-
-        req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
-        
-        HTTPClient client = this.sdkConfiguration.defaultClient;
-        HttpResponse<byte[]> httpRes = client.send(req);
-
-        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        openai.javasdk.models.operations.ListEnginesResponse res = new openai.javasdk.models.operations.ListEnginesResponse(contentType, httpRes.statusCode()) {{
-            listEnginesResponse = null;
-        }};
-        res.rawResponse = httpRes;
-        
-        if (httpRes.statusCode() == 200) {
-            if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = JSON.getMapper();
-                openai.javasdk.models.shared.ListEnginesResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.ListEnginesResponse.class);
-                res.listEnginesResponse = out;
-            }
-        }
-
-        return res;
-    }
-
-    /**
      * Returns a list of files that belong to the user's organization.
      * @return the response from the API call
      * @throws Exception if the API call fails
@@ -1014,46 +840,6 @@ public class OpenAI {
                 ObjectMapper mapper = JSON.getMapper();
                 openai.javasdk.models.shared.ListModelsResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.ListModelsResponse.class);
                 res.listModelsResponse = out;
-            }
-        }
-
-        return res;
-    }
-
-    /**
-     * Retrieves a model instance, providing basic information about it such as the owner and availability.
-     * @param request the request object containing all of the parameters for the API call
-     * @return the response from the API call
-     * @throws Exception if the API call fails
-     * @deprecated this method will be removed in a future release, please migrate away from it as soon as possible
-     */
-    @Deprecated
-    public openai.javasdk.models.operations.RetrieveEngineResponse retrieveEngine(openai.javasdk.models.operations.RetrieveEngineRequest request) throws Exception {
-        String baseUrl = this.sdkConfiguration.serverUrl;
-        String url = openai.javasdk.utils.Utils.generateURL(openai.javasdk.models.operations.RetrieveEngineRequest.class, baseUrl, "/engines/{engine_id}", request, null);
-        
-        HTTPRequest req = new HTTPRequest();
-        req.setMethod("GET");
-        req.setURL(url);
-
-        req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
-        
-        HTTPClient client = this.sdkConfiguration.defaultClient;
-        HttpResponse<byte[]> httpRes = client.send(req);
-
-        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        openai.javasdk.models.operations.RetrieveEngineResponse res = new openai.javasdk.models.operations.RetrieveEngineResponse(contentType, httpRes.statusCode()) {{
-            engine = null;
-        }};
-        res.rawResponse = httpRes;
-        
-        if (httpRes.statusCode() == 200) {
-            if (openai.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = JSON.getMapper();
-                openai.javasdk.models.shared.Engine out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), openai.javasdk.models.shared.Engine.class);
-                res.engine = out;
             }
         }
 

@@ -25,10 +25,10 @@ public class CreateTranslationRequest {
      * ID of the model to use. Only `whisper-1` is currently available.
      * 
      */
-    @SpeakeasyMetadata("multipartForm:name=model")
-    public String model;
+    @SpeakeasyMetadata("multipartForm:name=model,json")
+    public Object model;
 
-    public CreateTranslationRequest withModel(String model) {
+    public CreateTranslationRequest withModel(Object model) {
         this.model = model;
         return this;
     }
@@ -69,7 +69,7 @@ public class CreateTranslationRequest {
         return this;
     }
     
-    public CreateTranslationRequest(@JsonProperty("file") CreateTranslationRequestFile file, @JsonProperty("model") String model) {
+    public CreateTranslationRequest(@JsonProperty("file") CreateTranslationRequestFile file, @JsonProperty("model") Object model) {
         this.file = file;
         this.model = model;
   }

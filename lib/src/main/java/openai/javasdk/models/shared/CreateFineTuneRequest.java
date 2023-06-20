@@ -130,9 +130,9 @@ public class CreateFineTuneRequest {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("model")
-    public String model;
+    public Object model;
 
-    public CreateFineTuneRequest withModel(String model) {
+    public CreateFineTuneRequest withModel(Object model) {
         this.model = model;
         return this;
     }

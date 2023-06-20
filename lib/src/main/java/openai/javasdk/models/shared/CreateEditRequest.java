@@ -37,9 +37,9 @@ public class CreateEditRequest {
      * ID of the model to use. You can use the `text-davinci-edit-001` or `code-davinci-edit-001` model with this endpoint.
      */
     @JsonProperty("model")
-    public String model;
+    public Object model;
 
-    public CreateEditRequest withModel(String model) {
+    public CreateEditRequest withModel(Object model) {
         this.model = model;
         return this;
     }
@@ -80,7 +80,7 @@ public class CreateEditRequest {
         return this;
     }
     
-    public CreateEditRequest(@JsonProperty("instruction") String instruction, @JsonProperty("model") String model) {
+    public CreateEditRequest(@JsonProperty("instruction") String instruction, @JsonProperty("model") Object model) {
         this.instruction = instruction;
         this.model = model;
   }

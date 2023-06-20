@@ -22,6 +22,9 @@ public class CreateEmbeddingRequest {
         return this;
     }
     
+    /**
+     * model_description
+     */
     @JsonProperty("model")
     public Object model;
 

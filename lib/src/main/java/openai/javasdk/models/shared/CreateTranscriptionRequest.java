@@ -37,10 +37,10 @@ public class CreateTranscriptionRequest {
      * ID of the model to use. Only `whisper-1` is currently available.
      * 
      */
-    @SpeakeasyMetadata("multipartForm:name=model")
-    public String model;
+    @SpeakeasyMetadata("multipartForm:name=model,json")
+    public Object model;
 
-    public CreateTranscriptionRequest withModel(String model) {
+    public CreateTranscriptionRequest withModel(Object model) {
         this.model = model;
         return this;
     }
@@ -81,7 +81,7 @@ public class CreateTranscriptionRequest {
         return this;
     }
     
-    public CreateTranscriptionRequest(@JsonProperty("file") CreateTranscriptionRequestFile file, @JsonProperty("model") String model) {
+    public CreateTranscriptionRequest(@JsonProperty("file") CreateTranscriptionRequestFile file, @JsonProperty("model") Object model) {
         this.file = file;
         this.model = model;
   }

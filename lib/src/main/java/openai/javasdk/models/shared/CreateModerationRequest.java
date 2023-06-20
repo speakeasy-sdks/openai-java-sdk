@@ -29,9 +29,9 @@ public class CreateModerationRequest {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("model")
-    public String model;
+    public Object model;
 
-    public CreateModerationRequest withModel(String model) {
+    public CreateModerationRequest withModel(Object model) {
         this.model = model;
         return this;
     }
