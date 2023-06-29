@@ -116,61 +116,55 @@ public class Application {
                 .build();
 
             openai.javasdk.models.shared.CreateChatCompletionRequest req = new CreateChatCompletionRequest(                new openai.javasdk.models.shared.ChatCompletionRequestMessage[]{{
-                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.FUNCTION) {{
+                                add(new ChatCompletionRequestMessage("delectus", ChatCompletionRequestMessageRole.USER) {{
                                     content = "provident";
-                                    functionCall = new ChatCompletionRequestMessageFunctionCall() {{
+                                    functionCall = new ChatCompletionRequestMessageFunctionCall("vel", "error") {{
                                         arguments = "distinctio";
                                         name = "Stuart Stiedemann";
                                     }};
-                                    name = "Sabrina Oberbrunner";
-                                    role = ChatCompletionRequestMessageRole.USER;
+                                    name = "Rick Kertzmann";
+                                    role = ChatCompletionRequestMessageRole.SYSTEM;
                                 }}),
-                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.SYSTEM) {{
-                                    content = "ipsa";
-                                    functionCall = new ChatCompletionRequestMessageFunctionCall() {{
-                                        arguments = "delectus";
-                                        name = "Laurie Kreiger";
+                                add(new ChatCompletionRequestMessage("sapiente", ChatCompletionRequestMessageRole.FUNCTION) {{
+                                    content = "suscipit";
+                                    functionCall = new ChatCompletionRequestMessageFunctionCall("nisi", "recusandae") {{
+                                        arguments = "molestiae";
+                                        name = "Irving Lehner";
                                     }};
-                                    name = "Ted Mante";
+                                    name = "Miss Raymond Hauck III";
                                     role = ChatCompletionRequestMessageRole.FUNCTION;
                                 }}),
-                                add(new ChatCompletionRequestMessage(ChatCompletionRequestMessageRole.FUNCTION) {{
-                                    content = "quis";
-                                    functionCall = new ChatCompletionRequestMessageFunctionCall() {{
-                                        arguments = "veritatis";
-                                        name = "Christopher Hills";
+                                add(new ChatCompletionRequestMessage("fugit", ChatCompletionRequestMessageRole.ASSISTANT) {{
+                                    content = "odit";
+                                    functionCall = new ChatCompletionRequestMessageFunctionCall("esse", "totam") {{
+                                        arguments = "at";
+                                        name = "Emilio Krajcik";
                                     }};
-                                    name = "Fred Strosin";
-                                    role = ChatCompletionRequestMessageRole.USER;
+                                    name = "Omar Carroll";
+                                    role = ChatCompletionRequestMessageRole.ASSISTANT;
                                 }}),
                             }}, CreateChatCompletionRequestModel2.GPT35_TURBO) {{
-                frequencyPenalty = 4614.79d;
-                functionCall = new CreateChatCompletionRequestFunctionCall2("porro");;
+                frequencyPenalty = 7586.16d;
+                functionCall = new CreateChatCompletionRequestFunctionCall2("beatae");;
                 functions = new openai.javasdk.models.shared.ChatCompletionFunctions[]{{
-                    add(new ChatCompletionFunctions("cum") {{
-                        description = "dicta";
-                        name = "Luke McCullough";
+                    add(new ChatCompletionFunctions("perferendis",                 new java.util.HashMap<String, Object>() {{
+                                        put("natus", "sed");
+                                        put("iste", "dolor");
+                                    }}) {{
+                        description = "molestiae";
+                        name = "Norma Ryan";
                         parameters = new java.util.HashMap<String, Object>() {{
-                            put("optio", "totam");
-                            put("beatae", "commodi");
-                            put("molestiae", "modi");
-                            put("qui", "impedit");
+                            put("excepturi", "aspernatur");
                         }};
                     }}),
-                    add(new ChatCompletionFunctions("natus") {{
-                        description = "esse";
-                        name = "Mrs. Miriam Collier";
+                    add(new ChatCompletionFunctions("architecto",                 new java.util.HashMap<String, Object>() {{
+                                        put("reiciendis", "est");
+                                    }}) {{
+                        description = "natus";
+                        name = "May Turcotte";
                         parameters = new java.util.HashMap<String, Object>() {{
-                            put("iste", "dolor");
-                        }};
-                    }}),
-                    add(new ChatCompletionFunctions("est") {{
-                        description = "laboriosam";
-                        name = "Elias Parker";
-                        parameters = new java.util.HashMap<String, Object>() {{
-                            put("iure", "saepe");
-                            put("quidem", "architecto");
-                            put("ipsa", "reiciendis");
+                            put("iste", "iure");
+                            put("saepe", "quidem");
                         }};
                     }}),
                 }};

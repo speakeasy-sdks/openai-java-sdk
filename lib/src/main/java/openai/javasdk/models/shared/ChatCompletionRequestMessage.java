@@ -11,9 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ChatCompletionRequestMessage {
     /**
-     * The contents of the message. `content` is required for all messages except assistant messages with function calls.
+     * The contents of the message. `content` is required for all messages, and may be null for assistant messages with function calls.
      */
-    @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("content")
     public String content;
 
@@ -57,7 +56,8 @@ public class ChatCompletionRequestMessage {
         return this;
     }
     
-    public ChatCompletionRequestMessage(@JsonProperty("role") ChatCompletionRequestMessageRole role) {
+    public ChatCompletionRequestMessage(@JsonProperty("content") String content, @JsonProperty("role") ChatCompletionRequestMessageRole role) {
+        this.content = content;
         this.role = role;
   }
 }
