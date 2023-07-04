@@ -106,7 +106,6 @@ import openai.javasdk.models.shared.ChatCompletionRequestMessageRole;
 import openai.javasdk.models.shared.CreateChatCompletionRequest;
 import openai.javasdk.models.shared.CreateChatCompletionRequestFunctionCall1;
 import openai.javasdk.models.shared.CreateChatCompletionRequestFunctionCall2;
-import openai.javasdk.models.shared.CreateChatCompletionRequestLogitBias;
 import openai.javasdk.models.shared.CreateChatCompletionRequestModel2;
 
 public class Application {
@@ -168,15 +167,19 @@ public class Application {
                         }};
                     }}),
                 }};
-                logitBias = new CreateChatCompletionRequestLogitBias();;
-                maxTokens = 653140L;
+                logitBias = new java.util.HashMap<String, Long>() {{
+                    put("laborum", 170909L);
+                    put("dolorem", 358152L);
+                    put("explicabo", 750686L);
+                }};
+                maxTokens = 315428L;
                 n = 1L;
-                presencePenalty = 6706.38d;
-                stop = "dolorem";
+                presencePenalty = 6078.31d;
+                stop = "minima";
                 stream = false;
                 temperature = 1d;
                 topP = 1d;
-                user = "corporis";
+                user = "excepturi";
             }};            
 
             CreateChatCompletionResponse res = sdk.openAI.createChatCompletion(req);
@@ -215,7 +218,6 @@ package hello.world;
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateCompletionResponse;
 import openai.javasdk.models.shared.CreateCompletionRequest;
-import openai.javasdk.models.shared.CreateCompletionRequestLogitBias;
 import openai.javasdk.models.shared.CreateCompletionRequestModel2;
 
 public class Application {
@@ -224,19 +226,25 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateCompletionRequest req = new CreateCompletionRequest("nobis",                 new String[]{{
-                                add("This is a test."),
-                                add("This is a test."),
-                                add("This is a test."),
+            openai.javasdk.models.shared.CreateCompletionRequest req = new CreateCompletionRequest("iure",                 new Long[]{{
+                                add(958950L),
+                                add(102044L),
+                                add(652790L),
+                                add(208876L),
                             }}) {{
-                bestOf = 363711L;
+                bestOf = 635059L;
                 echo = false;
-                frequencyPenalty = 3250.47d;
-                logitBias = new CreateCompletionRequestLogitBias();;
-                logprobs = 570197L;
+                frequencyPenalty = 1613.09d;
+                logitBias = new java.util.HashMap<String, Long>() {{
+                    put("mollitia", 581850L);
+                    put("numquam", 414369L);
+                    put("quam", 474697L);
+                    put("velit", 623510L);
+                }};
+                logprobs = 158969L;
                 maxTokens = 16L;
                 n = 1L;
-                presencePenalty = 384.25d;
+                presencePenalty = 3380.07d;
                 stop = "
             ";
                 stream = false;
@@ -341,23 +349,11 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateEmbeddingRequest req = new CreateEmbeddingRequest(                new Long[][]{{
-                                add(new Long[]{{
-                                    add(652790L),
-                                }}),
-                                add(new Long[]{{
-                                    add(635059L),
-                                }}),
-                                add(new Long[]{{
-                                    add(995300L),
-                                }}),
-                                add(new Long[]{{
-                                    add(581850L),
-                                    add(253291L),
-                                    add(414369L),
-                                }}),
+            openai.javasdk.models.shared.CreateEmbeddingRequest req = new CreateEmbeddingRequest(                new Long[]{{
+                                add(138183L),
+                                add(778346L),
                             }}, "text-embedding-ada-002") {{
-                user = "molestiae";
+                user = "tenetur";
             }};            
 
             CreateEmbeddingResponse res = sdk.openAI.createEmbedding(req);
@@ -405,7 +401,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateFileRequest req = new CreateFileRequest(                new CreateFileRequestFile("velit".getBytes(), "error");, "quia");            
+            openai.javasdk.models.shared.CreateFileRequest req = new CreateFileRequest(                new CreateFileRequestFile("ipsam".getBytes(), "id");, "possimus");            
 
             CreateFileResponse res = sdk.openAI.createFile(req);
 
@@ -457,18 +453,18 @@ public class Application {
                 .build();
 
             openai.javasdk.models.shared.CreateFineTuneRequest req = new CreateFineTuneRequest("file-ajSREls59WBbvgSzJSVWxMCB") {{
-                batchSize = 338007L;
+                batchSize = 13571L;
                 classificationBetas = new Double[]{{
-                    add(6747.52d),
+                    add(6228.46d),
                 }};
-                classificationNClasses = 656330L;
-                classificationPositiveClass = "enim";
+                classificationNClasses = 837945L;
+                classificationPositiveClass = "laborum";
                 computeClassificationMetrics = false;
-                learningRateMultiplier = 1381.83d;
+                learningRateMultiplier = 960.98d;
                 model = CreateFineTuneRequestModel2.CURIE;
-                nEpochs = 196582L;
-                promptLossWeight = 9495.72d;
-                suffix = "ipsam";
+                nEpochs = 976460L;
+                promptLossWeight = 8781.94d;
+                suffix = "nihil";
                 validationFile = "file-XjSREls59WBbvgSzJSVWxMCa";
             }};            
 
@@ -521,7 +517,7 @@ public class Application {
                 n = 1L;
                 responseFormat = CreateImageRequestResponseFormat.URL;
                 size = CreateImageRequestSize.ONE_THOUSAND_AND_TWENTY_FOURX1024;
-                user = "id";
+                user = "praesentium";
             }};            
 
             CreateImageResponse res = sdk.openAI.createImage(req);
@@ -569,12 +565,12 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateImageEditRequest req = new CreateImageEditRequest(                new CreateImageEditRequestImage("possimus".getBytes(), "aut");, "A cute baby sea otter wearing a beret") {{
-                mask = new CreateImageEditRequestMask("quasi".getBytes(), "error");;
-                n = "temporibus";
-                responseFormat = "laborum";
-                size = "quasi";
-                user = "reiciendis";
+            openai.javasdk.models.shared.CreateImageEditRequest req = new CreateImageEditRequest(                new CreateImageEditRequestImage("voluptatibus".getBytes(), "ipsa");, "A cute baby sea otter wearing a beret") {{
+                mask = new CreateImageEditRequestMask("omnis".getBytes(), "voluptate");;
+                n = "cum";
+                responseFormat = "perferendis";
+                size = "doloremque";
+                user = "reprehenderit";
             }};            
 
             CreateImageEditResponse res = sdk.openAI.createImageEdit(req);
@@ -621,11 +617,11 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateImageVariationRequest req = new CreateImageVariationRequest(                new CreateImageVariationRequestImage("voluptatibus".getBytes(), "vero");) {{
-                n = "nihil";
-                responseFormat = "praesentium";
-                size = "voluptatibus";
-                user = "ipsa";
+            openai.javasdk.models.shared.CreateImageVariationRequest req = new CreateImageVariationRequest(                new CreateImageVariationRequestImage("ut".getBytes(), "maiores");) {{
+                n = "dicta";
+                responseFormat = "corporis";
+                size = "dolore";
+                user = "iusto";
             }};            
 
             CreateImageVariationResponse res = sdk.openAI.createImageVariation(req);
@@ -672,10 +668,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateModerationRequest req = new CreateModerationRequest(                new String[]{{
-                                add("I want to kill them."),
-                                add("I want to kill them."),
-                            }}) {{
+            openai.javasdk.models.shared.CreateModerationRequest req = new CreateModerationRequest("I want to kill them.") {{
                 model = CreateModerationRequestModel2.TEXT_MODERATION_STABLE;
             }};            
 
@@ -724,11 +717,11 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateTranscriptionRequest req = new CreateTranscriptionRequest(                new CreateTranscriptionRequestFile("perferendis".getBytes(), "doloremque");, "whisper-1") {{
-                language = "ut";
-                prompt = "maiores";
-                responseFormat = "dicta";
-                temperature = 3594.44d;
+            openai.javasdk.models.shared.CreateTranscriptionRequest req = new CreateTranscriptionRequest(                new CreateTranscriptionRequestFile("enim".getBytes(), "accusamus");, "whisper-1") {{
+                language = "repudiandae";
+                prompt = "quae";
+                responseFormat = "ipsum";
+                temperature = 6924.72d;
             }};            
 
             CreateTranscriptionResponse res = sdk.openAI.createTranscription(req);
@@ -776,10 +769,10 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateTranslationRequest req = new CreateTranslationRequest(                new CreateTranslationRequestFile("dolore".getBytes(), "iusto");, "whisper-1") {{
-                prompt = "harum";
-                responseFormat = "enim";
-                temperature = 8804.76d;
+            openai.javasdk.models.shared.CreateTranslationRequest req = new CreateTranslationRequest(                new CreateTranslationRequestFile("molestias".getBytes(), "excepturi");, CreateTranslationRequestModel2.WHISPER1) {{
+                prompt = "modi";
+                responseFormat = "praesentium";
+                temperature = 5232.48d;
             }};            
 
             CreateTranslationResponse res = sdk.openAI.createTranslation(req);
@@ -825,7 +818,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            DeleteFileRequest req = new DeleteFileRequest("commodi");            
+            DeleteFileRequest req = new DeleteFileRequest("voluptates");            
 
             DeleteFileResponse res = sdk.openAI.deleteFile(req);
 
@@ -915,7 +908,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            DownloadFileRequest req = new DownloadFileRequest("repudiandae");            
+            DownloadFileRequest req = new DownloadFileRequest("quasi");            
 
             DownloadFileResponse res = sdk.openAI.downloadFile(req);
 
@@ -1117,7 +1110,7 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            RetrieveFileRequest req = new RetrieveFileRequest("quae");            
+            RetrieveFileRequest req = new RetrieveFileRequest("repudiandae");            
 
             RetrieveFileResponse res = sdk.openAI.retrieveFile(req);
 

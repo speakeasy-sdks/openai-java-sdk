@@ -72,9 +72,9 @@ public class OpenAIFile {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("status_details")
-    public OpenAIFileStatusDetails statusDetails;
+    public String statusDetails;
 
-    public OpenAIFile withStatusDetails(OpenAIFileStatusDetails statusDetails) {
+    public OpenAIFile withStatusDetails(String statusDetails) {
         this.statusDetails = statusDetails;
         return this;
     }

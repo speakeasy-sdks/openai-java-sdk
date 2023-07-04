@@ -4,9 +4,75 @@
 
 package openai.javasdk.models.shared;
 
-
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class FineTuneHyperparams {
-    public FineTuneHyperparams(){}
+    @JsonProperty("batch_size")
+    public Long batchSize;
+
+    public FineTuneHyperparams withBatchSize(Long batchSize) {
+        this.batchSize = batchSize;
+        return this;
+    }
+    
+    @JsonInclude(Include.NON_ABSENT)
+    @JsonProperty("classification_n_classes")
+    public Long classificationNClasses;
+
+    public FineTuneHyperparams withClassificationNClasses(Long classificationNClasses) {
+        this.classificationNClasses = classificationNClasses;
+        return this;
+    }
+    
+    @JsonInclude(Include.NON_ABSENT)
+    @JsonProperty("classification_positive_class")
+    public String classificationPositiveClass;
+
+    public FineTuneHyperparams withClassificationPositiveClass(String classificationPositiveClass) {
+        this.classificationPositiveClass = classificationPositiveClass;
+        return this;
+    }
+    
+    @JsonInclude(Include.NON_ABSENT)
+    @JsonProperty("compute_classification_metrics")
+    public Boolean computeClassificationMetrics;
+
+    public FineTuneHyperparams withComputeClassificationMetrics(Boolean computeClassificationMetrics) {
+        this.computeClassificationMetrics = computeClassificationMetrics;
+        return this;
+    }
+    
+    @JsonProperty("learning_rate_multiplier")
+    public Double learningRateMultiplier;
+
+    public FineTuneHyperparams withLearningRateMultiplier(Double learningRateMultiplier) {
+        this.learningRateMultiplier = learningRateMultiplier;
+        return this;
+    }
+    
+    @JsonProperty("n_epochs")
+    public Long nEpochs;
+
+    public FineTuneHyperparams withNEpochs(Long nEpochs) {
+        this.nEpochs = nEpochs;
+        return this;
+    }
+    
+    @JsonProperty("prompt_loss_weight")
+    public Double promptLossWeight;
+
+    public FineTuneHyperparams withPromptLossWeight(Double promptLossWeight) {
+        this.promptLossWeight = promptLossWeight;
+        return this;
+    }
+    
+    public FineTuneHyperparams(@JsonProperty("batch_size") Long batchSize, @JsonProperty("learning_rate_multiplier") Double learningRateMultiplier, @JsonProperty("n_epochs") Long nEpochs, @JsonProperty("prompt_loss_weight") Double promptLossWeight) {
+        this.batchSize = batchSize;
+        this.learningRateMultiplier = learningRateMultiplier;
+        this.nEpochs = nEpochs;
+        this.promptLossWeight = promptLossWeight;
+  }
 }

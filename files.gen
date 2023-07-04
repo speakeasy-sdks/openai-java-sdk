@@ -63,7 +63,6 @@ lib/src/main/java/openai/javasdk/models/operations/RetrieveModelRequest.java
 lib/src/main/java/openai/javasdk/models/operations/RetrieveModelResponse.java
 lib/src/main/java/openai/javasdk/models/shared/FineTuneHyperparams.java
 lib/src/main/java/openai/javasdk/models/shared/FineTune.java
-lib/src/main/java/openai/javasdk/models/shared/OpenAIFileStatusDetails.java
 lib/src/main/java/openai/javasdk/models/shared/OpenAIFile.java
 lib/src/main/java/openai/javasdk/models/shared/FineTuneEvent.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionResponseChoicesFinishReason.java
@@ -75,7 +74,6 @@ lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessageRole
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessage.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequestFunctionCall2.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequestFunctionCall1.java
-lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequestLogitBias.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequestModel2.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequest.java
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessageFunctionCall.java
@@ -83,16 +81,13 @@ lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessageRole.
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessage.java
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionFunctions.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoicesFinishReason.java
-lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoicesLogprobsTopLogprobs.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoicesLogprobs.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoices.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseUsage.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponse.java
-lib/src/main/java/openai/javasdk/models/shared/CreateCompletionRequestLogitBias.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionRequestModel2.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionRequest.java
 lib/src/main/java/openai/javasdk/models/shared/CreateEditResponseChoicesFinishReason.java
-lib/src/main/java/openai/javasdk/models/shared/CreateEditResponseChoicesLogprobsTopLogprobs.java
 lib/src/main/java/openai/javasdk/models/shared/CreateEditResponseChoicesLogprobs.java
 lib/src/main/java/openai/javasdk/models/shared/CreateEditResponseChoices.java
 lib/src/main/java/openai/javasdk/models/shared/CreateEditResponseUsage.java
@@ -175,7 +170,6 @@ docs/models/operations/RetrieveModelRequest.md
 docs/models/operations/RetrieveModelResponse.md
 docs/models/shared/FineTuneHyperparams.md
 docs/models/shared/FineTune.md
-docs/models/shared/OpenAIFileStatusDetails.md
 docs/models/shared/OpenAIFile.md
 docs/models/shared/FineTuneEvent.md
 docs/models/shared/CreateChatCompletionResponseChoicesFinishReason.md
@@ -187,7 +181,6 @@ docs/models/shared/ChatCompletionResponseMessageRole.md
 docs/models/shared/ChatCompletionResponseMessage.md
 docs/models/shared/CreateChatCompletionRequestFunctionCall2.md
 docs/models/shared/CreateChatCompletionRequestFunctionCall1.md
-docs/models/shared/CreateChatCompletionRequestLogitBias.md
 docs/models/shared/CreateChatCompletionRequestModel2.md
 docs/models/shared/CreateChatCompletionRequest.md
 docs/models/shared/ChatCompletionRequestMessageFunctionCall.md
@@ -195,16 +188,13 @@ docs/models/shared/ChatCompletionRequestMessageRole.md
 docs/models/shared/ChatCompletionRequestMessage.md
 docs/models/shared/ChatCompletionFunctions.md
 docs/models/shared/CreateCompletionResponseChoicesFinishReason.md
-docs/models/shared/CreateCompletionResponseChoicesLogprobsTopLogprobs.md
 docs/models/shared/CreateCompletionResponseChoicesLogprobs.md
 docs/models/shared/CreateCompletionResponseChoices.md
 docs/models/shared/CreateCompletionResponseUsage.md
 docs/models/shared/CreateCompletionResponse.md
-docs/models/shared/CreateCompletionRequestLogitBias.md
 docs/models/shared/CreateCompletionRequestModel2.md
 docs/models/shared/CreateCompletionRequest.md
 docs/models/shared/CreateEditResponseChoicesFinishReason.md
-docs/models/shared/CreateEditResponseChoicesLogprobsTopLogprobs.md
 docs/models/shared/CreateEditResponseChoicesLogprobs.md
 docs/models/shared/CreateEditResponseChoices.md
 docs/models/shared/CreateEditResponseUsage.md

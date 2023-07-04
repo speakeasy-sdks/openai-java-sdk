@@ -39,9 +39,9 @@ public class CreateEditResponseChoicesLogprobs {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("top_logprobs")
-    public CreateEditResponseChoicesLogprobsTopLogprobs[] topLogprobs;
+    public java.util.Map<String, Long>[] topLogprobs;
 
-    public CreateEditResponseChoicesLogprobs withTopLogprobs(CreateEditResponseChoicesLogprobsTopLogprobs[] topLogprobs) {
+    public CreateEditResponseChoicesLogprobs withTopLogprobs(java.util.Map<String, Long>[] topLogprobs) {
         this.topLogprobs = topLogprobs;
         return this;
     }

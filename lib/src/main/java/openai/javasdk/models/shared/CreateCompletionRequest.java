@@ -65,9 +65,9 @@ public class CreateCompletionRequest {
      */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("logit_bias")
-    public CreateCompletionRequestLogitBias logitBias;
+    public java.util.Map<String, Long> logitBias;
 
-    public CreateCompletionRequest withLogitBias(CreateCompletionRequestLogitBias logitBias) {
+    public CreateCompletionRequest withLogitBias(java.util.Map<String, Long> logitBias) {
         this.logitBias = logitBias;
         return this;
     }
