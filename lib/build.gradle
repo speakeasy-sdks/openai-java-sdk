@@ -41,7 +41,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'openai'
             artifactId = 'javasdk'
-            version = '2.6.1'
+            version = '2.6.2'
 
             from components.java
 
