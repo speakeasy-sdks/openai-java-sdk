@@ -122,7 +122,8 @@ lib/src/main/java/openai/javasdk/models/shared/CreateModerationRequest.java
 lib/src/main/java/openai/javasdk/models/shared/CreateTranscriptionResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateTranscriptionRequestFile.java
 lib/src/main/java/openai/javasdk/models/shared/CreateTranscriptionRequestModel2.java
-lib/src/main/java/openai/javasdk/models/shared/CreateTranscriptionRequest.java
+lib/src/main/java/openai/javasdk/models/shared/CreateTranscriptionRequestResponseFormat.java
+lib/src/main/java/openai/javasdk/models/shared/CreateTranscriptionRequest1.java
 lib/src/main/java/openai/javasdk/models/shared/CreateTranslationResponse.java
 lib/src/main/java/openai/javasdk/models/shared/CreateTranslationRequestFile.java
 lib/src/main/java/openai/javasdk/models/shared/CreateTranslationRequestModel2.java
@@ -229,7 +230,8 @@ docs/models/shared/CreateModerationRequest.md
 docs/models/shared/CreateTranscriptionResponse.md
 docs/models/shared/CreateTranscriptionRequestFile.md
 docs/models/shared/CreateTranscriptionRequestModel2.md
-docs/models/shared/CreateTranscriptionRequest.md
+docs/models/shared/CreateTranscriptionRequestResponseFormat.md
+docs/models/shared/CreateTranscriptionRequest1.md
 docs/models/shared/CreateTranslationResponse.md
 docs/models/shared/CreateTranslationRequestFile.md
 docs/models/shared/CreateTranslationRequestModel2.md

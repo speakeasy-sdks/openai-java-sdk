@@ -500,7 +500,7 @@ public class OpenAI {
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public openai.javasdk.models.operations.CreateTranscriptionResponse createTranscription(openai.javasdk.models.shared.CreateTranscriptionRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateTranscriptionResponse createTranscription(openai.javasdk.models.shared.CreateTranscriptionRequest1 request) throws Exception {
         String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/audio/transcriptions");
         

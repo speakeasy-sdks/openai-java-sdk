@@ -709,9 +709,10 @@ package hello.world;
 
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateTranscriptionResponse;
-import openai.javasdk.models.shared.CreateTranscriptionRequest;
+import openai.javasdk.models.shared.CreateTranscriptionRequest1;
 import openai.javasdk.models.shared.CreateTranscriptionRequestFile;
 import openai.javasdk.models.shared.CreateTranscriptionRequestModel2;
+import openai.javasdk.models.shared.CreateTranscriptionRequestResponseFormat;
 
 public class Application {
     public static void main(String[] args) {
@@ -719,10 +720,10 @@ public class Application {
             Gpt sdk = Gpt.builder()
                 .build();
 
-            openai.javasdk.models.shared.CreateTranscriptionRequest req = new CreateTranscriptionRequest(                new CreateTranscriptionRequestFile("enim".getBytes(), "accusamus");, "whisper-1") {{
+            openai.javasdk.models.shared.CreateTranscriptionRequest1 req = new CreateTranscriptionRequest1(                new CreateTranscriptionRequestFile("enim".getBytes(), "accusamus");, "whisper-1") {{
                 language = "repudiandae";
                 prompt = "quae";
-                responseFormat = "ipsum";
+                responseFormat = CreateTranscriptionRequestResponseFormat.TEXT;
                 temperature = 6924.72d;
             }};            
 
@@ -740,9 +741,9 @@ public class Application {
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [openai.javasdk.models.shared.CreateTranscriptionRequest](../../models/shared/CreateTranscriptionRequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                      | [openai.javasdk.models.shared.CreateTranscriptionRequest1](../../models/shared/CreateTranscriptionRequest1.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 
 
 ### Response

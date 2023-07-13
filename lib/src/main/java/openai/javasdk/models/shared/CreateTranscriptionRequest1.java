@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 
-public class CreateTranscriptionRequest {
+public class CreateTranscriptionRequest1 {
     /**
      * The audio file object (not file name) to transcribe, in one of these formats: mp3, mp4, mpeg, mpga, m4a, wav, or webm.
      * 
@@ -16,7 +16,7 @@ public class CreateTranscriptionRequest {
     @SpeakeasyMetadata("multipartForm:file")
     public CreateTranscriptionRequestFile file;
 
-    public CreateTranscriptionRequest withFile(CreateTranscriptionRequestFile file) {
+    public CreateTranscriptionRequest1 withFile(CreateTranscriptionRequestFile file) {
         this.file = file;
         return this;
     }
@@ -28,7 +28,7 @@ public class CreateTranscriptionRequest {
     @SpeakeasyMetadata("multipartForm:name=language")
     public String language;
 
-    public CreateTranscriptionRequest withLanguage(String language) {
+    public CreateTranscriptionRequest1 withLanguage(String language) {
         this.language = language;
         return this;
     }
@@ -40,7 +40,7 @@ public class CreateTranscriptionRequest {
     @SpeakeasyMetadata("multipartForm:name=model,json")
     public Object model;
 
-    public CreateTranscriptionRequest withModel(Object model) {
+    public CreateTranscriptionRequest1 withModel(Object model) {
         this.model = model;
         return this;
     }
@@ -52,7 +52,7 @@ public class CreateTranscriptionRequest {
     @SpeakeasyMetadata("multipartForm:name=prompt")
     public String prompt;
 
-    public CreateTranscriptionRequest withPrompt(String prompt) {
+    public CreateTranscriptionRequest1 withPrompt(String prompt) {
         this.prompt = prompt;
         return this;
     }
@@ -62,9 +62,9 @@ public class CreateTranscriptionRequest {
      * 
      */
     @SpeakeasyMetadata("multipartForm:name=response_format")
-    public String responseFormat;
+    public CreateTranscriptionRequestResponseFormat responseFormat;
 
-    public CreateTranscriptionRequest withResponseFormat(String responseFormat) {
+    public CreateTranscriptionRequest1 withResponseFormat(CreateTranscriptionRequestResponseFormat responseFormat) {
         this.responseFormat = responseFormat;
         return this;
     }
@@ -76,12 +76,12 @@ public class CreateTranscriptionRequest {
     @SpeakeasyMetadata("multipartForm:name=temperature")
     public Double temperature;
 
-    public CreateTranscriptionRequest withTemperature(Double temperature) {
+    public CreateTranscriptionRequest1 withTemperature(Double temperature) {
         this.temperature = temperature;
         return this;
     }
     
-    public CreateTranscriptionRequest(@JsonProperty("file") CreateTranscriptionRequestFile file, @JsonProperty("model") Object model) {
+    public CreateTranscriptionRequest1(@JsonProperty("file") CreateTranscriptionRequestFile file, @JsonProperty("model") Object model) {
         this.file = file;
         this.model = model;
   }
