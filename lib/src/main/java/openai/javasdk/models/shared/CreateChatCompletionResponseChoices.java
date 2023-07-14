@@ -4,13 +4,10 @@
 
 package openai.javasdk.models.shared;
 
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class CreateChatCompletionResponseChoices {
-    @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("finish_reason")
     public CreateChatCompletionResponseChoicesFinishReason finishReason;
 
@@ -19,7 +16,6 @@ public class CreateChatCompletionResponseChoices {
         return this;
     }
     
-    @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("index")
     public Long index;
 
@@ -28,7 +24,6 @@ public class CreateChatCompletionResponseChoices {
         return this;
     }
     
-    @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("message")
     public ChatCompletionResponseMessage message;
 
@@ -37,5 +32,9 @@ public class CreateChatCompletionResponseChoices {
         return this;
     }
     
-    public CreateChatCompletionResponseChoices(){}
+    public CreateChatCompletionResponseChoices(@JsonProperty("finish_reason") CreateChatCompletionResponseChoicesFinishReason finishReason, @JsonProperty("index") Long index, @JsonProperty("message") ChatCompletionResponseMessage message) {
+        this.finishReason = finishReason;
+        this.index = index;
+        this.message = message;
+  }
 }

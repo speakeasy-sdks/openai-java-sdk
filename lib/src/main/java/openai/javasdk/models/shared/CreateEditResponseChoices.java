@@ -4,13 +4,10 @@
 
 package openai.javasdk.models.shared;
 
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class CreateEditResponseChoices {
-    @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("finish_reason")
     public CreateEditResponseChoicesFinishReason finishReason;
 
@@ -19,7 +16,6 @@ public class CreateEditResponseChoices {
         return this;
     }
     
-    @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("index")
     public Long index;
 
@@ -28,16 +24,6 @@ public class CreateEditResponseChoices {
         return this;
     }
     
-    @JsonInclude(Include.NON_ABSENT)
-    @JsonProperty("logprobs")
-    public CreateEditResponseChoicesLogprobs logprobs;
-
-    public CreateEditResponseChoices withLogprobs(CreateEditResponseChoicesLogprobs logprobs) {
-        this.logprobs = logprobs;
-        return this;
-    }
-    
-    @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("text")
     public String text;
 
@@ -46,5 +32,9 @@ public class CreateEditResponseChoices {
         return this;
     }
     
-    public CreateEditResponseChoices(){}
+    public CreateEditResponseChoices(@JsonProperty("finish_reason") CreateEditResponseChoicesFinishReason finishReason, @JsonProperty("index") Long index, @JsonProperty("text") String text) {
+        this.finishReason = finishReason;
+        this.index = index;
+        this.text = text;
+  }
 }
