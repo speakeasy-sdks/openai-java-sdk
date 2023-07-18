@@ -7,7 +7,8 @@ package openai.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * CreateEmbeddingRequestModel2 - model_description
+ * CreateEmbeddingRequestModel2 - ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.
+ * 
  */
 public enum CreateEmbeddingRequestModel2 {
     TEXT_EMBEDDING_ADA002("text-embedding-ada-002");

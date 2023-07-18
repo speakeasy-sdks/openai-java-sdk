@@ -8,14 +8,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import openai.javasdk.utils.SpeakeasyMetadata;
 
 
-public class CreateImageEditRequest {
+public class CreateImageEditRequest2 {
     /**
      * The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
      */
     @SpeakeasyMetadata("multipartForm:file")
     public CreateImageEditRequestImage image;
 
-    public CreateImageEditRequest withImage(CreateImageEditRequestImage image) {
+    public CreateImageEditRequest2 withImage(CreateImageEditRequestImage image) {
         this.image = image;
         return this;
     }
@@ -26,15 +26,18 @@ public class CreateImageEditRequest {
     @SpeakeasyMetadata("multipartForm:file")
     public CreateImageEditRequestMask mask;
 
-    public CreateImageEditRequest withMask(CreateImageEditRequestMask mask) {
+    public CreateImageEditRequest2 withMask(CreateImageEditRequestMask mask) {
         this.mask = mask;
         return this;
     }
     
+    /**
+     * The number of images to generate. Must be between 1 and 10.
+     */
     @SpeakeasyMetadata("multipartForm:name=n")
-    public Object n;
+    public Long n;
 
-    public CreateImageEditRequest withN(Object n) {
+    public CreateImageEditRequest2 withN(Long n) {
         this.n = n;
         return this;
     }
@@ -45,36 +48,46 @@ public class CreateImageEditRequest {
     @SpeakeasyMetadata("multipartForm:name=prompt")
     public String prompt;
 
-    public CreateImageEditRequest withPrompt(String prompt) {
+    public CreateImageEditRequest2 withPrompt(String prompt) {
         this.prompt = prompt;
         return this;
     }
     
+    /**
+     * The format in which the generated images are returned. Must be one of `url` or `b64_json`.
+     */
     @SpeakeasyMetadata("multipartForm:name=response_format")
-    public Object responseFormat;
+    public CreateImageEditRequestResponseFormat responseFormat;
 
-    public CreateImageEditRequest withResponseFormat(Object responseFormat) {
+    public CreateImageEditRequest2 withResponseFormat(CreateImageEditRequestResponseFormat responseFormat) {
         this.responseFormat = responseFormat;
         return this;
     }
     
+    /**
+     * The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
+     */
     @SpeakeasyMetadata("multipartForm:name=size")
-    public Object size;
+    public CreateImageEditRequestSize size;
 
-    public CreateImageEditRequest withSize(Object size) {
+    public CreateImageEditRequest2 withSize(CreateImageEditRequestSize size) {
         this.size = size;
         return this;
     }
     
+    /**
+     * A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
+     * 
+     */
     @SpeakeasyMetadata("multipartForm:name=user")
-    public Object user;
+    public String user;
 
-    public CreateImageEditRequest withUser(Object user) {
+    public CreateImageEditRequest2 withUser(String user) {
         this.user = user;
         return this;
     }
     
-    public CreateImageEditRequest(@JsonProperty("image") CreateImageEditRequestImage image, @JsonProperty("prompt") String prompt) {
+    public CreateImageEditRequest2(@JsonProperty("image") CreateImageEditRequestImage image, @JsonProperty("prompt") String prompt) {
         this.image = image;
         this.prompt = prompt;
   }

@@ -57,11 +57,15 @@ public class CreateImageRequest {
         return this;
     }
     
+    /**
+     * A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
+     * 
+     */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("user")
-    public Object user;
+    public String user;
 
-    public CreateImageRequest withUser(Object user) {
+    public CreateImageRequest withUser(String user) {
         this.user = user;
         return this;
     }

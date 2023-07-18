@@ -371,7 +371,7 @@ public class OpenAI {
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public openai.javasdk.models.operations.CreateImageEditResponse createImageEdit(openai.javasdk.models.shared.CreateImageEditRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateImageEditResponse createImageEdit(openai.javasdk.models.shared.CreateImageEditRequest2 request) throws Exception {
         String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/images/edits");
         
@@ -414,7 +414,7 @@ public class OpenAI {
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public openai.javasdk.models.operations.CreateImageVariationResponse createImageVariation(openai.javasdk.models.shared.CreateImageVariationRequest request) throws Exception {
+    public openai.javasdk.models.operations.CreateImageVariationResponse createImageVariation(openai.javasdk.models.shared.CreateImageVariationRequest2 request) throws Exception {
         String baseUrl = this.sdkConfiguration.serverUrl;
         String url = openai.javasdk.utils.Utils.generateURL(baseUrl, "/images/variations");
         
