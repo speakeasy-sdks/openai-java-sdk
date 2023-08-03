@@ -153,7 +153,7 @@ public class OpenAI {
      * @param request the request object containing all of the parameters for the API call
      * @return the response from the API call
      * @throws Exception if the API call fails
-     * @deprecated this method will be removed in a future release, please migrate away from it as soon as possible
+     * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     @Deprecated
     public openai.javasdk.models.operations.CreateEditResponse createEdit(openai.javasdk.models.shared.CreateEditRequest request) throws Exception {
