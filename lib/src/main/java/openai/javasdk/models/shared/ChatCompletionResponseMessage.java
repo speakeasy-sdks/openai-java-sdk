@@ -13,7 +13,6 @@ public class ChatCompletionResponseMessage {
     /**
      * The contents of the message.
      */
-    @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("content")
     public String content;
 
@@ -45,7 +44,8 @@ public class ChatCompletionResponseMessage {
         return this;
     }
     
-    public ChatCompletionResponseMessage(@JsonProperty("role") ChatCompletionResponseMessageRole role) {
+    public ChatCompletionResponseMessage(@JsonProperty("content") String content, @JsonProperty("role") ChatCompletionResponseMessageRole role) {
+        this.content = content;
         this.role = role;
   }
 }
