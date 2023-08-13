@@ -6,33 +6,45 @@ package openai.javasdk.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * CompletionUsage - Usage statistics for the completion request.
+ */
 
-public class CreateChatCompletionResponseUsage {
+public class CompletionUsage {
+    /**
+     * Number of tokens in the generated completion.
+     */
     @JsonProperty("completion_tokens")
     public Long completionTokens;
 
-    public CreateChatCompletionResponseUsage withCompletionTokens(Long completionTokens) {
+    public CompletionUsage withCompletionTokens(Long completionTokens) {
         this.completionTokens = completionTokens;
         return this;
     }
     
+    /**
+     * Number of tokens in the prompt.
+     */
     @JsonProperty("prompt_tokens")
     public Long promptTokens;
 
-    public CreateChatCompletionResponseUsage withPromptTokens(Long promptTokens) {
+    public CompletionUsage withPromptTokens(Long promptTokens) {
         this.promptTokens = promptTokens;
         return this;
     }
     
+    /**
+     * Total number of tokens used in the request (prompt + completion).
+     */
     @JsonProperty("total_tokens")
     public Long totalTokens;
 
-    public CreateChatCompletionResponseUsage withTotalTokens(Long totalTokens) {
+    public CompletionUsage withTotalTokens(Long totalTokens) {
         this.totalTokens = totalTokens;
         return this;
     }
     
-    public CreateChatCompletionResponseUsage(@JsonProperty("completion_tokens") Long completionTokens, @JsonProperty("prompt_tokens") Long promptTokens, @JsonProperty("total_tokens") Long totalTokens) {
+    public CompletionUsage(@JsonProperty("completion_tokens") Long completionTokens, @JsonProperty("prompt_tokens") Long promptTokens, @JsonProperty("total_tokens") Long totalTokens) {
         this.completionTokens = completionTokens;
         this.promptTokens = promptTokens;
         this.totalTokens = totalTokens;

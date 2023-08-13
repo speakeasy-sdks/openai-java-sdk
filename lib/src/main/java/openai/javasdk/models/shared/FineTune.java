@@ -9,10 +9,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * FineTune - OK
+ * FineTune - The `FineTune` object represents a fine-tuning job that has been created through the API.
+ * 
  */
 
 public class FineTune {
+    /**
+     * The unix timestamp for when the fine-tuning job was created.
+     */
     @JsonProperty("created_at")
     public Long createdAt;
 
@@ -21,6 +25,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The list of events that have been observed in the lifecycle of the FineTune job.
+     */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("events")
     public FineTuneEvent[] events;
@@ -30,6 +37,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The name of the fine-tuned model that is being created.
+     */
     @JsonProperty("fine_tuned_model")
     public String fineTunedModel;
 
@@ -38,6 +48,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The hyperparameters used for the fine-tuning job. See the [Fine-tuning Guide](/docs/guides/fine-tuning/hyperparameters) for more details.
+     */
     @JsonProperty("hyperparams")
     public FineTuneHyperparams hyperparams;
 
@@ -46,6 +59,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The object identifier, which can be referenced in the API endpoints.
+     */
     @JsonProperty("id")
     public String id;
 
@@ -54,6 +70,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The base model that is being fine-tuned.
+     */
     @JsonProperty("model")
     public String model;
 
@@ -62,6 +81,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The object type, which is always "fine-tune".
+     */
     @JsonProperty("object")
     public String object;
 
@@ -70,6 +92,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The organization that owns the fine-tuning job.
+     */
     @JsonProperty("organization_id")
     public String organizationId;
 
@@ -78,6 +103,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The compiled results files for the fine-tuning job.
+     */
     @JsonProperty("result_files")
     public OpenAIFile[] resultFiles;
 
@@ -86,6 +114,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The current status of the fine-tuning job, which can be either `created`, `pending`, `running`, `succeeded`, `failed`, or `cancelled`.
+     */
     @JsonProperty("status")
     public String status;
 
@@ -94,6 +125,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The list of files used for training.
+     */
     @JsonProperty("training_files")
     public OpenAIFile[] trainingFiles;
 
@@ -102,6 +136,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The unix timestamp for when the fine-tuning job was last updated.
+     */
     @JsonProperty("updated_at")
     public Long updatedAt;
 
@@ -110,6 +147,9 @@ public class FineTune {
         return this;
     }
     
+    /**
+     * The list of files used for validation.
+     */
     @JsonProperty("validation_files")
     public OpenAIFile[] validationFiles;
 

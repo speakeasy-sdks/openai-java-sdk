@@ -6,8 +6,14 @@ package openai.javasdk.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * CreateEmbeddingResponseUsage - The usage information for the request.
+ */
 
 public class CreateEmbeddingResponseUsage {
+    /**
+     * The number of tokens used by the prompt.
+     */
     @JsonProperty("prompt_tokens")
     public Long promptTokens;
 
@@ -16,6 +22,9 @@ public class CreateEmbeddingResponseUsage {
         return this;
     }
     
+    /**
+     * The total number of tokens used by the request.
+     */
     @JsonProperty("total_tokens")
     public Long totalTokens;
 

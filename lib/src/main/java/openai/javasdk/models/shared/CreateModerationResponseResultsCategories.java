@@ -6,8 +6,14 @@ package openai.javasdk.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * CreateModerationResponseResultsCategories - A list of the categories, and whether they are flagged or not.
+ */
 
 public class CreateModerationResponseResultsCategories {
+    /**
+     * Whether the content was flagged as 'hate'.
+     */
     @JsonProperty("hate")
     public Boolean hate;
 
@@ -16,6 +22,9 @@ public class CreateModerationResponseResultsCategories {
         return this;
     }
     
+    /**
+     * Whether the content was flagged as 'hate/threatening'.
+     */
     @JsonProperty("hate/threatening")
     public Boolean hateThreatening;
 
@@ -24,6 +33,9 @@ public class CreateModerationResponseResultsCategories {
         return this;
     }
     
+    /**
+     * Whether the content was flagged as 'self-harm'.
+     */
     @JsonProperty("self-harm")
     public Boolean selfHarm;
 
@@ -32,6 +44,9 @@ public class CreateModerationResponseResultsCategories {
         return this;
     }
     
+    /**
+     * Whether the content was flagged as 'sexual'.
+     */
     @JsonProperty("sexual")
     public Boolean sexual;
 
@@ -40,6 +55,9 @@ public class CreateModerationResponseResultsCategories {
         return this;
     }
     
+    /**
+     * Whether the content was flagged as 'sexual/minors'.
+     */
     @JsonProperty("sexual/minors")
     public Boolean sexualMinors;
 
@@ -48,6 +66,9 @@ public class CreateModerationResponseResultsCategories {
         return this;
     }
     
+    /**
+     * Whether the content was flagged as 'violence'.
+     */
     @JsonProperty("violence")
     public Boolean violence;
 
@@ -56,6 +77,9 @@ public class CreateModerationResponseResultsCategories {
         return this;
     }
     
+    /**
+     * Whether the content was flagged as 'violence/graphic'.
+     */
     @JsonProperty("violence/graphic")
     public Boolean violenceGraphic;
 

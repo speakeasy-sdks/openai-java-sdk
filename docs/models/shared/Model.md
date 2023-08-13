@@ -1,13 +1,13 @@
 # Model
 
-OK
+Describes an OpenAI model offering that can be used with the API.
 
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `created`          | *Long*             | :heavy_check_mark: | N/A                |
-| `id`               | *String*           | :heavy_check_mark: | N/A                |
-| `object`           | *String*           | :heavy_check_mark: | N/A                |
-| `ownedBy`          | *String*           | :heavy_check_mark: | N/A                |
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `created`                                                           | *Long*                                                              | :heavy_check_mark:                                                  | The date and time when the model was created.                       |
+| `id`                                                                | *String*                                                            | :heavy_check_mark:                                                  | The model identifier, which can be referenced in the API endpoints. |
+| `object`                                                            | *String*                                                            | :heavy_check_mark:                                                  | The object type, which is always "model".                           |
+| `ownedBy`                                                           | *String*                                                            | :heavy_check_mark:                                                  | The organization that owns the model.                               |

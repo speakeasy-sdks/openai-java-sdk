@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 public class CreateEditResponse {
+    /**
+     * A list of edit choices. Can be more than one if `n` is greater than 1.
+     */
     @JsonProperty("choices")
     public CreateEditResponseChoices[] choices;
 
@@ -19,6 +22,9 @@ public class CreateEditResponse {
         return this;
     }
     
+    /**
+     * A unix timestamp of when the edit was created.
+     */
     @JsonProperty("created")
     public Long created;
 
@@ -27,6 +33,9 @@ public class CreateEditResponse {
         return this;
     }
     
+    /**
+     * The object type, which is always `edit`.
+     */
     @JsonProperty("object")
     public String object;
 
@@ -35,15 +44,18 @@ public class CreateEditResponse {
         return this;
     }
     
+    /**
+     * Usage statistics for the completion request.
+     */
     @JsonProperty("usage")
-    public CreateEditResponseUsage usage;
+    public CompletionUsage usage;
 
-    public CreateEditResponse withUsage(CreateEditResponseUsage usage) {
+    public CreateEditResponse withUsage(CompletionUsage usage) {
         this.usage = usage;
         return this;
     }
     
-    public CreateEditResponse(@JsonProperty("choices") CreateEditResponseChoices[] choices, @JsonProperty("created") Long created, @JsonProperty("object") String object, @JsonProperty("usage") CreateEditResponseUsage usage) {
+    public CreateEditResponse(@JsonProperty("choices") CreateEditResponseChoices[] choices, @JsonProperty("created") Long created, @JsonProperty("object") String object, @JsonProperty("usage") CompletionUsage usage) {
         this.choices = choices;
         this.created = created;
         this.object = object;

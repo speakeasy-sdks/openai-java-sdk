@@ -20,14 +20,14 @@ public class ImagesResponse {
     }
     
     @JsonProperty("data")
-    public ImagesResponseData[] data;
+    public Image[] data;
 
-    public ImagesResponse withData(ImagesResponseData[] data) {
+    public ImagesResponse withData(Image[] data) {
         this.data = data;
         return this;
     }
     
-    public ImagesResponse(@JsonProperty("created") Long created, @JsonProperty("data") ImagesResponseData[] data) {
+    public ImagesResponse(@JsonProperty("created") Long created, @JsonProperty("data") Image[] data) {
         this.created = created;
         this.data = data;
   }

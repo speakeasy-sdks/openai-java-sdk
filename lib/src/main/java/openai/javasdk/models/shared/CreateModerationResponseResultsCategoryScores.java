@@ -6,8 +6,14 @@ package openai.javasdk.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * CreateModerationResponseResultsCategoryScores - A list of the categories along with their scores as predicted by model.
+ */
 
 public class CreateModerationResponseResultsCategoryScores {
+    /**
+     * The score for the category 'hate'.
+     */
     @JsonProperty("hate")
     public Double hate;
 
@@ -16,6 +22,9 @@ public class CreateModerationResponseResultsCategoryScores {
         return this;
     }
     
+    /**
+     * The score for the category 'hate/threatening'.
+     */
     @JsonProperty("hate/threatening")
     public Double hateThreatening;
 
@@ -24,6 +33,9 @@ public class CreateModerationResponseResultsCategoryScores {
         return this;
     }
     
+    /**
+     * The score for the category 'self-harm'.
+     */
     @JsonProperty("self-harm")
     public Double selfHarm;
 
@@ -32,6 +44,9 @@ public class CreateModerationResponseResultsCategoryScores {
         return this;
     }
     
+    /**
+     * The score for the category 'sexual'.
+     */
     @JsonProperty("sexual")
     public Double sexual;
 
@@ -40,6 +55,9 @@ public class CreateModerationResponseResultsCategoryScores {
         return this;
     }
     
+    /**
+     * The score for the category 'sexual/minors'.
+     */
     @JsonProperty("sexual/minors")
     public Double sexualMinors;
 
@@ -48,6 +66,9 @@ public class CreateModerationResponseResultsCategoryScores {
         return this;
     }
     
+    /**
+     * The score for the category 'violence'.
+     */
     @JsonProperty("violence")
     public Double violence;
 
@@ -56,6 +77,9 @@ public class CreateModerationResponseResultsCategoryScores {
         return this;
     }
     
+    /**
+     * The score for the category 'violence/graphic'.
+     */
     @JsonProperty("violence/graphic")
     public Double violenceGraphic;
 

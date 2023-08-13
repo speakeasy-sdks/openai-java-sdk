@@ -8,6 +8,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class CreateModerationResponseResults {
+    /**
+     * A list of the categories, and whether they are flagged or not.
+     */
     @JsonProperty("categories")
     public CreateModerationResponseResultsCategories categories;
 
@@ -16,6 +19,9 @@ public class CreateModerationResponseResults {
         return this;
     }
     
+    /**
+     * A list of the categories along with their scores as predicted by model.
+     */
     @JsonProperty("category_scores")
     public CreateModerationResponseResultsCategoryScores categoryScores;
 
@@ -24,6 +30,9 @@ public class CreateModerationResponseResults {
         return this;
     }
     
+    /**
+     * Whether the content violates [OpenAI's usage policies](/policies/usage-policies).
+     */
     @JsonProperty("flagged")
     public Boolean flagged;
 

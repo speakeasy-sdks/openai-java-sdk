@@ -8,8 +8,16 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * FineTuneHyperparams - The hyperparameters used for the fine-tuning job. See the [Fine-tuning Guide](/docs/guides/fine-tuning/hyperparameters) for more details.
+ */
 
 public class FineTuneHyperparams {
+    /**
+     * The batch size to use for training. The batch size is the number of
+     * training examples used to train a single forward and backward pass.
+     * 
+     */
     @JsonProperty("batch_size")
     public Long batchSize;
 
@@ -18,6 +26,10 @@ public class FineTuneHyperparams {
         return this;
     }
     
+    /**
+     * The number of classes to use for computing classification metrics.
+     * 
+     */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("classification_n_classes")
     public Long classificationNClasses;
@@ -27,6 +39,10 @@ public class FineTuneHyperparams {
         return this;
     }
     
+    /**
+     * The positive class to use for computing classification metrics.
+     * 
+     */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("classification_positive_class")
     public String classificationPositiveClass;
@@ -36,6 +52,10 @@ public class FineTuneHyperparams {
         return this;
     }
     
+    /**
+     * The classification metrics to compute using the validation dataset at the end of every epoch.
+     * 
+     */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("compute_classification_metrics")
     public Boolean computeClassificationMetrics;
@@ -45,6 +65,10 @@ public class FineTuneHyperparams {
         return this;
     }
     
+    /**
+     * The learning rate multiplier to use for training.
+     * 
+     */
     @JsonProperty("learning_rate_multiplier")
     public Double learningRateMultiplier;
 
@@ -53,6 +77,11 @@ public class FineTuneHyperparams {
         return this;
     }
     
+    /**
+     * The number of epochs to train the model for. An epoch refers to one
+     * full cycle through the training dataset.
+     * 
+     */
     @JsonProperty("n_epochs")
     public Long nEpochs;
 
@@ -61,6 +90,10 @@ public class FineTuneHyperparams {
         return this;
     }
     
+    /**
+     * The weight to use for loss on the prompt tokens.
+     * 
+     */
     @JsonProperty("prompt_loss_weight")
     public Double promptLossWeight;
 

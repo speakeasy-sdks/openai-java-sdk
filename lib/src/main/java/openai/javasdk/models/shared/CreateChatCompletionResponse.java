@@ -9,10 +9,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * CreateChatCompletionResponse - OK
+ * CreateChatCompletionResponse - Represents a chat completion response returned by model, based on the provided input.
  */
 
 public class CreateChatCompletionResponse {
+    /**
+     * A list of chat completion choices. Can be more than one if `n` is greater than 1.
+     */
     @JsonProperty("choices")
     public CreateChatCompletionResponseChoices[] choices;
 
@@ -21,6 +24,9 @@ public class CreateChatCompletionResponse {
         return this;
     }
     
+    /**
+     * A unix timestamp of when the chat completion was created.
+     */
     @JsonProperty("created")
     public Long created;
 
@@ -29,6 +35,9 @@ public class CreateChatCompletionResponse {
         return this;
     }
     
+    /**
+     * A unique identifier for the chat completion.
+     */
     @JsonProperty("id")
     public String id;
 
@@ -37,6 +46,9 @@ public class CreateChatCompletionResponse {
         return this;
     }
     
+    /**
+     * The model used for the chat completion.
+     */
     @JsonProperty("model")
     public String model;
 
@@ -45,6 +57,9 @@ public class CreateChatCompletionResponse {
         return this;
     }
     
+    /**
+     * The object type, which is always `chat.completion`.
+     */
     @JsonProperty("object")
     public String object;
 
@@ -53,11 +68,14 @@ public class CreateChatCompletionResponse {
         return this;
     }
     
+    /**
+     * Usage statistics for the completion request.
+     */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("usage")
-    public CreateChatCompletionResponseUsage usage;
+    public CompletionUsage usage;
 
-    public CreateChatCompletionResponse withUsage(CreateChatCompletionResponseUsage usage) {
+    public CreateChatCompletionResponse withUsage(CompletionUsage usage) {
         this.usage = usage;
         return this;
     }

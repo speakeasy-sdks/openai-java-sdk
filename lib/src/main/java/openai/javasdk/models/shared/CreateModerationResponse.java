@@ -7,10 +7,13 @@ package openai.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * CreateModerationResponse - OK
+ * CreateModerationResponse - Represents policy compliance report by OpenAI's content moderation model against a given input.
  */
 
 public class CreateModerationResponse {
+    /**
+     * The unique identifier for the moderation request.
+     */
     @JsonProperty("id")
     public String id;
 
@@ -19,6 +22,9 @@ public class CreateModerationResponse {
         return this;
     }
     
+    /**
+     * The model used to generate the moderation results.
+     */
     @JsonProperty("model")
     public String model;
 
@@ -27,6 +33,9 @@ public class CreateModerationResponse {
         return this;
     }
     
+    /**
+     * A list of moderation objects.
+     */
     @JsonProperty("results")
     public CreateModerationResponseResults[] results;
 

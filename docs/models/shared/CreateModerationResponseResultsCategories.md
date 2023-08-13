@@ -1,14 +1,16 @@
 # CreateModerationResponseResultsCategories
 
+A list of the categories, and whether they are flagged or not.
+
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `hate`             | *Boolean*          | :heavy_check_mark: | N/A                |
-| `hateThreatening`  | *Boolean*          | :heavy_check_mark: | N/A                |
-| `selfHarm`         | *Boolean*          | :heavy_check_mark: | N/A                |
-| `sexual`           | *Boolean*          | :heavy_check_mark: | N/A                |
-| `sexualMinors`     | *Boolean*          | :heavy_check_mark: | N/A                |
-| `violence`         | *Boolean*          | :heavy_check_mark: | N/A                |
-| `violenceGraphic`  | *Boolean*          | :heavy_check_mark: | N/A                |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `hate`                                                 | *Boolean*                                              | :heavy_check_mark:                                     | Whether the content was flagged as 'hate'.             |
+| `hateThreatening`                                      | *Boolean*                                              | :heavy_check_mark:                                     | Whether the content was flagged as 'hate/threatening'. |
+| `selfHarm`                                             | *Boolean*                                              | :heavy_check_mark:                                     | Whether the content was flagged as 'self-harm'.        |
+| `sexual`                                               | *Boolean*                                              | :heavy_check_mark:                                     | Whether the content was flagged as 'sexual'.           |
+| `sexualMinors`                                         | *Boolean*                                              | :heavy_check_mark:                                     | Whether the content was flagged as 'sexual/minors'.    |
+| `violence`                                             | *Boolean*                                              | :heavy_check_mark:                                     | Whether the content was flagged as 'violence'.         |
+| `violenceGraphic`                                      | *Boolean*                                              | :heavy_check_mark:                                     | Whether the content was flagged as 'violence/graphic'. |

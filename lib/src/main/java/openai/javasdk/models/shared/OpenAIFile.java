@@ -9,10 +9,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * OpenAIFile - OK
+ * OpenAIFile - The `File` object represents a document that has been uploaded to OpenAI.
+ * 
  */
 
 public class OpenAIFile {
+    /**
+     * The size of the file in bytes.
+     */
     @JsonProperty("bytes")
     public Long bytes;
 
@@ -21,6 +25,9 @@ public class OpenAIFile {
         return this;
     }
     
+    /**
+     * The unix timestamp for when the file was created.
+     */
     @JsonProperty("created_at")
     public Long createdAt;
 
@@ -29,6 +36,9 @@ public class OpenAIFile {
         return this;
     }
     
+    /**
+     * The name of the file.
+     */
     @JsonProperty("filename")
     public String filename;
 
@@ -37,6 +47,9 @@ public class OpenAIFile {
         return this;
     }
     
+    /**
+     * The file identifier, which can be referenced in the API endpoints.
+     */
     @JsonProperty("id")
     public String id;
 
@@ -45,6 +58,9 @@ public class OpenAIFile {
         return this;
     }
     
+    /**
+     * The object type, which is always "file".
+     */
     @JsonProperty("object")
     public String object;
 
@@ -53,6 +69,9 @@ public class OpenAIFile {
         return this;
     }
     
+    /**
+     * The intended purpose of the file. Currently, only "fine-tune" is supported.
+     */
     @JsonProperty("purpose")
     public String purpose;
 
@@ -61,6 +80,9 @@ public class OpenAIFile {
         return this;
     }
     
+    /**
+     * The current status of the file, which can be either `uploaded`, `processed`, `pending`, `error`, `deleting` or `deleted`.
+     */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("status")
     public String status;
@@ -70,6 +92,10 @@ public class OpenAIFile {
         return this;
     }
     
+    /**
+     * Additional details about the status of the file. If the file is in the `error` state, this will include a message describing the error.
+     * 
+     */
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("status_details")
     public String statusDetails;

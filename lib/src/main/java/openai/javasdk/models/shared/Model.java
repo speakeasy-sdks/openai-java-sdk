@@ -7,10 +7,13 @@ package openai.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Model - OK
+ * Model - Describes an OpenAI model offering that can be used with the API.
  */
 
 public class Model {
+    /**
+     * The date and time when the model was created.
+     */
     @JsonProperty("created")
     public Long created;
 
@@ -19,6 +22,9 @@ public class Model {
         return this;
     }
     
+    /**
+     * The model identifier, which can be referenced in the API endpoints.
+     */
     @JsonProperty("id")
     public String id;
 
@@ -27,6 +33,9 @@ public class Model {
         return this;
     }
     
+    /**
+     * The object type, which is always "model".
+     */
     @JsonProperty("object")
     public String object;
 
@@ -35,6 +44,9 @@ public class Model {
         return this;
     }
     
+    /**
+     * The organization that owns the model.
+     */
     @JsonProperty("owned_by")
     public String ownedBy;
 
