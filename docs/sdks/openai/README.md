@@ -99,13 +99,13 @@ package hello.world;
 
 import openai.javasdk.Gpt;
 import openai.javasdk.models.operations.CreateChatCompletionResponse;
+import openai.javasdk.models.shared.ChatCompletionFunctionCallOption;
 import openai.javasdk.models.shared.ChatCompletionFunctions;
 import openai.javasdk.models.shared.ChatCompletionRequestMessage;
 import openai.javasdk.models.shared.ChatCompletionRequestMessageFunctionCall;
 import openai.javasdk.models.shared.ChatCompletionRequestMessageRole;
 import openai.javasdk.models.shared.CreateChatCompletionRequest;
 import openai.javasdk.models.shared.CreateChatCompletionRequestFunctionCall1;
-import openai.javasdk.models.shared.CreateChatCompletionRequestFunctionCall2;
 import openai.javasdk.models.shared.CreateChatCompletionRequestModel2;
 
 public class Application {
@@ -144,7 +144,7 @@ public class Application {
                                 }}),
                             }}, CreateChatCompletionRequestModel2.GPT35_TURBO) {{
                 frequencyPenalty = 7586.16d;
-                functionCall = new CreateChatCompletionRequestFunctionCall2("beatae");;
+                functionCall = new ChatCompletionFunctionCallOption("beatae");;
                 functions = new openai.javasdk.models.shared.ChatCompletionFunctions[]{{
                     add(new ChatCompletionFunctions("perferendis",                 new java.util.HashMap<String, Object>() {{
                                         put("natus", "sed");

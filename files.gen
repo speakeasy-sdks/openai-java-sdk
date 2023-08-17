@@ -72,7 +72,6 @@ lib/src/main/java/openai/javasdk/models/shared/CompletionUsage.java
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessageFunctionCall.java
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessageRole.java
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionResponseMessage.java
-lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequestFunctionCall2.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequestFunctionCall1.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequestModel2.java
 lib/src/main/java/openai/javasdk/models/shared/CreateChatCompletionRequest.java
@@ -80,6 +79,7 @@ lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessageFunct
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessageRole.java
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionRequestMessage.java
 lib/src/main/java/openai/javasdk/models/shared/ChatCompletionFunctions.java
+lib/src/main/java/openai/javasdk/models/shared/ChatCompletionFunctionCallOption.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoicesFinishReason.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoicesLogprobs.java
 lib/src/main/java/openai/javasdk/models/shared/CreateCompletionResponseChoices.java
@@ -181,7 +181,6 @@ docs/models/shared/CompletionUsage.md
 docs/models/shared/ChatCompletionResponseMessageFunctionCall.md
 docs/models/shared/ChatCompletionResponseMessageRole.md
 docs/models/shared/ChatCompletionResponseMessage.md
-docs/models/shared/CreateChatCompletionRequestFunctionCall2.md
 docs/models/shared/CreateChatCompletionRequestFunctionCall1.md
 docs/models/shared/CreateChatCompletionRequestModel2.md
 docs/models/shared/CreateChatCompletionRequest.md
@@ -189,6 +188,7 @@ docs/models/shared/ChatCompletionRequestMessageFunctionCall.md
 docs/models/shared/ChatCompletionRequestMessageRole.md
 docs/models/shared/ChatCompletionRequestMessage.md
 docs/models/shared/ChatCompletionFunctions.md
+docs/models/shared/ChatCompletionFunctionCallOption.md
 docs/models/shared/CreateCompletionResponseChoicesFinishReason.md
 docs/models/shared/CreateCompletionResponseChoicesLogprobs.md
 docs/models/shared/CreateCompletionResponseChoices.md
